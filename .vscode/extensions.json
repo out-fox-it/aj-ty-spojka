@@ -1,8 +1,10 @@
 {
 	"recommendations": [
+        "coenraads.bracket-pair-colorizer-2",
         "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "dsznajder.es7-react-js-snippets",
         "mhutchie.git-graph",
-        "dbaeumer.vscode-eslint",   
-        "ms-vsliveshare.vsliveshare",
+        "ms-vsliveshare.vsliveshare"
 	]
 }
