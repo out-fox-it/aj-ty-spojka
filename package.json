@@ -12,6 +12,7 @@
     "Tomáš Hampl (https://github.com/tomas90hampl)",
     "Jindřich Máca (https://github.com/macajind)"
   ],
+  "license": "GPL-3.0-or-later",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
