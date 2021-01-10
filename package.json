@@ -1,8 +1,31 @@
 {
   "name": "aj-ty-spojka",
   "version": "0.1.0",
+  "description": "[: aj tý :] spojka",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/out-fox-it/aj-ty-spojka"
+  },
+  "contributors": [
+    "Jana Chaloupková (https://github.com/agnes97)",
+    "Martina Vilímová (https://github.com/MartinaVilimova)",
+    "Tomáš Hampl (https://github.com/tomas90hampl)",
+    "Jindřich Máca (https://github.com/macajind)"
+  ],
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "web-vitals": "^0.2.4"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "7.29.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -10,17 +33,8 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
-    "typescript": "^4.0.3",
-    "web-vitals": "^0.2.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "typescript": "^4.0.3"
   },
   "eslintConfig": {
     "extends": [
