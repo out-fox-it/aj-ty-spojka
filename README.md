@@ -2,6 +2,16 @@
 
 Web application that connects programmers based on their experience, interests and the type of person they are looking for (mentor, buddy, mentee) through matching and contact sharing.
 
+## Prerequisites ⚙️
+
+-   [Node.js](https://nodejs.org/en/download/)
+-   [Yarn](https://classic.yarnpkg.com/en/docs/getting-started) package manager
+
+## Getting Started 🚀
+
+-   type `yarn` to install dependencies
+-   type `yarn start` and open [http://localhost:3000](http://localhost:3000) to view project in the browser.
+
 ## Available Scripts 📃
 
 In the project directory, you can run:
@@ -18,6 +28,10 @@ In the project directory, you can run:
 
     -   🧪 Launches the test runner in the interactive watch mode.\
         See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+-   `yarn code:fix`
+
+    -   💅 Formats the code according to the set rules
 
 -   `yarn build`
 
