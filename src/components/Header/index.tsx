@@ -1,7 +1,8 @@
 import React from 'react'
+import { Title } from './styled'
 
 const Header: React.FC = () => {
-	return <h1>Test learn react</h1>
+	return <Title>Hello, World!</Title>
 }
 
 export default Header
