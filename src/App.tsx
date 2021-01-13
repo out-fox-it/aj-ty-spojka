@@ -1,11 +1,8 @@
 import React from 'react'
 import Header from './components/Header'
-import './App.css'
 
-const App: React.FC = () => (
-	<div className="App">
-		<Header />
-	</div>
-)
+const App: React.FC = () => {
+	return <Header />
+}
 
 export default App
