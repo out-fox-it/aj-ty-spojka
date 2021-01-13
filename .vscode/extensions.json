@@ -5,6 +5,7 @@
 		"dbaeumer.vscode-eslint",
 		"dsznajder.es7-react-js-snippets",
 		"mhutchie.git-graph",
-		"ms-vsliveshare.vsliveshare"
+		"ms-vsliveshare.vsliveshare",
+		"jpoissonnier.vscode-styled-components"
 	]
 }
