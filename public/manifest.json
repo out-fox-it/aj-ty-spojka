@@ -1,5 +1,10 @@
 {
-	"author":["Jindřich Máca", "Tomáš Hampl", "Martina Vilímová", "Jana Chaloupková"],
+	"author": [
+		"Jindřich Máca",
+		"Tomáš Hampl",
+		"Martina Vilímová",
+		"Jana Chaloupková"
+	],
 	"background_color": "#264653",
 	"categories": ["programming", "networking"],
 	"description": "Web application that connects programmers based on their experience, interests and the type of person they are looking for (mentor, buddy, mentee) through matching and contact sharing.",
