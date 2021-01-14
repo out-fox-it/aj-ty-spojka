@@ -25,7 +25,8 @@
 		"lint:fix": "eslint --fix src/",
 		"prettier": "prettier --check .",
 		"prettier:fix": "prettier --write .",
-		"code:check": "npm-run-all -l -p lint prettier",
+		"tsc:check": "tsc --noemit -p tsconfig.json",
+		"code:check": "npm-run-all -l -p tsc:check lint prettier",
 		"code:fix": "npm-run-all -l -p lint:fix prettier:fix"
 	},
 	"dependencies": {
