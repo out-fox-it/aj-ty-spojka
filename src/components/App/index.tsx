@@ -1,8 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { ThemeProvider } from 'styled-components'
 import Home from '../../pages/Home'
-import { DarkTheme } from '../../themes'
+import ThemeProvider from '../Theme'
 import { GlobalStyles } from './styled'
 
 const Routes: React.FC = () => (
@@ -12,7 +11,7 @@ const Routes: React.FC = () => (
 )
 
 const App: React.FC = () => (
-	<ThemeProvider theme={DarkTheme}>
+	<ThemeProvider>
 		<GlobalStyles />
 		<Routes />
 	</ThemeProvider>
