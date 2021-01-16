@@ -1,8 +1,22 @@
 import React from 'react'
-import { Title } from './styled'
+import { Theme, useThemeControl } from '../Theme'
+import { StyledToggle, Title, Wrapper } from './styled'
 
 const Header: React.FC = () => {
-	return <Title>Hello, World!</Title>
+	const [theme, setTheme] = useThemeControl()
+
+	return (
+		<Wrapper>
+			<Title>Hello, World!</Title>
+			<StyledToggle
+				label={['☀️', '🌙']}
+				isChecked={theme === Theme.Dark}
+				onChange={(checked) =>
+					setTheme(checked ? Theme.Dark : Theme.Light)
+				}
+			/>
+		</Wrapper>
+	)
 }
 
 export default Header

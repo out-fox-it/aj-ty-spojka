@@ -1,10 +1,11 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import renderWithTheme from '../../testing/renderWithTheme'
 import Header from '.'
 
 test('renders header text', () => {
-	render(<Header />)
-	const headerElement = screen.getByText('Hello, World!')
+	const { getByText } = renderWithTheme(<Header />)
+	const headerElement = getByText('Hello, World!')
+
 	expect(headerElement.tagName).toBe('H1')
 	expect(headerElement).toBeVisible()
 })
