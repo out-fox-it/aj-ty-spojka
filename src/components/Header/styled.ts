@@ -10,8 +10,6 @@ export const Wrapper = styled.header`
 	display: grid;
 	grid-template-columns: 1fr 3fr 1fr;
 	height: 45em;
-	min-width: max-content;
-	width: 100%;
 `
 
 export const Title = styled.h1`
