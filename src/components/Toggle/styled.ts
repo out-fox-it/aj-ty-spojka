@@ -22,31 +22,7 @@ export const Switch = styled.label`
 	height: 34px;
 `
 
-export const Checkbox = styled.input.attrs((props) => ({
-	type: 'checkbox',
-	checked: props.checked,
-	onChange: props.onChange,
-}))`
-	opacity: 0;
-	width: 0;
-	height: 0;
-
-	&:checked + .slider {
-		background-color: ${({ theme }) => theme.bg.secondary};
-	}
-
-	&:focus + .slider {
-		box-shadow: 0 0 1px ${({ theme }) => theme.bg.secondary};
-	}
-
-	&:checked + .slider:before {
-		-webkit-transform: translateX(26px);
-		-ms-transform: translateX(26px);
-		transform: translateX(26px);
-	}
-`
-
-export const Slider = styled.span.attrs({ className: 'slider' })`
+export const Slider = styled.span`
 	position: absolute;
 	cursor: pointer;
 	top: 0;
@@ -75,5 +51,29 @@ export const RoundSlider = styled(Slider)`
 
 	&:before {
 		border-radius: 50%;
+	}
+`
+
+export const Checkbox = styled.input.attrs((props) => ({
+	type: 'checkbox',
+	checked: props.checked,
+	onChange: props.onChange,
+}))`
+	opacity: 0;
+	width: 0;
+	height: 0;
+
+	&:checked + ${Slider} {
+		background-color: ${({ theme }) => theme.bg.secondary};
+	}
+
+	&:focus + ${Slider} {
+		box-shadow: 0 0 1px ${({ theme }) => theme.bg.secondary};
+	}
+
+	&:checked + ${Slider}:before {
+		-webkit-transform: translateX(26px);
+		-ms-transform: translateX(26px);
+		transform: translateX(26px);
 	}
 `

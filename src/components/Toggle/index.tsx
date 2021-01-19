@@ -21,7 +21,7 @@ const Toggle: React.FC<Props> = ({
 	onChange,
 	isChecked = false,
 	isRound = false,
-	label,
+	label = ['', ''],
 	className,
 }) => {
 	const [checked, setChecked] = useState<boolean>(isChecked)
@@ -31,13 +31,13 @@ const Toggle: React.FC<Props> = ({
 		onChange(checked)
 	}
 
-	const [leftLabel, rightLabel] = label ?? ['', '']
+	const [leftLabel, rightLabel] = label
 
 	return (
 		<Wrapper className={className}>
-			{leftLabel ? (
+			{leftLabel && (
 				<LeftLabel onClick={() => change(false)}>{leftLabel}</LeftLabel>
-			) : null}
+			)}
 			<Switch>
 				<Checkbox
 					checked={checked}
@@ -45,11 +45,11 @@ const Toggle: React.FC<Props> = ({
 				/>
 				{isRound ? <RoundSlider /> : <Slider />}
 			</Switch>
-			{rightLabel ? (
+			{rightLabel && (
 				<RightLabel onClick={() => change(true)}>
 					{rightLabel}
 				</RightLabel>
-			) : null}
+			)}
 		</Wrapper>
 	)
 }
