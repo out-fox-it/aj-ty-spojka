@@ -10,6 +10,7 @@ const Header: React.FC = () => {
 		<Wrapper>
 			<Title>[: aj tý :] spojka</Title>
 			<Toggle
+				isRound={true}
 				label={['☀️', '🌙']}
 				isChecked={theme === Theme.Dark}
 				onChange={(checked) =>
