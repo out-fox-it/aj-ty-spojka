@@ -7,7 +7,7 @@ const Header: React.FC = () => {
 
 	return (
 		<Wrapper>
-			<Title>Hello, World!</Title>
+			<Title>[: aj tý :] spojka</Title>
 			<StyledToggle
 				label={['☀️', '🌙']}
 				isChecked={theme === Theme.Dark}
