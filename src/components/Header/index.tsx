@@ -1,6 +1,7 @@
 import React from 'react'
 import { Theme, useThemeControl } from '../Theme'
-import { StyledToggle, Title, Wrapper } from './styled'
+import Toggle from '../Toggle'
+import { Title, Wrapper } from './styled'
 
 const Header: React.FC = () => {
 	const [theme, setTheme] = useThemeControl()
@@ -8,7 +9,7 @@ const Header: React.FC = () => {
 	return (
 		<Wrapper>
 			<Title>[: aj tý :] spojka</Title>
-			<StyledToggle
+			<Toggle
 				label={['☀️', '🌙']}
 				isChecked={theme === Theme.Dark}
 				onChange={(checked) =>
