@@ -11763,6 +11763,11 @@ which@^2.0.1, which@^2.0.2:
   dependencies:
     isexe "^2.0.0"
 
+with-alpha-hex@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/with-alpha-hex/-/with-alpha-hex-1.0.6.tgz#6bc55eb640388e2d056c77491ce4c5fd2d0f953d"
+  integrity sha512-+D0E+QoJFYTCoQDChc0lE3Mm4PLIxAhlW7+S/ejf9nBWrlqFK3vuKVHCi17PnLHP1BfJjs7oKSB7WZL8dKscBw==
+
 word-wrap@^1.2.3, word-wrap@~1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/word-wrap/-/word-wrap-1.2.3.tgz#610636f6b1f703891bd34771ccb17fb93b47079c"
