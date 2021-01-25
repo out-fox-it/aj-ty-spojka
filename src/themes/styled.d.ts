@@ -5,6 +5,7 @@ declare module 'styled-components' {
 		readonly bg: {
 			readonly primary: string
 			readonly secondary: string
+			readonly buttonBackground: string
 		}
 		readonly text: {
 			readonly primary: string

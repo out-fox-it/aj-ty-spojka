@@ -1,11 +1,16 @@
 import styled from 'styled-components'
+import { Button } from '../Button'
 
 export const Wrapper = styled.nav`
 	display: flex;
 	flex-wrap: wrap;
-	gap: 1em;
 	justify-content: center;
-	& > div {
-		width: 13em;
-	}
+	gap: 2em;
+
+	position: relative;
+	top: -10em;
+`
+
+export const StyledButton = styled(Button)`
+	width: 15em;
 `
