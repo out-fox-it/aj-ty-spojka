@@ -4,6 +4,7 @@ export const DarkTheme: DefaultTheme = {
 	bg: {
 		primary: '#264653' /* japanese indigo */,
 		secondary: '#2a9d8f' /* jungle green */,
+		buttonBackground: '#1f6f66' /* viridian green */,
 	},
 	text: {
 		primary: '#ffffff' /* white */,
@@ -17,6 +18,7 @@ export const LightTheme: DefaultTheme = {
 	bg: {
 		primary: '#ffffff',
 		secondary: '#ffffff',
+		buttonBackground: '#ffffff',
 	},
 	text: {
 		primary: '#000000',
