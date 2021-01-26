@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { withAlphaHex } from 'with-alpha-hex'
 
-export const ButtonIcon = styled.img`
-	width: 3em;
-	margin: 1em;
+export const WrapperIcon = styled.div`
+	width: 3.2em;
+	margin: 1.5em;
 `
 
 export const ButtonTitle = styled.span`

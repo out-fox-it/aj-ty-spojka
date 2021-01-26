@@ -2,18 +2,6 @@ import React from 'react'
 import { fireEvent } from '@testing-library/react'
 import { Button } from '.'
 import renderWithTheme from '../../testing/renderWithTheme'
-import mentor from '../../assets/mentor.svg'
-
-test('renders button with the icon, tests src and alt', () => {
-	const { getByAltText } = renderWithTheme(
-		<Button icon={mentor} alt="Mentor" />
-	)
-
-	const imageElement = getByAltText('Mentor')
-	expect(imageElement.tagName).toBe('IMG')
-	expect(imageElement.src).toContain(mentor)
-	expect(imageElement.alt).toBe('Mentor')
-})
 
 test('renders button with title', () => {
 	const { getByText } = renderWithTheme(<Button title="Mentor" />)

@@ -10,5 +10,5 @@ export const Wrapper = styled.nav`
 `
 
 export const StyledButton = styled(Button)`
-	width: 15em;
+	width: 18em;
 `
