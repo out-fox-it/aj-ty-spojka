@@ -3,13 +3,14 @@ import { withAlphaHex } from 'with-alpha-hex'
 
 export const WrapperIcon = styled.div`
 	width: 3.2em;
+	height: 3.2em;
 	margin: 1.5em;
 `
 
 export const ButtonTitle = styled.span`
 	font-size: 1.5em;
 	text-transform: uppercase;
-	margin: 0.2em 0.5em 0 0.5em;
+	margin: 0 0.5em 0.2em 0.5em;
 `
 
 export const ButtonSubtitle = styled.p`
@@ -31,6 +32,7 @@ export const StyledButton = styled.button`
 
 	border: 0.1em solid ${({ theme }) => withAlphaHex(theme.bg.secondary, 0.5)};
 	border-radius: 0.8em;
+	outline: none;
 
 	&:hover {
 		color: ${({ theme }) => theme.bg.primary};

@@ -8,7 +8,7 @@ const Header: React.FC = () => {
 
 	return (
 		<Wrapper>
-			<Title>[: aj tý :] spojka</Title>
+			<Title to="/">[: aj tý :] spojka</Title>
 			<Toggle
 				isRound={true}
 				label={['☀️', '🌙']}

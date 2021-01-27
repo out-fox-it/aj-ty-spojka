@@ -1,5 +1,10 @@
 import React from 'react'
-import { WrapperIcon, ButtonSubtitle, ButtonTitle, StyledButton } from './styled'
+import {
+	WrapperIcon,
+	ButtonSubtitle,
+	ButtonTitle,
+	StyledButton,
+} from './styled'
 
 interface Props {
 	icon?: React.ReactElement

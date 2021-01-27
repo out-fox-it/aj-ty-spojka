@@ -1,32 +1,20 @@
 import React from 'react'
-import { StyledButton, Wrapper } from './styled'
-import {UserFriends, ChalkboardTeacher, GraduationCap} from '@styled-icons/fa-solid'
-
-const clickMe = (): void => {
-	alert('functionality will be added later')
-}
+import { StyledButton, Wrapper, StyledLink } from './styled'
+import { UserEdit, Users } from '@styled-icons/fa-solid'
+import { PermContactCalendar } from '@styled-icons/material-rounded'
 
 export const ButtonNav: React.FC = () => {
 	return (
 		<Wrapper>
-			<StyledButton
-				onClick={clickMe}
-				icon={<ChalkboardTeacher />}
-				title="mentor"
-				subtitle="Najdi si lekora, který ti pomůže s učením."
-			/>
-			<StyledButton
-				onClick={clickMe}
-				icon={<UserFriends />}
-				title="buddy"
-				subtitle="Poznej nové přátele."
-			/>
-			<StyledButton
-				onClick={clickMe}
-				icon={<GraduationCap />}
-				title="mentee"
-				subtitle="Předej své vědomosti někomu dalšímu."
-			/>
+			<StyledLink to="/my-profile">
+				<StyledButton icon={<UserEdit />} title="můj profil" />
+			</StyledLink>
+			<StyledLink to="/search-matching">
+				<StyledButton icon={<Users />} title="matching" />
+			</StyledLink>
+			<StyledLink to="/">
+				<StyledButton icon={<PermContactCalendar />} title="kontakty" />
+			</StyledLink>
 		</Wrapper>
 	)
 }
