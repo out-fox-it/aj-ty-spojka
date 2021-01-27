@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import Svg from '../../assets/header.svg'
 
 export const Wrapper = styled.header`
@@ -12,8 +13,10 @@ export const Wrapper = styled.header`
 	height: 45em;
 `
 
-export const Title = styled.h1`
+export const Title = styled(Link)`
 	font-size: 3em;
 	grid-column: 2;
 	margin: 1em;
+	text-decoration: none;
+	color: ${({ theme }) => theme.bg.buttonBackground};
 `
