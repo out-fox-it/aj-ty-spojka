@@ -16,7 +16,7 @@ const Home: React.FC = () => {
 				<Route path="/search-matching">
 					<Matching />
 				</Route>
-				<Route path='/my-profile'>
+				<Route path="/profile">
 					<Profile />
 				</Route>
 			</Switch>

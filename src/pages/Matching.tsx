@@ -5,7 +5,6 @@ const Matching: React.FC = () => {
 	return (
 		<>
 			<ButtonMatching />
-
 		</>
 	)
 }
