@@ -6,7 +6,7 @@ import { PermContactCalendar } from '@styled-icons/material-rounded'
 export const ButtonNav: React.FC = () => {
 	return (
 		<Wrapper>
-			<StyledLink to="/my-profile">
+			<StyledLink to="/profile">
 				<StyledButton icon={<UserEdit />} title="můj profil" />
 			</StyledLink>
 			<StyledLink to="/search-matching">
