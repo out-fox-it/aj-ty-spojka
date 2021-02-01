@@ -10,6 +10,8 @@ export const DarkTheme: DefaultTheme = {
 		primary: '#ffffff' /* white */,
 		secondary: '#e9c46a' /* hansa yellow */,
 		link: '#f4a261' /* light red ochre */,
+		true: '#30c551' /* for validation - true */,
+		false: '#f46161' /* for validation - false */,
 	},
 }
 
@@ -24,5 +26,7 @@ export const LightTheme: DefaultTheme = {
 		primary: '#000000',
 		secondary: '#000000',
 		link: '#000000',
+		true: '#30c551' /* for validation - true */,
+		false: '#f46161' /* for validation - false */,
 	},
 }

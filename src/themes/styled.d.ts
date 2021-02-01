@@ -11,6 +11,8 @@ declare module 'styled-components' {
 			readonly primary: string
 			readonly secondary: string
 			readonly link: string
+			readonly true: string
+			readonly false: string
 		}
 	}
 }
