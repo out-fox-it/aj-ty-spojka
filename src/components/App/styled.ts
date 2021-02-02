@@ -11,4 +11,9 @@ export const GlobalStyles = createGlobalStyle`
 		color: ${({ theme }) => theme.text.primary};
 		background-color: ${({ theme }) => theme.bg.primary};
 	}
+
+	h1 {
+		font-size: 2em;
+    text-align: center;
+	}
 `
