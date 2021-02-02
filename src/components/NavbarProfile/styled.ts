@@ -1,20 +1,16 @@
 import { Link } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.div`
-	display: flex;
-	justify-content: center;
-	width: 100%;
+export const Wrapper = styled.nav`
+	box-sizing: border-box;
 	height: 10em;
-`
-
-export const WrapperCenter = styled.div`
 	max-width: 75em;
 	width: 100%;
-	margin: 0 2em;
+	margin: auto;
+	padding: 0 2em;
 `
 
-export const WrapperContent = styled.div`
+export const WrapperContent = styled.section`
 	display: grid;
 	grid-template-columns: 1fr 3fr;
 	position: relative;
@@ -26,19 +22,7 @@ export const WrapperContent = styled.div`
 	}
 `
 
-export const WrapperNavigation = styled.div`
-	display: grid;
-	justify-items: center;
-	align-items: center;
-	grid-template-columns: 3fr 1fr;
-
-	@media (max-width: 62.5em) {
-		grid-template-columns: 1fr;
-		grid-template-rows: 60px 100px;
-	}
-`
-
-export const WrapperData = styled.div`
+export const WrapperData = styled.article`
 	position: relative;
 	width: 100%;
 	min-width: 15em;
@@ -80,9 +64,21 @@ export const Name = styled.h2`
 	color: ${({ theme }) => theme.text.primary};
 `
 
-export const Profession = styled.div`
+export const Profession = styled.span`
 	padding: 0 0 0.7em 0;
 	color: ${({ theme }) => theme.text.link};
+`
+
+export const WrapperNavigation = styled.article`
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	grid-template-columns: 3fr 1fr;
+
+	@media (max-width: 62.5em) {
+		grid-template-columns: 1fr;
+		grid-template-rows: 60px 100px;
+	}
 `
 
 export const StyledLink = styled(Link)`
