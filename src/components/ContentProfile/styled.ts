@@ -22,7 +22,7 @@ export const WrapperCenter = styled.div`
 	}
 `
 
-export const WrapperContent = styled.div`
+export const WrapperContent = styled.section`
 	grid-column: 2;
 	@media (max-width: 50em) {
 		grid-column: 1;
@@ -30,7 +30,7 @@ export const WrapperContent = styled.div`
 	}
 `
 
-export const StyledIcon = styled.div`
+export const StyledIcon = styled.article`
 	display: inline-block;
 	& svg {
 		width: 1em;
@@ -42,7 +42,7 @@ export const WrapperLabel = styled.div`
 	text-align: center;
 `
 
-export const WrapperInformation = styled.div`
+export const WrapperInformation = styled.article`
 	margin-bottom: 3em;
 	& h2 {
 		color: ${({ theme }) => theme.text.secondary};
