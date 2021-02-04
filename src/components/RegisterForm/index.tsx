@@ -31,7 +31,10 @@ const RegisterForm: React.FC = () => {
 		errors,
 		watch,
 		setValue,
-	} = useForm<FormData>()
+	} = useForm<FormData>({
+		mode: 'onChange',
+		reValidateMode: 'onChange',
+	})
 
 	// console.log to be removed after we'll be able to save user data
 	const onSubmit = handleSubmit(({ email, nickname }) =>
