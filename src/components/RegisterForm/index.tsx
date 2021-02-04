@@ -10,7 +10,6 @@ import {
 	Label,
 	PasswordMessage,
 	ValidPassword,
-	InvalidPassword,
 } from './styled'
 
 // library for creating forms
@@ -41,19 +40,24 @@ const RegisterForm: React.FC = () => {
 		console.log(email, nickname)
 	)
 
-	// password validation
+	// password and PasswordMessage validation
 	const [hidden, setHidden] = useState<boolean>(true)
 
-	const password = useRef({})
+	const password = useRef('')
 	password.current = watch('password', '')
 
+	const hasLowerCase = /[a-z]/.test(password.current)
+	const hasMinimumLength = password.current.length >= 6
+	const hasUpperCase = /[A-Z]/.test(password.current)
+	const hasNumber = /\d/.test(password.current)
+
 	// nickname prompter
-	const email = useRef({})
+	const email = useRef('')
 	email.current = watch('email', '')
 
-	const newNickname = `${email.current}`.substring(
+	const newNickname = email.current.substring(
 		0,
-		`${email.current}`.lastIndexOf('@')
+		email.current.lastIndexOf('@')
 	)
 
 	return (
@@ -104,7 +108,7 @@ const RegisterForm: React.FC = () => {
 					ref={register({
 						required: 'Musíte zadat heslo!',
 						minLength: {
-							value: 8,
+							value: 6,
 							message: 'Heslo musí mít minimální délku',
 						},
 					})}
@@ -117,10 +121,16 @@ const RegisterForm: React.FC = () => {
 			<PasswordMessage hidden={hidden}>
 				{/* TODO: I don't know how to make this work. Real time validation should indicate
 				wheter the password already has a number, lowercase letter and good lenght. */}
-				<ValidPassword>lowercase</ValidPassword>
-				<ValidPassword>UPPERCASE</ValidPassword>
-				<ValidPassword>123</ValidPassword>
-				<InvalidPassword>length</InvalidPassword>
+				<ValidPassword validPassword={hasLowerCase}>
+					malé písmeno
+				</ValidPassword>
+				<ValidPassword validPassword={hasMinimumLength}>
+					více než 6 znaků
+				</ValidPassword>
+				<ValidPassword validPassword={hasUpperCase}>
+					VELKÉ PÍSMENO
+				</ValidPassword>
+				<ValidPassword validPassword={hasNumber}>číslo</ValidPassword>
 			</PasswordMessage>
 
 			{/* CONFIRM PASSWORD */}

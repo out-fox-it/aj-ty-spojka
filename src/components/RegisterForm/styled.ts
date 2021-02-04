@@ -73,24 +73,14 @@ export const HiddenError = styled.span`
 	margin: 0;
 `
 
-export const ValidPassword = styled.p`
+export const ValidPassword = styled.p<{ validPassword?: boolean }>`
 	margin: 0;
-	color: ${({ theme }) => theme.text.true};
+	color: ${(props) =>
+		props?.validPassword ? props.theme.text.true : props.theme.text.false};
 
 	&:before {
 		position: relative;
 		left: -0.5em;
-		content: '✔';
-	}
-`
-
-export const InvalidPassword = styled.p`
-	margin: 0;
-	color: ${({ theme }) => theme.text.false};
-
-	&:before {
-		position: relative;
-		left: -0.5em;
-		content: '✖';
+		content: '${(props) => (props?.validPassword ? '✔' : '✖')}';
 	}
 `
