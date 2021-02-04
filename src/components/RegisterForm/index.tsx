@@ -25,7 +25,13 @@ type FormData = {
 }
 
 const RegisterForm: React.FC = () => {
-	const { register, handleSubmit, errors, watch } = useForm<FormData>()
+	const {
+		register,
+		handleSubmit,
+		errors,
+		watch,
+		setValue,
+	} = useForm<FormData>()
 
 	// console.log to be removed after we'll be able to save user data
 	const onSubmit = handleSubmit(({ email, nickname }) =>
@@ -33,10 +39,19 @@ const RegisterForm: React.FC = () => {
 	)
 
 	// password validation
+	const [hidden, setHidden] = useState<boolean>(true)
+
 	const password = useRef({})
 	password.current = watch('password', '')
 
-	const [hidden, setHidden] = useState<boolean>(true)
+	// nickname prompter
+	const email = useRef({})
+	email.current = watch('email', '')
+
+	const newNickname = `${email.current}`.substring(
+		0,
+		`${email.current}`.lastIndexOf('@')
+	)
 
 	return (
 		<Form onSubmit={onSubmit}>
@@ -53,6 +68,7 @@ const RegisterForm: React.FC = () => {
 						required: 'Musíte zadat e-mail!',
 						// TODO: Must be unique!
 					})}
+					onChange={() => setValue('nickname', newNickname)} // sets nickname to email prefix
 				/>
 			</FormItem>
 			<Errors>{errors.email && <p>{errors.email.message}</p>}</Errors>
@@ -82,7 +98,6 @@ const RegisterForm: React.FC = () => {
 					type="password"
 					placeholder="1SafePassword%"
 					onFocus={() => setHidden(false)} // enables PasswordMessage
-					onBlur={() => setHidden(true)} // hides PasswordMessage
 					ref={register({
 						required: 'Musíte zadat heslo!',
 						minLength: {
