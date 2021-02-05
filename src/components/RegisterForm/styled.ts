@@ -84,3 +84,8 @@ export const ValidPassword = styled.p<{ validPassword?: boolean }>`
 		content: '${(props) => (props?.validPassword ? '✔' : '✖')}';
 	}
 `
+
+export const RegistrationMessage = styled.div`
+	text-align: center;
+	margin: 5em;
+`
