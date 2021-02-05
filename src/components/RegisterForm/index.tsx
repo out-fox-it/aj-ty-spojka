@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import { Route, Switch, useHistory } from 'react-router-dom'
 import {
 	Errors,
 	Form,
@@ -10,6 +11,7 @@ import {
 	Label,
 	PasswordMessage,
 	ValidPassword,
+	RegistrationMessage,
 } from './styled'
 
 // library for creating forms
@@ -35,9 +37,13 @@ const RegisterForm: React.FC = () => {
 		reValidateMode: 'onChange',
 	})
 
-	// console.log to be removed after we'll be able to save user data
-	const onSubmit = handleSubmit(({ email, nickname }) =>
-		console.log(email, nickname)
+	// handle submitting form
+	const changeLocation = useHistory()
+
+	const onSubmit = handleSubmit(
+		() => changeLocation.push('/register/successful')
+
+		// TODO: HANDLE ERRORS
 	)
 
 	// password and PasswordMessage validation
@@ -61,118 +67,157 @@ const RegisterForm: React.FC = () => {
 	)
 
 	return (
-		<Form onSubmit={onSubmit}>
-			<h1>REGISTRAČNÍ FORMULÁŘ</h1>
+		<Switch>
+			<Route exact path="/register">
+				<Form onSubmit={onSubmit}>
+					<h1>REGISTRAČNÍ FORMULÁŘ</h1>
 
-			{/* E-MAIL */}
-			<FormItem>
-				<Label htmlFor="email">E-mail:</Label>
-				<FormInput
-					name="email"
-					type="email"
-					placeholder="email@domain.com"
-					ref={register({
-						required: 'Musíte zadat e-mail!',
-						// TODO: Must be unique!
-					})}
-					onChange={() => setValue('nickname', newNickname)} // sets nickname to email prefix
-				/>
-			</FormItem>
-			<Errors>{errors.email && <p>{errors.email.message}</p>}</Errors>
+					{/* E-MAIL */}
+					<FormItem>
+						<Label htmlFor="email">E-mail:</Label>
+						<FormInput
+							name="email"
+							type="email"
+							placeholder="email@domain.com"
+							ref={register({
+								required: 'Musíte zadat e-mail!',
+								pattern: {
+									value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+									message:
+										'Neplatný formát e-mailové adresy!',
+									// TODO: Must be unique!
+								},
+								maxLength: {
+									value: 50,
+									message: 'Váš e-mail má více než 50 znaků!',
+								},
+							})}
+							onChange={() => setValue('nickname', newNickname)} // sets nickname to email prefix
+						/>
+					</FormItem>
+					<Errors>
+						{errors.email && <p>{errors.email.message}</p>}
+					</Errors>
 
-			{/* NICKNAME */}
-			<FormItem>
-				<Label htmlFor="nickname">Přezdívka:</Label>
-				<FormInput
-					name="nickname"
-					type="text"
-					placeholder="Přezdívka1"
-					ref={register({
-						required: 'Musíte zadat přezdívku!',
-						// TODO: Must be unique!
-					})}
-				/>
-			</FormItem>
-			<Errors>
-				{errors.nickname && <p>{errors.nickname.message}</p>}
-			</Errors>
+					{/* NICKNAME */}
+					<FormItem>
+						<Label htmlFor="nickname">Přezdívka:</Label>
+						<FormInput
+							name="nickname"
+							type="text"
+							placeholder="Přezdívka1"
+							ref={register({
+								required: 'Musíte zadat přezdívku!',
+								maxLength: {
+									value: 30,
+									message:
+										'Vaše přezdívka má více než 30 znaků!',
+								},
+								// TODO: Must be unique!
+							})}
+						/>
+					</FormItem>
+					<Errors>
+						{errors.nickname && <p>{errors.nickname.message}</p>}
+					</Errors>
 
-			{/* PASSWORD */}
-			<FormItem>
-				<Label htmlFor="password">Heslo:</Label>
-				<FormInput
-					name="password"
-					type="password"
-					placeholder="1SafePassword%"
-					onFocus={() => setHidden(false)} // enables PasswordMessage
-					ref={register({
-						required: 'Musíte zadat heslo!',
-						minLength: {
-							value: 6,
-							message: 'Heslo musí mít minimální délku',
-						},
-					})}
-				/>
-			</FormItem>
-			<HiddenError>
-				{errors.password && <p>{errors.password.message}</p>}
-			</HiddenError>
+					{/* PASSWORD */}
+					<FormItem>
+						<Label htmlFor="password">Heslo:</Label>
+						<FormInput
+							name="password"
+							type="password"
+							placeholder="1SafePassword%"
+							onFocus={() => setHidden(false)} // enables PasswordMessage
+							ref={register({
+								// messages not necessary (PasswordMessage handles those)
+								required: '',
+								pattern: {
+									value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$/,
+									message: '',
+								},
+								minLength: {
+									value: 6,
+									message: '',
+								},
+							})}
+						/>
+					</FormItem>
+					<HiddenError>
+						{errors.password && <p>{errors.password.message}</p>}
+					</HiddenError>
 
-			<PasswordMessage hidden={hidden}>
-				{/* TODO: I don't know how to make this work. Real time validation should indicate
-				wheter the password already has a number, lowercase letter and good lenght. */}
-				<ValidPassword validPassword={hasLowerCase}>
-					malé písmeno
-				</ValidPassword>
-				<ValidPassword validPassword={hasMinimumLength}>
-					více než 6 znaků
-				</ValidPassword>
-				<ValidPassword validPassword={hasUpperCase}>
-					VELKÉ PÍSMENO
-				</ValidPassword>
-				<ValidPassword validPassword={hasNumber}>číslo</ValidPassword>
-			</PasswordMessage>
+					<PasswordMessage hidden={hidden}>
+						<ValidPassword validPassword={hasLowerCase}>
+							malé písmeno
+						</ValidPassword>
+						<ValidPassword validPassword={hasMinimumLength}>
+							více než 6 znaků
+						</ValidPassword>
+						<ValidPassword validPassword={hasUpperCase}>
+							VELKÉ PÍSMENO
+						</ValidPassword>
+						<ValidPassword validPassword={hasNumber}>
+							číslo
+						</ValidPassword>
+					</PasswordMessage>
 
-			{/* CONFIRM PASSWORD */}
-			<FormItem>
-				<Label htmlFor="passwordConfirm">Potvrď heslo:</Label>
-				<FormInput
-					name="passwordConfirm"
-					type="password"
-					placeholder="1SafePassword%"
-					ref={register({
-						validate: (value) =>
-							value === password.current || 'Hesla se neshodují!',
-					})}
-				/>
-			</FormItem>
-			<Errors>
-				{errors.passwordConfirm && (
-					<p>{errors.passwordConfirm.message}</p>
-				)}
-			</Errors>
+					{/* CONFIRM PASSWORD */}
+					<FormItem>
+						<Label htmlFor="passwordConfirm">Potvrď heslo:</Label>
+						<FormInput
+							name="passwordConfirm"
+							type="password"
+							placeholder="1SafePassword%"
+							ref={register({
+								validate: (value) =>
+									value === password.current ||
+									'Hesla se neshodují!',
+							})}
+						/>
+					</FormItem>
+					<Errors>
+						{errors.passwordConfirm && (
+							<p>{errors.passwordConfirm.message}</p>
+						)}
+					</Errors>
 
-			{/* CHECK */}
-			<FormItem>
-				<Label htmlFor="check">Souhlasím s XY:</Label>
-				<FormCheckbox
-					name="check"
-					type="checkbox"
-					ref={register({
-						required:
-							'Registrace bez souhlasu s podmínkami není možná!',
-					})}
-				/>
-			</FormItem>
-			<Errors>{errors.check && <p>{errors.check.message}</p>}</Errors>
+					{/* CHECK */}
+					<FormItem>
+						<Label htmlFor="check">Souhlasím s XY:</Label>
+						<FormCheckbox
+							name="check"
+							type="checkbox"
+							ref={register({
+								required:
+									'Registrace bez souhlasu s podmínkami není možná!',
+							})}
+						/>
+					</FormItem>
+					<Errors>
+						{errors.check && <p>{errors.check.message}</p>}
+					</Errors>
 
-			{/* SUBMIT */}
-			<FormItem>
-				<FormButton name="submit" type="submit">
-					ODESLAT
-				</FormButton>
-			</FormItem>
-		</Form>
+					{/* SUBMIT */}
+					<FormItem>
+						<FormButton name="submit" type="submit">
+							ODESLAT
+						</FormButton>
+					</FormItem>
+				</Form>
+			</Route>
+
+			<Route path="/register/successful">
+				{/* TODO: E-MAIL MI NEPŘIŠEL, POŠLI HO ZNOVU */}
+				<RegistrationMessage>
+					<h2>Registrace byla úspěšná!</h2>
+					<p>
+						Po potvrzení e-mailu si můžete začít hledat nové
+						kamarády. :)
+					</p>
+				</RegistrationMessage>
+			</Route>
+		</Switch>
 	)
 }
 
