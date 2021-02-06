@@ -1,6 +1,8 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
+import ForRegistrationUser from '../../pages/ForRegistrationUser'
+import Home from '../../pages/Home'
 import ThemeProvider from '../Theme'
 import { GlobalStyles } from './styled'
 
@@ -14,6 +16,9 @@ const Routes: React.FC = () => (
 		<Route path="/login" component={Login} />
 		<Route path="/register" component={Register} />
 		<Route path="/" component={Home} />
+
+		<Route exact path="/" component={Home} />
+		<Route path="/for-registration-user" component={ForRegistrationUser} />
 	</Switch>
 )
 

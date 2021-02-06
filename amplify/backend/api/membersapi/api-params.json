@@ -1,0 +1,32 @@
+{
+	"paths": [
+		{
+			"name": "/members",
+			"lambdaFunction": "membersfunction",
+			"privacy": {
+				"open": true
+			},
+			"policyResourceName": "/members"
+		}
+	],
+	"resourceName": "membersapi",
+	"apiName": "membersapi",
+	"functionArns": [
+		{
+			"lambdaFunction": "membersfunction"
+		}
+	],
+	"privacy": {
+		"auth": 0,
+		"unauth": 0,
+		"authRoleName": "amplify-ajtyspojka-dev-223917-authRole",
+		"unAuthRoleName": "amplify-ajtyspojka-dev-223917-unauthRole"
+	},
+	"dependsOn": [
+		{
+			"category": "function",
+			"resourceName": "membersfunction",
+			"attributes": ["Name", "Arn"]
+		}
+	]
+}

@@ -6,11 +6,14 @@ Web application that connects programmers based on their experience, interests a
 
 -   [Node.js](https://nodejs.org/en/download/)
 -   [Yarn](https://classic.yarnpkg.com/en/docs/getting-started) package manager
+-   [Amplify CLI](https://docs.amplify.aws/cli/start/install) cli tool for create AWS cloud services
 
 ## Getting Started 🚀
 
 -   type `yarn` to install dependencies
 -   type `yarn start` and open [http://localhost:3000](http://localhost:3000) to view project in the browser.
+-   create team-provider-info.json in amplify
+-   type `amplify pull` to pull enviroments from amplify
 
 ## Available Scripts 📃
 
