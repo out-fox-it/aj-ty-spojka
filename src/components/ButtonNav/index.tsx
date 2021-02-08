@@ -6,13 +6,13 @@ import { PermContactCalendar } from '@styled-icons/material-rounded'
 const ButtonNav: React.FC = () => (
 	<Wrapper>
 		<StyledLink to="/profile">
-			<StyledButton icon={<UserEdit />} title="můj profil" />
+			<StyledButton icon={UserEdit} title="Můj profil" />
 		</StyledLink>
 		<StyledLink to="/search-matching">
-			<StyledButton icon={<Users />} title="matching" />
+			<StyledButton icon={Users} title="Matching" />
 		</StyledLink>
 		<StyledLink to="/">
-			<StyledButton icon={<PermContactCalendar />} title="kontakty" />
+			<StyledButton icon={PermContactCalendar} title="Kontakty" />
 		</StyledLink>
 	</Wrapper>
 )
