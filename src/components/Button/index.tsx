@@ -1,4 +1,5 @@
 import React from 'react'
+import { StyledIcon } from '@styled-icons/styled-icon'
 import {
 	WrapperIcon,
 	ButtonSubtitle,
@@ -7,7 +8,7 @@ import {
 } from './styled'
 
 interface Props {
-	icon?: React.ReactElement
+	icon?: StyledIcon
 	title?: string
 	subtitle?: string
 	onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
@@ -22,7 +23,7 @@ const Button: React.FC<Props> = ({
 	className,
 }) => (
 	<StyledButton className={className} onClick={onClick}>
-		{icon && <WrapperIcon>{icon}</WrapperIcon>}
+		{icon && <WrapperIcon>{React.createElement(icon)}</WrapperIcon>}
 		{title && <ButtonTitle>{title}</ButtonTitle>}
 		{subtitle && <ButtonSubtitle>{subtitle}</ButtonSubtitle>}
 	</StyledButton>
