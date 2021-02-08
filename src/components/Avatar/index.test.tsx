@@ -1,6 +1,6 @@
 import React from 'react'
-import { Avatar } from '.'
 import renderWithTheme from '../../testing/renderWithTheme'
+import Avatar from '.'
 
 test('renders avatar with src', () => {
 	const { getByAltText } = renderWithTheme(

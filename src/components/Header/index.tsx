@@ -1,14 +1,16 @@
 import React from 'react'
 import { Theme, useThemeControl } from '../Theme'
 import Toggle from '../Toggle'
-import { Title, Wrapper } from './styled'
+import { TitleLink, Title, Wrapper } from './styled'
 
 const Header: React.FC = () => {
 	const [theme, setTheme] = useThemeControl()
 
 	return (
 		<Wrapper>
-			<Title to="/">[: aj tý :] spojka</Title>
+			<TitleLink to="/">
+				<Title>[: aj tý :] spojka</Title>
+			</TitleLink>
 			<Toggle
 				isRound={true}
 				label={['☀️', '🌙']}

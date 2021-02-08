@@ -1,55 +1,55 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
-	width: 100%;
-	display: flex;
-	justify-content: center;
-`
-
-export const WrapperCenter = styled.div`
-	max-width: 75em;
-	width: 100%;
-	margin: 0 2em;
 	display: grid;
-	grid-template-columns: 1fr 3fr 1fr;
-	gap: 3em;
-	width: 100%;
+	grid-template-columns: 1fr 3fr 0.5fr 1fr;
+	gap: 2em;
+	justify-items: center;
+
 	@media (max-width: 50em) {
-		grid-template-columns: 1fr;
-		grid-template-rows: auto auto auto auto auto;
-		position: relative;
-		top: 12.1em;
+		grid-template-columns: 1fr 5fr 1fr;
+		grid-template-rows: auto auto;
 	}
 `
 
-export const WrapperContent = styled.section`
+export const WrapperInformation = styled.section`
 	grid-column: 2;
+	margin-bottom: 1em;
+
+	& h2 {
+		color: ${({ theme }) => theme.text.secondary};
+	}
+
+	& p {
+		margin-bottom: 3em;
+	}
+
 	@media (max-width: 50em) {
-		grid-column: 1;
-		margin: 0 2em;
+		grid-column: 2;
+		grid-row: 1;
 	}
 `
 
 export const StyledIcon = styled.article`
 	display: inline-block;
+
 	& svg {
 		width: 1em;
 		padding: 0 0.5em;
 	}
 `
 
-export const WrapperLabel = styled.div`
+export const WrapperLabel = styled.section`
+	grid-column: 3;
 	text-align: center;
-`
 
-export const WrapperInformation = styled.article`
-	margin-bottom: 3em;
-	& h2 {
-		color: ${({ theme }) => theme.text.secondary};
+	@media (max-width: 50em) {
+		grid-column: 2;
+		grid-row: 2;
 	}
 `
 
-export const StyledButton = styled.div`
+export const StyledButton = styled.article`
 	display: grid;
 	gap: 1em;
 	justify-content: center;

@@ -6,6 +6,8 @@ interface Props {
 	fullName?: string
 }
 
-export const Avatar: React.FC<Props> = ({ picture, fullName }) => {
-	return <>{picture ? <Picture src={picture} alt={fullName} /> : <Icon />}</>
-}
+const Avatar: React.FC<Props> = ({ picture, fullName }) => (
+	<>{picture ? <Picture src={picture} alt={fullName} /> : <Icon />}</>
+)
+
+export default Avatar

@@ -14,7 +14,7 @@ interface Props {
 	className?: string
 }
 
-export const Button: React.FC<Props> = ({
+const Button: React.FC<Props> = ({
 	icon,
 	title,
 	subtitle,
@@ -27,3 +27,5 @@ export const Button: React.FC<Props> = ({
 		{subtitle && <ButtonSubtitle>{subtitle}</ButtonSubtitle>}
 	</StyledButton>
 )
+
+export default Button
