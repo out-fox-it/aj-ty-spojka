@@ -4,13 +4,16 @@ import { withAlphaHex } from 'with-alpha-hex'
 export const WrapperIcon = styled.div`
 	width: 3.2em;
 	height: 3.2em;
-	margin: 1.5em;
+	margin: 0.3em;
 `
 
 export const ButtonTitle = styled.span`
 	font-size: 1.5em;
 	text-transform: uppercase;
-	margin: 0 0.5em 0.2em 0.5em;
+
+	@media (max-width: 51em) {
+		font-size: 1em;
+	}
 `
 
 export const ButtonSubtitle = styled.p`
