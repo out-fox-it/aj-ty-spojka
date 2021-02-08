@@ -36,16 +36,15 @@ export interface RandomUser {
 	phone: string
 }
 
-export const getProfileData = async (): Promise<RandomUser | undefined> => {
-	const url = 'https://randomuser.me/api/'
+export const url = 'https://randomuser.me/api/'
 
+export const getProfileData = async (): Promise<RandomUser | null> => {
 	try {
-		const data = await fetch(url, {
-			method: 'GET',
-		})
+		const data = await fetch(url)
 		const jsonData = await data.json()
 		return jsonData.results[0]
 	} catch (error) {
 		console.error(error)
+		return null
 	}
 }

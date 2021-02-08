@@ -1,40 +1,33 @@
 import { Link } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.nav`
-	box-sizing: border-box;
-	height: 10em;
-	max-width: 75em;
-	width: 100%;
-	margin: auto;
-	padding: 0 2em;
-`
-
-export const WrapperContent = styled.section`
+export const Wrapper = styled.div`
 	display: grid;
-	grid-template-columns: 1fr 3fr;
-	position: relative;
-	border-bottom: 1px solid ${({ theme }) => theme.text.secondary};
+	grid-template-columns: 1fr 1fr 3fr 1fr;
+	margin-bottom: 6em;
 
 	@media (max-width: 50em) {
 		grid-template-columns: 1fr;
-		grid-template-rows: auto auto;
+		grid-template-rows: auto auto auto;
+		margin-bottom: 1em;
 	}
 `
 
-export const WrapperData = styled.article`
+export const WrapperData = styled.section`
+	grid-column: 2;
 	position: relative;
 	width: 100%;
 	min-width: 15em;
 	height: 5em;
 
 	@media (max-width: 50em) {
+		grid-column: 1;
 		height: 12em;
 		min-width: 15em;
 	}
 `
 
-export const BasicDataProfile = styled.div`
+export const BasicDataProfile = styled.article`
 	display: grid;
 	justify-items: center;
 	align-items: center;
@@ -44,7 +37,6 @@ export const BasicDataProfile = styled.div`
 `
 
 const size = css`
-	box-sizing: border-box;
 	max-width: 15em;
 	width: 100%;
 	height: 15em;
@@ -52,6 +44,7 @@ const size = css`
 
 export const StyledAvatar = styled.div`
 	${size}
+
 	& img {
 		${size}
 	}
@@ -69,7 +62,7 @@ export const Profession = styled.span`
 	color: ${({ theme }) => theme.text.link};
 `
 
-export const WrapperNavigation = styled.article`
+export const WrapperNavigation = styled.section`
 	display: grid;
 	justify-items: center;
 	align-items: center;
@@ -77,7 +70,7 @@ export const WrapperNavigation = styled.article`
 
 	@media (max-width: 62.5em) {
 		grid-template-columns: 1fr;
-		grid-template-rows: 60px 100px;
+		grid-template-rows: 3.8em 6.3em;
 	}
 `
 

@@ -16,9 +16,10 @@ export const List = styled.ul`
 
 export const NavLink = styled(Link)`
 	display: block;
-	padding: 1.5em 3em;
+	padding: 1.5em 2em;
 	text-decoration: none;
 	color: ${({ theme }) => theme.text.primary};
+
 	&:hover {
 		color: ${({ theme }) => theme.text.secondary};
 	}

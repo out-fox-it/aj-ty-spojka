@@ -1,7 +1,7 @@
 import React from 'react'
 import { fireEvent } from '@testing-library/react'
-import { Button } from '.'
 import renderWithTheme from '../../testing/renderWithTheme'
+import Button from '.'
 
 test('renders button with title', () => {
 	const { getByText } = renderWithTheme(<Button title="Mentor" />)

@@ -13,10 +13,13 @@ export const Wrapper = styled.header`
 	height: 45em;
 `
 
-export const Title = styled(Link)`
+export const Title = styled.h1`
 	font-size: 3em;
-	grid-column: 2;
 	margin: 1em;
-	text-decoration: none;
 	color: ${({ theme }) => theme.text.primary};
+`
+
+export const TitleLink = styled(Link)`
+	text-decoration: none;
+	grid-column: 2;
 `

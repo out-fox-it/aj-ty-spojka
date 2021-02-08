@@ -1,26 +1,25 @@
 import React, { useEffect, useState } from 'react'
-import { ContentProfile } from '../components/ContentProfile'
-import { NavbarProfile } from '../components/NavbarProfile'
+import ContentProfile from '../components/ContentProfile'
+import NavbarProfile from '../components/NavbarProfile'
 import { getProfileData, RandomUser } from '../utils/getUserData'
 
 const Profile: React.FC = () => {
-	const [userData, setUserdata] = useState<RandomUser>()
+	const [userData, setUserData] = useState<RandomUser | null>(null)
 
 	useEffect(() => {
-		const fetchData = async () => {
-			setUserdata(await getProfileData())
-		}
-		fetchData()
+		getProfileData().then(setUserData)
 	}, [])
+
+	const picture = userData?.picture?.large ?? ''
+
+	const title = userData?.name?.title ?? ''
+	const first = userData?.name?.first ?? ''
+	const last = userData?.name?.last ?? ''
+	const fullName = `${title} ${first} ${last}`
 
 	return (
 		<>
-			<NavbarProfile
-				picture={userData?.picture.large}
-				fullName={`${userData?.name.title ?? ''} ${
-					userData?.name.first ?? ''
-				} ${userData?.name.last ?? ''}`}
-			/>
+			<NavbarProfile picture={picture} fullName={fullName} />
 			<ContentProfile />
 		</>
 	)

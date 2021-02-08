@@ -1,12 +1,6 @@
 import React from 'react'
-import { ButtonMatching } from '../components/ButtonMatching'
+import ButtonMatching from '../components/ButtonMatching'
 
-const Matching: React.FC = () => {
-	return (
-		<>
-			<ButtonMatching />
-		</>
-	)
-}
+const Matching: React.FC = () => <ButtonMatching />
 
 export default Matching
