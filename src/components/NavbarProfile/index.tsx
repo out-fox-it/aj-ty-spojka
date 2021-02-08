@@ -11,7 +11,6 @@ import {
 } from './styled'
 import Avatar from '../Avatar'
 import Button from '../Button'
-import Navbar from '../Navbar'
 
 interface Props {
 	fullName?: string
@@ -31,7 +30,6 @@ const NavbarProfile: React.FC<Props> = ({ fullName, picture }) => (
 		</WrapperData>
 
 		<WrapperNavigation>
-			<Navbar />
 			<StyledLink to="/search-matching">
 				<Button title="Matching" />
 			</StyledLink>

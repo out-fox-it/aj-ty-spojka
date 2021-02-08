@@ -1,12 +1,10 @@
 import React from 'react'
-import ButtonNav from '../components/ButtonNav'
-import Header from '../components/Header'
+import NavBar from '../components/NavBar'
 import RegisterForm from '../components/RegisterForm'
 
 const Register: React.FC = () => (
 	<>
-		<Header />
-		<ButtonNav />
+		<NavBar login={false} />
 		<RegisterForm />
 	</>
 )
