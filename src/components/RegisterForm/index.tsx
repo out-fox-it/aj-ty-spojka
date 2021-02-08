@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { Route, Switch, useHistory } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
 import {
 	Errors,
 	Form,
@@ -13,9 +14,6 @@ import {
 	ValidPassword,
 	RegistrationMessage,
 } from './styled'
-
-// library for creating forms
-import { useForm } from 'react-hook-form'
 
 type FormData = {
 	email: string
@@ -38,10 +36,10 @@ const RegisterForm: React.FC = () => {
 	})
 
 	// handle submitting form
-	const changeLocation = useHistory()
+	const history = useHistory()
 
 	const onSubmit = handleSubmit(
-		() => changeLocation.push('/register/successful')
+		() => history.push('/register/successful')
 
 		// TODO: HANDLE ERRORS
 	)
@@ -68,8 +66,19 @@ const RegisterForm: React.FC = () => {
 
 	return (
 		<Switch>
-			<Route exact path="/register">
-				<Form onSubmit={onSubmit}>
+			<Route path="/register/successful">
+				{/* TODO: E-MAIL MI NEPŘIŠEL, POŠLI HO ZNOVU */}
+				<RegistrationMessage>
+					<h2>Registrace byla úspěšná!</h2>
+					<p>
+						Po potvrzení e-mailu si můžete začít hledat nové
+						kamarády. :)
+					</p>
+				</RegistrationMessage>
+			</Route>
+
+			<Route path="/">
+				<Form onSubmit={onSubmit} noValidate>
 					<h1>REGISTRAČNÍ FORMULÁŘ</h1>
 
 					{/* E-MAIL */}
@@ -82,7 +91,7 @@ const RegisterForm: React.FC = () => {
 							ref={register({
 								required: 'Musíte zadat e-mail!',
 								pattern: {
-									value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+									value: /^[A-Z0-9._-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
 									message:
 										'Neplatný formát e-mailové adresy!',
 									// TODO: Must be unique!
@@ -134,10 +143,6 @@ const RegisterForm: React.FC = () => {
 								required: '',
 								pattern: {
 									value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$/,
-									message: '',
-								},
-								minLength: {
-									value: 6,
 									message: '',
 								},
 							})}
@@ -205,17 +210,6 @@ const RegisterForm: React.FC = () => {
 						</FormButton>
 					</FormItem>
 				</Form>
-			</Route>
-
-			<Route path="/register/successful">
-				{/* TODO: E-MAIL MI NEPŘIŠEL, POŠLI HO ZNOVU */}
-				<RegistrationMessage>
-					<h2>Registrace byla úspěšná!</h2>
-					<p>
-						Po potvrzení e-mailu si můžete začít hledat nové
-						kamarády. :)
-					</p>
-				</RegistrationMessage>
 			</Route>
 		</Switch>
 	)
