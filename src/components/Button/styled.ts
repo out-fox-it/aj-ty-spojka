@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { withAlphaHex } from 'with-alpha-hex'
 
 export const WrapperIcon = styled.div`
 	width: 3.2em;
@@ -29,17 +28,15 @@ export const StyledButton = styled.button`
 
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	color: ${({ theme }) => theme.text.secondary};
-	background-color: ${({ theme }) =>
-		withAlphaHex(theme.bg.buttonBackground, 0.5)};
+	background-color: ${({ theme }) => theme.bg.buttonBackground};
 	cursor: pointer;
 
-	border: 0.1em solid ${({ theme }) => withAlphaHex(theme.bg.secondary, 0.5)};
+	border: 0.1em solid ${({ theme }) => theme.bg.secondary};
 	border-radius: 0.8em;
 	outline: none;
 
 	&:hover {
 		color: ${({ theme }) => theme.bg.primary};
-		background-color: ${({ theme }) =>
-			withAlphaHex(theme.text.secondary, 0.7)};
+		background-color: ${({ theme }) => theme.text.secondary};
 	}
 `

@@ -10,7 +10,7 @@ export const Wrapper = styled.nav`
 	align-content: center;
 
 	@media (max-width: 51em) {
-		position: absolute;
+		position: fixed;
 		bottom: 0;
 	}
 `
@@ -26,6 +26,7 @@ export const StyledLink = styled(Link)`
 
 	@media (max-width: 51em) {
 		flex: 1;
+		height: 6em;
 		& > button {
 			border-radius: 0;
 		}
