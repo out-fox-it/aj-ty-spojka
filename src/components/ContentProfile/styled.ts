@@ -1,56 +1,31 @@
 import styled from 'styled-components'
+import Button from '../Button'
 
 export const Wrapper = styled.div`
+	background-color: red;
 	display: grid;
-	grid-template-columns: 1fr 3fr 0.5fr 1fr;
-	gap: 2em;
-	justify-items: center;
-
-	@media (max-width: 50em) {
-		grid-template-columns: 1fr 5fr 1fr;
-		grid-template-rows: auto auto;
-	}
+	grid-template-columns: 1fr 3fr 1fr;
+	margin-top: 2em;
 `
 
-export const WrapperInformation = styled.section`
+export const Center = styled.section`
+	background-color: green;
 	grid-column: 2;
-	margin-bottom: 1em;
-
-	& h2 {
-		color: ${({ theme }) => theme.text.secondary};
-	}
-
-	& p {
-		margin-bottom: 3em;
-	}
-
-	@media (max-width: 50em) {
-		grid-column: 2;
-		grid-row: 1;
-	}
 `
 
-export const StyledIcon = styled.article`
-	display: inline-block;
-
-	& svg {
-		width: 1em;
-		padding: 0 0.5em;
-	}
+export const Space = styled.div`
+	width: 100%;
+	height: 2em;
 `
 
-export const WrapperLabel = styled.section`
-	grid-column: 3;
-	text-align: center;
+export const Name = styled.h1``
 
-	@media (max-width: 50em) {
-		grid-column: 2;
-		grid-row: 2;
-	}
+export const Title = styled.h2``
+
+export const TextArea = styled.p``
+
+export const SocialNetwork = styled.span`
+	display: block;
 `
 
-export const StyledButton = styled.article`
-	display: grid;
-	gap: 1em;
-	justify-content: center;
-`
+export const StyledButton = styled(Button)``

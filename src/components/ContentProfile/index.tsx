@@ -1,79 +1,49 @@
 import React from 'react'
 import {
-	Wrapper,
-	WrapperInformation,
-	StyledIcon,
+	Title,
+	Center,
+	Name,
+	SocialNetwork,
+	TextArea,
 	StyledButton,
-	WrapperLabel,
+	Space,
+	Wrapper,
 } from './styled'
-import { InfoCircle, Heart } from '@styled-icons/bootstrap'
-import { WorkOutline } from '@styled-icons/material-outlined'
-import { Css3, Angularjs, Reactjs } from '@styled-icons/remix-fill'
-import { Nodejs, Vuejs, Python } from '@styled-icons/boxicons-logos'
-import Button from '../Button'
 
-const ContentProfile: React.FC = () => (
+interface Props {
+	fullName: string
+	email: string
+}
+
+const ContentProfile: React.FC<Props> = ({ fullName, email }) => (
 	<Wrapper>
-		<WrapperInformation>
-			<h2>
-				<StyledIcon>
-					<InfoCircle />
-				</StyledIcon>
-				Něco o málo o mně ...
-			</h2>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-				eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-				enim ad minim veniam, quis nostrud exercitation ullamco laboris
-				nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-				in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-				nulla pariatur. Excepteur
-			</p>
-			<h2>
-				<StyledIcon>
-					<WorkOutline />
-				</StyledIcon>
-				IT zkušenosti ...
-			</h2>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-				eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-				enim ad minim veniam, quis nostrud exercitation ullamco laboris
-				nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-				in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-				nulla pariatur. Excepteur
-			</p>
-			<h2>
-				<StyledIcon>
-					<Heart />
-				</StyledIcon>
-				Mé zájmy ...
-			</h2>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-				eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-				enim ad minim veniam, quis nostrud exercitation ullamco laboris
-				nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-				in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-				nulla pariatur. Excepteur
-			</p>
-			<StyledIcon>
-				<Css3 />
-				<Angularjs />
-				<Reactjs />
-				<Nodejs />
-				<Vuejs />
-				<Python />
-			</StyledIcon>
-		</WrapperInformation>
-		<WrapperLabel>
-			<h5>Vyber si štítek:</h5>
-			<StyledButton>
-				<Button subtitle="Mentor" />
-				<Button subtitle="Buddy" />
-				<Button subtitle="Mentee" />
-			</StyledButton>
-		</WrapperLabel>
+		<Center>
+			<Name>{fullName}</Name>
+			<SocialNetwork>{email}</SocialNetwork>
+			<Space />
+			<Title>Něco o mě</Title>
+			<TextArea>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+				quam pariatur delectus eaque. Enim in adipisci quidem facere
+				doloremque, ullam eum aperiam totam, quia eveniet vel vitae
+				accusamus libero officiis. Lorem ipsum dolor sit, amet
+				consectetur adipisicing elit. Asperiores eaque perspiciatis
+				minus nesciunt dolor quaerat odit suscipit architecto qui
+				dolorem, id provident sapiente molestiae impedit magnam adipisci
+				nam illo blanditiis? Lorem ipsum dolor sit, amet consectetur
+				adipisicing elit. Nulla magnam ducimus blanditiis nam, alias
+				nobis non corporis necessitatibus quia saepe repudiandae
+				distinctio recusandae perspiciatis sit quasi minus mollitia
+				cumque facilis.
+			</TextArea>
+			<Space />
+			<Title>Kde mě najdeš</Title>
+			<SocialNetwork>www.seznam.cz</SocialNetwork>
+			<SocialNetwork>www.facebook.com</SocialNetwork>
+			<Space />
+			<StyledButton title="Odhlásit se" />
+			<Space />
+		</Center>
 	</Wrapper>
 )
 
