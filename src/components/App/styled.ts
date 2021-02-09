@@ -11,6 +11,10 @@ export const GlobalStyles = createGlobalStyle`
 		-moz-osx-font-smoothing: grayscale;
 		color: ${({ theme }) => theme.text.primary};
 		background-color: ${({ theme }) => theme.bg.primary};
+		
+		@media (max-width: 51em) {
+			padding-bottom: 5em;
+		}
 	}
 
 	h1 {
