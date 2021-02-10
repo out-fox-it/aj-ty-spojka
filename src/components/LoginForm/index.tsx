@@ -6,12 +6,12 @@ import { Form, FormButton, FormItem } from '../Form/styled'
 
 import FormEmail from '../Form/components/FormEmail'
 import FormPassword from '../Form/components/FormPassword'
+import FormCheckbox from '../Form/components/FormCheckbox'
+import ForgottenPassword from './ForgottenPassword'
 
 const LoginForm: React.FC = () => {
-	const { handleSubmit, errors, register } = useForm<FormData>({
-		mode: 'onChange',
-		reValidateMode: 'onChange',
-	})
+	const { handleSubmit, errors, register } = useForm<FormData>()
+	// Mode is set to default (onSubmit)
 
 	const history = useHistory()
 
@@ -36,7 +36,7 @@ const LoginForm: React.FC = () => {
 			/>
 
 			{/* TODO: Remember login info */}
-			{/* TODO: Forgot password */}
+			<FormCheckbox register={register} errors={errors} />
 
 			{/* SUBMIT */}
 			<FormItem>
@@ -44,6 +44,9 @@ const LoginForm: React.FC = () => {
 					ODESLAT
 				</FormButton>
 			</FormItem>
+
+			{/* TODO: Forgotten password */}
+			<ForgottenPassword />
 		</Form>
 	)
 }
