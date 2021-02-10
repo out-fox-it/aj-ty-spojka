@@ -26,7 +26,7 @@ const FormEmail: React.FC<Props> = ({ register, errors, onChange }) => (
 						// TODO: Must be unique!
 					},
 					maxLength: {
-						value: 50,
+						value: 254,
 						message: 'Váš e-mail má více než 50 znaků!',
 					},
 				})}
