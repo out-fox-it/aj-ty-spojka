@@ -11,3 +11,6 @@ export const EditAccount = styled.input`
 	padding: 0.7em;
 	outline: none;
 `
+
+export const HiddenIcon = styled.div`
+display: ${(props) => (props?.hidden ? 'none' : 'block')};`

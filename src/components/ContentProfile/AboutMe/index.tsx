@@ -19,7 +19,7 @@ export const AboutMe: React.FC = () => {
 					<Description>
 						{input.value}
 						<EditIcon<StateData>
-							icon={Icon.pencil}
+							icon={Icon.edit}
 							stateFunction={setInput}
 							state={{
 								change: false,
@@ -37,7 +37,7 @@ export const AboutMe: React.FC = () => {
 						}
 					/>
 					<EditIcon<StateData>
-						icon={Icon.check}
+						icon={Icon.save}
 						stateFunction={setInput}
 						state={{
 							change: true,

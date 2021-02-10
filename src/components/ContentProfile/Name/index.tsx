@@ -28,7 +28,7 @@ export const Name: React.FC<Props> = ({ fullName }) => {
 					<ProfileName>
 						{input.value}
 						<EditIcon<StateData>
-							icon={Icon.pencil}
+							icon={Icon.edit}
 							stateFunction={setInput}
 							state={{
 								change: false,
@@ -47,7 +47,7 @@ export const Name: React.FC<Props> = ({ fullName }) => {
 						}
 					/>
 					<EditIcon<StateData>
-						icon={Icon.check}
+						icon={Icon.save}
 						stateFunction={setInput}
 						state={{
 							change: true,

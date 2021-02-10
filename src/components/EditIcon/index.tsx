@@ -1,10 +1,12 @@
 import React, { Dispatch, SetStateAction } from 'react'
 import { PencilAlt, Check } from '@styled-icons/fa-solid'
+import { DeleteOutline } from '@styled-icons/material-outlined'
 import { Edit } from './styled'
 
 export enum Icon {
-	pencil = 'pencil',
-	check = 'check',
+	edit = 'edit',
+	save = 'save',
+	delete = 'delete',
 }
 
 interface Props<T> {
@@ -18,22 +20,15 @@ export const EditIcon = <T,>({
 	stateFunction,
 	state,
 }: Props<T>): JSX.Element => {
-	const pencilIcon = (
-		<Edit>
-			<PencilAlt onClick={() => stateFunction(state)} />
-		</Edit>
-	)
-
-	const checkIcon = (
-		<Edit>
-			<Check onClick={() => stateFunction(state)} />
-		</Edit>
-	)
+	const editIcon = <PencilAlt onClick={() => stateFunction(state)} />
+	const saveIcon = <Check onClick={() => stateFunction(state)} />
+	const deleteIcon = <DeleteOutline onClick={() => stateFunction(state)} />
 
 	return (
-		<>
-			{icon === Icon.pencil && pencilIcon}
-			{icon === Icon.check && checkIcon}
-		</>
+		<Edit>
+			{icon === Icon.edit && editIcon}
+			{icon === Icon.save && saveIcon}
+			{icon === Icon.delete && deleteIcon}
+		</Edit>
 	)
 }
