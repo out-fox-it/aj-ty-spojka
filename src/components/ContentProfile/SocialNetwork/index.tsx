@@ -1,31 +1,23 @@
-import React, { useEffect, useState } from 'react'
-import { ProfileName, EditName } from './styled'
+import React, { useState } from 'react'
+import { Account, EditAccount } from './styled'
 import { EditIcon, Icon } from '../../EditIcon'
-
-interface Props {
-	fullName: string
-}
 
 interface StateData {
 	change: boolean
 	value: string
 }
 
-export const Name: React.FC<Props> = ({ fullName }) => {
+export const SocialNetwork: React.FC = () => {
 	const [input, setInput] = useState<StateData>({
 		change: true,
 		value: '',
 	})
 
-	useEffect(() => {
-		setInput({ change: true, value: fullName })
-	}, [fullName])
-
 	return (
 		<>
 			{input.change ? (
 				<>
-					<ProfileName>
+					<Account>
 						{input.value}
 						<EditIcon<StateData>
 							icon={Icon.pencil}
@@ -35,11 +27,11 @@ export const Name: React.FC<Props> = ({ fullName }) => {
 								value: input.value,
 							}}
 						/>
-					</ProfileName>
+					</Account>
 				</>
 			) : (
 				<>
-					<EditName
+					<EditAccount
 						type="text"
 						value={input.value}
 						onChange={(e) =>

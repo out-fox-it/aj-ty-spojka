@@ -1,31 +1,22 @@
-import React, { useEffect, useState } from 'react'
-import { ProfileName, EditName } from './styled'
+import React, { useState } from 'react'
+import { Description, EditDescription } from './styled'
 import { EditIcon, Icon } from '../../EditIcon'
-
-interface Props {
-	fullName: string
-}
 
 interface StateData {
 	change: boolean
 	value: string
 }
 
-export const Name: React.FC<Props> = ({ fullName }) => {
+export const AboutMe: React.FC = () => {
 	const [input, setInput] = useState<StateData>({
 		change: true,
 		value: '',
 	})
-
-	useEffect(() => {
-		setInput({ change: true, value: fullName })
-	}, [fullName])
-
 	return (
 		<>
 			{input.change ? (
 				<>
-					<ProfileName>
+					<Description>
 						{input.value}
 						<EditIcon<StateData>
 							icon={Icon.pencil}
@@ -35,12 +26,11 @@ export const Name: React.FC<Props> = ({ fullName }) => {
 								value: input.value,
 							}}
 						/>
-					</ProfileName>
+					</Description>
 				</>
 			) : (
 				<>
-					<EditName
-						type="text"
+					<EditDescription
 						value={input.value}
 						onChange={(e) =>
 							setInput({ change: false, value: e.target.value })
