@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 import { useForm } from 'react-hook-form'
@@ -10,7 +10,10 @@ import FormCheckbox from '../Form/components/FormCheckbox'
 import ForgottenPassword from './ForgottenPassword'
 
 const LoginForm: React.FC = () => {
-	const { handleSubmit, errors, register } = useForm<FormData>()
+	const { handleSubmit, errors, register } = useForm<FormData>({
+		mode: 'onChange',
+		reValidateMode: 'onChange',
+	})
 	// Mode is set to default (onSubmit)
 
 	const history = useHistory()
@@ -21,6 +24,9 @@ const LoginForm: React.FC = () => {
 		// TODO: HANDLE ERRORS
 	)
 
+	// Password eye icon shows or hides the password
+	const [passwordShown, setPasswordShown] = useState(false)
+
 	return (
 		<Form onSubmit={onSubmit} noValidate>
 			<h1>PŘIHLAŠOVACÍ FORMULÁŘ</h1>
@@ -30,9 +36,12 @@ const LoginForm: React.FC = () => {
 			<FormPassword
 				passwordName="password"
 				passwordLabel="Heslo:"
+				passwordType={passwordShown ? 'text' : 'password'}
 				register={register}
 				errors={errors}
 				passwordErrorDisplay={false}
+				// onClick sets hides or enables the password
+				onClick={() => setPasswordShown(!passwordShown)}
 			/>
 
 			{/* TODO: Remember login info */}
