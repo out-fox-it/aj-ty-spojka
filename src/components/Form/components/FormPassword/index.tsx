@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Errors, FormItem, Label, FormInput, HiddenError } from '../../styled'
+import { Errors, FormItem, Label, FormInput } from '../../styled'
 
 type Props = {
 	passwordName: string
@@ -39,18 +39,12 @@ const FormPassword: React.FC<Props> = ({
 			/>
 		</FormItem>
 
-		{passwordErrorDisplay ? (
+		{passwordErrorDisplay && (
 			<Errors>
 				{errors?.passwordConfirm?.types?.validate && (
 					<p>Hesla se neshodují!</p>
 				)}
 			</Errors>
-		) : (
-			<HiddenError>
-				{errors?.passwordConfirm?.types?.validate && (
-					<p>This message is never visible.</p>
-				)}
-			</HiddenError>
 		)}
 	</>
 )

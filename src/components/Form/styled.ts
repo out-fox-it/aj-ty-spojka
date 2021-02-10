@@ -59,8 +59,3 @@ export const Errors = styled.span`
 	text-align: center;
 	color: ${({ theme }) => theme.text.false};
 `
-
-export const HiddenError = styled.span`
-	display: none;
-	margin: 0;
-`
