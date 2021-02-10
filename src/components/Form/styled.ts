@@ -24,7 +24,7 @@ export const FormInput = styled.input`
 	}
 `
 
-export const FormCheckbox = styled.input`
+export const FormCheck = styled.input`
 	margin: 1.5em;
 	padding: 0.5em;
 	transform: scale(1.5);
@@ -54,14 +54,6 @@ export const Label = styled.label`
 	margin: 1em;
 `
 
-export const PasswordMessage = styled.div`
-	display: ${(props) => (props?.hidden ? 'none' : 'grid')};
-	grid: repeat(2, 1fr) / repeat(2, 1fr);
-	justify-items: center;
-	gap: 1em;
-	margin: 1em;
-`
-
 export const Errors = styled.span`
 	margin: 0;
 	text-align: center;
@@ -71,21 +63,4 @@ export const Errors = styled.span`
 export const HiddenError = styled.span`
 	display: none;
 	margin: 0;
-`
-
-export const ValidPassword = styled.p<{ validPassword?: boolean }>`
-	margin: 0;
-	color: ${(props) =>
-		props?.validPassword ? props.theme.text.true : props.theme.text.false};
-
-	&:before {
-		position: relative;
-		left: -0.5em;
-		content: '${(props) => (props?.validPassword ? '✔' : '✖')}';
-	}
-`
-
-export const RegistrationMessage = styled.div`
-	text-align: center;
-	margin: 5em;
 `
