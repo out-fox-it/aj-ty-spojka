@@ -2,7 +2,8 @@ import React from 'react'
 import { Theme, useThemeControl } from '../Theme'
 import Toggle from '../Toggle'
 import { ButtonNav } from '../ButtonNav'
-import { Wrapper, StyledLink, Logo } from './styled'
+import { Wrapper, StyledLink } from './styled'
+import Logo from '../../assets/Logo/'
 
 interface Props {
 	login: boolean
