@@ -1,12 +1,17 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import Home from '../../pages/Home'
-import Register from '../../pages/Register'
+
 import ThemeProvider from '../Theme'
 import { GlobalStyles } from './styled'
 
+// Pages
+import Home from '../../pages/Home'
+import Login from '../../pages/Login'
+import Register from '../../pages/Register'
+
 const Routes: React.FC = () => (
 	<Switch>
+		<Route path="/login" component={Login} />
 		<Route path="/register" component={Register} />
 		<Route path="/" component={Home} />
 	</Switch>
