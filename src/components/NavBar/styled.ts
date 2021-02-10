@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { ConnectWithoutContact } from '@styled-icons/material-rounded'
 import { Link } from 'react-router-dom'
 
 export const Wrapper = styled.header`
@@ -16,14 +15,10 @@ export const Wrapper = styled.header`
 	}
 `
 
-export const Logo = styled(ConnectWithoutContact)`
-	width: 10em;
-	padding: 1em;
-`
-
 export const StyledLink = styled(Link)`
 	color: ${({ theme }) => theme.text.primary};
 	grid-column: 2;
+	padding: 2em;
 
 	@media (max-width: 80em) {
 		grid-column: 1;
