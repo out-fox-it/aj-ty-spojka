@@ -5,7 +5,7 @@ import { Errors, FormItem, Label, FormInput } from '../../styled'
 type Props = {
 	register: ReturnType<typeof useForm>['register']
 	errors: ReturnType<typeof useForm>['errors']
-	onChange: () => void
+	onChange?: () => void
 }
 
 const emailRegex = /^[A-Z0-9._-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
