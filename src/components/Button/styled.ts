@@ -15,6 +15,15 @@ export const ButtonTitle = styled.span`
 	}
 `
 
+export const ButtonTitleSmall = styled.span`
+	font-size: 1em;
+	text-transform: uppercase;
+
+	@media (max-width: 51em) {
+		font-size: 0.7em;
+	}
+`
+
 export const ButtonSubtitle = styled.p`
 	font-size: 0.7em;
 `

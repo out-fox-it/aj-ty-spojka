@@ -10,6 +10,13 @@ test('renders button with title', () => {
 	expect(spanElement.tagName).toBe('SPAN')
 })
 
+test('renders button with titleSmall', () => {
+	const { getByText } = renderWithTheme(<Button titleSmall="Mentor" />)
+
+	const spanElement = getByText('Mentor')
+	expect(spanElement.tagName).toBe('SPAN')
+})
+
 test('renders button with subtitle', () => {
 	const { getByText } = renderWithTheme(
 		<Button subtitle="Poznej nové přátele." />
