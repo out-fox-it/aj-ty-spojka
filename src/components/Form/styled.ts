@@ -16,6 +16,7 @@ export const FormItem = styled.div`
 `
 
 export const FormInput = styled.input`
+	position: relative;
 	margin: 1em;
 	padding: 0.7em;
 
@@ -58,4 +59,21 @@ export const Errors = styled.span`
 	margin: 0;
 	text-align: center;
 	color: ${({ theme }) => theme.text.false};
+`
+
+export const FormFieldWithIcon = styled.div`
+	position: relative;
+	display: flex;
+`
+
+export const FormIcon = styled.div`
+	color: ${({ theme }) => theme.bg.secondary};
+	position: absolute;
+	width: 1.4em;
+	right: 11%;
+	top: 34%;
+
+	&:hover {
+		cursor: pointer;
+	}
 `

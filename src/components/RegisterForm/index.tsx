@@ -36,10 +36,14 @@ const RegisterForm: React.FC<Props> = ({ onSuccess }) => {
 	)
 
 	// Validation of password and PasswordMessage
-	const [hidden, setHidden] = useState<boolean>(true)
-
 	const password = useRef('')
 	password.current = watch('password', '')
+
+	// PasswordMessage is or is not visible
+	const [hidden, setHidden] = useState<boolean>(true)
+
+	// Password eye icon shows or hides the password
+	const [passwordShown, setPasswordShown] = useState(false)
 
 	const hasLowerCase = /[a-z]/.test(password.current)
 	const hasMinimumLength = password.current.length >= 6
@@ -71,8 +75,11 @@ const RegisterForm: React.FC<Props> = ({ onSuccess }) => {
 				register={register}
 				errors={errors}
 				passwordErrorDisplay={false}
+				passwordType={passwordShown ? 'text' : 'password'}
 				// onFocus enables PasswordMessage
 				onFocus={() => setHidden(false)}
+				// onClick sets hides or enables the password
+				onClick={() => setPasswordShown(!passwordShown)}
 			/>
 
 			<FormPasswordMessage
@@ -89,6 +96,10 @@ const RegisterForm: React.FC<Props> = ({ onSuccess }) => {
 				register={register}
 				errors={errors}
 				passwordErrorDisplay={true}
+				passwordType={passwordShown ? 'text' : 'password'}
+				// onClick sets hides or enables the password
+				onClick={() => setPasswordShown(!passwordShown)}
+				// Validates that password and confirmPassword are equal
 				validate={(value) => value === password.current}
 			/>
 
