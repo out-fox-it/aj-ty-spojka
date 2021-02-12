@@ -1,27 +1,65 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { withAlphaHex } from 'with-alpha-hex'
 
 export const Form = styled.form`
-	display: flex;
-	flex-flow: column wrap;
-	align-content: center;
-	margin: 2em;
+	display: grid;
+	grid-template-columns: 3fr 1fr 3fr 3fr;
+	padding: 2em;
+
+	@media (max-width: 75em) {
+		grid-template-columns: 1fr 5fr 1fr;
+		padding: 0em;
+	}
+`
+
+export const FormTitle = styled.h1`
+	grid-column: 2 / 4;
+	font-size: 2em;
+	text-align: center;
+
+	@media (max-width: 75em) {
+		grid-column: 2;
+	}
 `
 
 export const FormItem = styled.div`
+	grid-column: 2 / 4;
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
 	justify-content: space-between;
+
+	@media (max-width: 75em) {
+		grid-column: 2;
+	}
 `
 
 export const FormInput = styled.input`
 	position: relative;
 	margin: 1em;
 	padding: 0.7em;
+	min-width: 45%;
+	max-width: 100%;
 
 	&:focus {
 		outline: none;
+	}
+
+	@media (min-width: 80em) {
+		min-width: 60%;
+	}
+
+	@media (min-width: 79em) {
+		min-width: 50%;
+	}
+
+	@media (min-width: 50em) {
+		min-width: 60%;
+	}
+
+	@media (max-width: 30em) {
+		max-width: 50%;
 	}
 `
 
@@ -29,6 +67,18 @@ export const FormCheck = styled.input`
 	margin: 1.5em;
 	padding: 0.5em;
 	transform: scale(1.5);
+`
+
+export const FormLink = styled(Link)`
+	color: ${({ theme }) => theme.text.primary};
+	grid-column: 2 / 4;
+	text-decoration: none;
+	text-align: center;
+	margin: 1em;
+
+	@media (max-width: 75em) {
+		grid-column: 2;
+	}
 `
 
 export const FormButton = styled.button`
@@ -56,22 +106,22 @@ export const Label = styled.label`
 `
 
 export const Errors = styled.span`
+	grid-column: 2 / 4;
 	margin: 0;
 	text-align: center;
 	color: ${({ theme }) => theme.text.false};
-`
 
-export const FormFieldWithIcon = styled.div`
-	position: relative;
-	display: flex;
+	@media (max-width: 75em) {
+		grid-column: 2;
+	}
 `
 
 export const FormIcon = styled.div`
 	color: ${({ theme }) => theme.bg.secondary};
-	position: absolute;
 	width: 1.4em;
-	right: 11%;
-	top: 34%;
+	align-self: center;
+	margin-left: -3em;
+	z-index: 1;
 
 	&:hover {
 		cursor: pointer;
