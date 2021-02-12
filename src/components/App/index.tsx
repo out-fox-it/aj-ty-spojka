@@ -7,12 +7,14 @@ import { GlobalStyles } from './styled'
 // Pages
 import Home from '../../pages/Home'
 import Login from '../../pages/Login'
+import Contacts from '../../pages/Contacts'
 import Register from '../../pages/Register'
 
 const Routes: React.FC = () => (
 	<Switch>
 		<Route path="/login" component={Login} />
 		<Route path="/register" component={Register} />
+		<Route path="/contacts" component={Contacts} />
 		<Route path="/" component={Home} />
 	</Switch>
 )
