@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Form, FormButton, FormItem } from '../Form/styled'
+import { Form, FormButton, FormItem, FormTitle } from '../Form/styled'
 
 import FormEmail from '../Form/components/FormEmail'
 import FormNickname from '../Form/components/FormNickname'
@@ -58,7 +58,7 @@ const RegisterForm: React.FC<Props> = ({ onSuccess }) => {
 
 	return (
 		<Form onSubmit={onSubmit} noValidate>
-			<h1>REGISTRAČNÍ FORMULÁŘ</h1>
+			<FormTitle>REGISTRAČNÍ FORMULÁŘ</FormTitle>
 
 			<FormEmail
 				register={register}

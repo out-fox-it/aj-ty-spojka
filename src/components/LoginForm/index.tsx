@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 import { useForm } from 'react-hook-form'
-import { Form, FormButton, FormItem } from '../Form/styled'
+import { Form, FormButton, FormItem, FormTitle } from '../Form/styled'
 
 import FormEmail from '../Form/components/FormEmail'
 import FormPassword from '../Form/components/FormPassword'
@@ -29,7 +29,7 @@ const LoginForm: React.FC = () => {
 
 	return (
 		<Form onSubmit={onSubmit} noValidate>
-			<h1>PŘIHLAŠOVACÍ FORMULÁŘ</h1>
+			<FormTitle>PŘIHLAŠOVACÍ FORMULÁŘ</FormTitle>
 
 			<FormEmail register={register} errors={errors} />
 

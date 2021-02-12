@@ -1,13 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import {
-	Errors,
-	FormItem,
-	Label,
-	FormInput,
-	FormIcon,
-	FormFieldWithIcon,
-} from '../../styled'
+import { Errors, FormItem, Label, FormInput, FormIcon } from '../../styled'
 import { Eye } from '@styled-icons/fa-solid'
 
 type Props = {
@@ -38,23 +31,23 @@ const FormPassword: React.FC<Props> = ({
 	<>
 		<FormItem>
 			<Label htmlFor="password">{passwordLabel}</Label>
-			<FormFieldWithIcon>
-				<FormInput
-					name={passwordName}
-					type={passwordType}
-					placeholder="1SafePassword%"
-					ref={register({
-						required: true,
-						pattern: passwordRegex,
-						validate,
-					})}
-					onFocus={onFocus}
-				/>
-				<FormIcon>
-					<Eye onClick={onClick} />
-				</FormIcon>
-			</FormFieldWithIcon>
+
+			<FormInput
+				name={passwordName}
+				type={passwordType}
+				placeholder="1SafePassword%"
+				ref={register({
+					required: true,
+					pattern: passwordRegex,
+					validate,
+				})}
+				onFocus={onFocus}
+			/>
 		</FormItem>
+
+		<FormIcon>
+			<Eye onClick={onClick} />
+		</FormIcon>
 
 		{passwordErrorDisplay && (
 			<Errors>

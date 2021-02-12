@@ -1,5 +1,5 @@
 import React from 'react'
-import { FormLink } from './styled'
+import { FormLink } from '../../Form/styled'
 
 const ForgottenPassword: React.FC = () => (
 	// TODO: Add correct link!
