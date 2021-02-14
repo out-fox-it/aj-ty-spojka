@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { withAlphaHex } from 'with-alpha-hex'
+import { StyledButton } from '../Button/styled'
 
 export const Form = styled.form`
 	display: grid;
@@ -81,24 +81,9 @@ export const FormLink = styled(Link)`
 	}
 `
 
-export const FormButton = styled.button`
+export const FormButton = styled(StyledButton)`
 	margin: 1em;
-	padding: 0.5em;
 	flex-grow: 1;
-
-	color: ${({ theme }) => theme.text.secondary};
-	background-color: ${({ theme }) =>
-		withAlphaHex(theme.bg.buttonBackground, 0.5)};
-	cursor: pointer;
-
-	border: 0.1em solid ${({ theme }) => withAlphaHex(theme.bg.secondary, 0.5)};
-	border-radius: 0.8em;
-
-	&:hover {
-		color: ${({ theme }) => theme.bg.primary};
-		background-color: ${({ theme }) =>
-			withAlphaHex(theme.text.secondary, 0.7)};
-	}
 `
 
 export const Label = styled.label`
