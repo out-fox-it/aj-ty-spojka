@@ -9,18 +9,20 @@ export const Wrapper = styled.section`
 
 export const MessageBoxTitle = styled.h1`
 	grid-column: 2;
-	font-size: 2em;
+	font-size: 1.8rem;
 	text-align: center;
 	margin: 0;
+	text-transform: uppercase;
+	color: ${({ theme }) => theme.text.secondary};
+
+	@media (max-width: 50em) {
+		margin-bottom: 0.7em;
+	}
 `
 
-export const MessageBox = styled.div`
+export const MessageBoxBorder = styled.div`
 	grid-column: 2;
 	width: 80%;
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: space-around;
-	align-items: center;
 	padding: 2em;
 	margin: 2em;
 	border: 0.1em solid ${({ theme }) => theme.bg.secondary};
@@ -32,12 +34,22 @@ export const MessageBox = styled.div`
 
 	@media (max-width: 50em) {
 		grid-template-columns: 1fr;
-		flex-wrap: wrap;
 		width: 50%;
 		padding-left: 0.5em;
 		padding-right: 0.5em;
 		padding-top: 1.5em;
 		padding-bottom: 1.5em;
+	}
+`
+
+export const MessageBox = styled.div`
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: center;
+
+	@media (max-width: 50em) {
+		flex-wrap: wrap;
 	}
 `
 
@@ -73,13 +85,6 @@ export const MessageBody = styled.p`
 	}
 `
 
-export const ReadMore = styled.span`
-	color: ${({ theme }) => theme.text.secondary};
-	margin-left: 0.5em;
-	text-decoration: underline;
-	cursor: pointer;
-`
-
 export const MessageButton = styled.button`
 	background-color: ${({ theme }) => theme.bg.secondary};
 	background-color: #2a9d8f;
@@ -96,5 +101,25 @@ export const MessageButton = styled.button`
 	@media (max-width: 30em) {
 		width: 18vw;
 		height: 18vw;
+	}
+`
+
+export const BreakLine = styled.hr`
+	margin: 1.5em;
+	height: 0.15em;
+	background-color: #e9c46a;
+	border-width: 0;
+	border-radius: 50%;
+
+	:last-child {
+		display: none;
+	}
+
+	@media (max-width: 50em) {
+		margin: 1em;
+	}
+
+	@media (max-width: 30em) {
+		margin: 1.5em;
 	}
 `
