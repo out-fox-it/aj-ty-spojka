@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { StyledButton } from '../Button/styled'
 
 export const Wrapper = styled.section`
 	display: grid;
@@ -85,24 +86,13 @@ export const MessageBody = styled.p`
 	}
 `
 
-export const MessageButton = styled.button`
-	background-color: ${({ theme }) => theme.bg.secondary};
-	background-color: #2a9d8f;
-	width: 6vw;
-	height: 6vw;
-	border-radius: 50%;
-	border: none;
-
-	@media (max-width: 50em) {
-		width: 12vw;
-		height: 12vw;
-	}
-
-	@media (max-width: 30em) {
-		width: 18vw;
-		height: 18vw;
-	}
+export const ButtonBox = styled.div`
+	display: flex;
+	flex-flow: column nowrap;
+	row-gap: 1em;
 `
+
+export const MessageButton = styled(StyledButton)``
 
 export const BreakLine = styled.hr`
 	margin: 1.5em;

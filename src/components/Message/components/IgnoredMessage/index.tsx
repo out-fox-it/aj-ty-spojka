@@ -5,6 +5,7 @@ import {
 	MessageAvatar,
 	MessageBody,
 	MessageButton,
+	ButtonBox,
 } from '../../styled'
 import ReadMore from '../ReadMore'
 
@@ -15,12 +16,21 @@ type Props = {
 const IgnoredMessage: React.FC<Props> = ({ message }) => (
 	<>
 		<MessageBox>
+			{/* TODO: Add this avatar of last-message author */}
 			<MessageAvatar />
 			<MessageBody>
 				{message}
 				<ReadMore message={message} />
 			</MessageBody>
-			<MessageButton />
+			{/* TODO: Add button submit functionality */}
+			<ButtonBox>
+				<MessageButton name="submit" type="submit">
+					OBNOVIT
+				</MessageButton>
+				<MessageButton name="submit" type="submit">
+					SMAZAT
+				</MessageButton>
+			</ButtonBox>
 		</MessageBox>
 		<BreakLine />
 	</>
