@@ -12,7 +12,7 @@ type Props = {
 	message: string
 }
 
-const MatchMessage: React.FC<Props> = ({ message }) => (
+const AwaitingResponseMessage: React.FC<Props> = ({ message }) => (
 	<>
 		<MessageBox>
 			<MessageAvatar />
@@ -26,4 +26,4 @@ const MatchMessage: React.FC<Props> = ({ message }) => (
 	</>
 )
 
-export default MatchMessage
+export default AwaitingResponseMessage
