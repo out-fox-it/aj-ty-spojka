@@ -9,6 +9,7 @@ import {
 } from '../components/Message/styled'
 import NavBar from '../components/NavBar'
 
+// TODO: Discard fakeMessages when our own API is ready
 const fakeMessages: MessageData[] = [
 	{
 		content:
@@ -92,7 +93,8 @@ const Contacts: React.FC = () => {
 		<>
 			<NavBar login={true} />
 			<Wrapper>
-				{/* TODO: In case of no messages, display some message */}
+				{/* TODO: Add message in case of no messages in any cathegory */}
+				{/* TODO: Handle new/unread messages style and notifications */}
 				{Object.entries(messagesGroups).map(([type, messages]) => (
 					<MessageBoxBorder key={type} hidden={messages.length === 0}>
 						<MessageBoxTitle>
