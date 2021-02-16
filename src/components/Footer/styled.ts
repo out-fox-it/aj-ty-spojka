@@ -1,13 +1,14 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Wrapper = styled.footer`
-	position: fixed;
 	bottom: 0;
 	right: 0;
 	left: 0;
-	padding-top: 2em;
-	padding-bottom: 2em;
+	padding-top: 1em;
+	margin-top: 1em;
 	text-align: center;
+	z-index: -1; // Otherwise absolute position overlaps menu!
 
 	@media (max-width: 50em) {
 		position: relative;
@@ -18,4 +19,9 @@ export const Wrapper = styled.footer`
 
 export const FooterText = styled.p`
 	color: ${({ theme }) => theme.text.primary};
+`
+
+export const FooterLink = styled(Link)`
+	color: ${({ theme }) => theme.text.secondary};
+	text-decoration: none;
 `
