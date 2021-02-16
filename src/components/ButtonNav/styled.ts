@@ -12,6 +12,7 @@ export const Wrapper = styled.nav`
 	@media (max-width: 51em) {
 		position: fixed;
 		bottom: 0;
+		z-index: 999;
 	}
 `
 
