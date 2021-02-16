@@ -5,7 +5,7 @@ import { Email } from './Email'
 import { SocialNetwork } from './SocialNetwork'
 import { Title, Center, StyledButton, Space, Wrapper } from './styled'
 
-interface Props {
+type Props = {
 	fullName: string
 	email: string
 }
