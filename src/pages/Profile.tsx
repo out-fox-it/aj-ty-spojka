@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ContentProfile from '../components/ContentProfile'
+import Footer from '../components/Footer'
 import NavbarProfile from '../components/NavbarProfile'
 import { getProfileData, RandomUser } from '../utils/getUserData'
 
@@ -21,6 +22,7 @@ const Profile: React.FC = () => {
 		<>
 			<NavbarProfile picture={picture} fullName={fullName} />
 			<ContentProfile />
+			<Footer />
 		</>
 	)
 }
