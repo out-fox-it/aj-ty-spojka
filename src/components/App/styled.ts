@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
 		color: ${({ theme }) => theme.text.primary};
 		background-color: ${({ theme }) => theme.bg.primary};
 		
-		@media (max-width: 51em) {
+		@media (max-width: 50em) {
 			padding-bottom: 5em;
 		}
 	}

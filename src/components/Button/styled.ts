@@ -10,7 +10,7 @@ export const ButtonTitle = styled.span`
 	font-size: 1.5em;
 	text-transform: uppercase;
 
-	@media (max-width: 51em) {
+	@media (max-width: 50em) {
 		font-size: 1em;
 	}
 `

@@ -10,7 +10,7 @@ export const Wrapper = styled.header`
 		grid-template-columns: 1fr 4fr 1fr;
 	}
 
-	@media (max-width: 51em) {
+	@media (max-width: 50em) {
 		grid-template-columns: 1fr;
 	}
 `
