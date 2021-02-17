@@ -9,7 +9,7 @@ export const Wrapper = styled.nav`
 	justify-content: space-around;
 	align-content: center;
 
-	@media (max-width: 51em) {
+	@media (max-width: 50em) {
 		position: fixed;
 		bottom: 0;
 		z-index: 999;
@@ -25,7 +25,7 @@ export const StyledLink = styled(Link)`
 	text-decoration: none;
 	width: 25%;
 
-	@media (max-width: 51em) {
+	@media (max-width: 50em) {
 		flex: 1;
 		height: 6em;
 		& > button {
