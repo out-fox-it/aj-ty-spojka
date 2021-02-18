@@ -22,7 +22,6 @@ const ContentProfile: React.FC<Props> = ({ fullName, email }) => {
 				<Space />
 				<Title>Kde mě najdeš</Title>
 				<SocialNetwork />
-				<StyledButton titleSmall="Přidat sociální síť" />
 				<Space />
 				<StyledButton titleSmall="Přidat do kontaktů" />
 				<Space />
