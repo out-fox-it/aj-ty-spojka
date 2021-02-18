@@ -1,0 +1,7 @@
+{
+    "tableName": "membersdb",
+    "partitionKeyName": "id",
+    "partitionKeyType": "S",
+    "sortKeyName": "type",
+    "sortKeyType": "S"
+}
