@@ -1,6 +1,9 @@
 import React, { useContext } from 'react'
+import { Edit } from '../../../EditIcon/styled'
 import { SocialNetworkContext } from '../Context'
-import { ListItem, NetworkText, ButtonNetwork } from './styled'
+import { ListItem, NetworkText} from './styled'
+import { PencilAlt } from '@styled-icons/fa-solid'
+import { DeleteOutline } from '@styled-icons/material-outlined'
 
 type Props = {
 	address: string
@@ -13,12 +16,8 @@ export const Network: React.FC<Props> = ({ address, id }) => {
 		<>
 			<ListItem>
 				<NetworkText>{address}</NetworkText>
-				<ButtonNetwork onClick={() => removeNetwork(id)}>
-					delete
-				</ButtonNetwork>
-				<ButtonNetwork onClick={() => findNetwork(id)}>
-					upravit
-				</ButtonNetwork>
+				<Edit onClick={() => removeNetwork(id)}><DeleteOutline /></Edit>
+				<Edit onClick={() => findNetwork(id)}><PencilAlt /></Edit>
 			</ListItem>
 		</>
 	)

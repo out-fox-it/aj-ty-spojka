@@ -10,7 +10,6 @@ type ContexType = {
 	network: NetworkType[]
 	addNetwork: (text: string) => void
 	removeNetwork: (id: string) => void
-	clearList: () => void
 	findNetwork: (id: string) => void
 	editNetwork: (text: string, id: string) => void
 	editItem: NetworkType | null
@@ -22,9 +21,6 @@ export const SocialNetworkContext = createContext<ContexType>({
 		return
 	},
 	removeNetwork: () => {
-		return
-	},
-	clearList: () => {
 		return
 	},
 	findNetwork: () => {
@@ -52,10 +48,6 @@ export const SocialNetworkContextProvider: React.FC = (props) => {
 		setNetwork(network.filter((item) => item.id !== id))
 	}
 
-	const clearList = () => {
-		setNetwork([])
-	}
-
 	const findNetwork = (id: string) => {
 		const item = network.find((item) => item.id === id)
 		setEditItem(item || null)
@@ -75,7 +67,6 @@ export const SocialNetworkContextProvider: React.FC = (props) => {
 				network,
 				addNetwork,
 				removeNetwork,
-				clearList,
 				findNetwork,
 				editNetwork,
 				editItem,

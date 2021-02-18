@@ -3,7 +3,7 @@ import { SocialNetworkContext } from '../Context'
 import { Button, Form, Input } from './styled'
 
 export const NetworkForm: React.FC = () => {
-	const { addNetwork, clearList, editItem, editNetwork } = useContext(
+	const { addNetwork, editItem, editNetwork } = useContext(
 		SocialNetworkContext
 	)
 	const [address, setAddress] = useState<string>('')
@@ -40,9 +40,8 @@ export const NetworkForm: React.FC = () => {
 				required
 			/>
 			<Button type="submit">
-				{editItem ? 'Upravit' : 'Přidat adressu'}
+				{editItem ? 'Upravit' : 'Přidat adresu'}
 			</Button>
-			<Button onClick={() => clearList()}>Vymazat</Button>
 		</Form>
 	)
 }

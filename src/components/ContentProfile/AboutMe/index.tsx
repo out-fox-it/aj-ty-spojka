@@ -15,6 +15,24 @@ export const AboutMe: React.FC = () => {
 	return (
 		<>
 			{input.change ? (
+							<>
+								<EditDescription
+									value={input.value}
+									placeholder='Zde můžeš napsat něco o sobě . . .'
+									onChange={(e) =>
+										setInput({ change: true, value: e.target.value })
+									}
+								/>
+								<EditIcon<StateData>
+									icon={Icon.save}
+									stateFunction={setInput}
+									state={{
+										change: false,
+										value: input.value,
+									}}
+								/>
+							</>
+			) : (
 				<>
 					<Description>
 						{input.value}
@@ -22,28 +40,11 @@ export const AboutMe: React.FC = () => {
 							icon={Icon.edit}
 							stateFunction={setInput}
 							state={{
-								change: false,
+								change: true,
 								value: input.value,
 							}}
 						/>
 					</Description>
-				</>
-			) : (
-				<>
-					<EditDescription
-						value={input.value}
-						onChange={(e) =>
-							setInput({ change: false, value: e.target.value })
-						}
-					/>
-					<EditIcon<StateData>
-						icon={Icon.save}
-						stateFunction={setInput}
-						state={{
-							change: true,
-							value: input.value,
-						}}
-					/>
 				</>
 			)}
 		</>
