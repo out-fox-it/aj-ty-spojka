@@ -29,6 +29,9 @@ const NavAfterLogin = (
 		<StyledLink to="/contacts">
 			<StyledButton icon={PermContactCalendar} title="Kontakty" />
 		</StyledLink>
+		<StyledLink to="/testapi">
+			<StyledButton icon={PermContactCalendar} title="Testování API" />
+		</StyledLink>
 	</Wrapper>
 )
 
