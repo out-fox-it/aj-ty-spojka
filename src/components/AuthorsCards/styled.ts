@@ -1,5 +1,11 @@
 import styled from 'styled-components'
 
+// AuthorsCards images
+import jindrichmaca from '../../assets/AuthorsCards/jindrichmaca.jpg'
+import janachaloupkova from '../../assets/AuthorsCards/janachaloupkova.jpg'
+import martinavilimova from '../../assets/AuthorsCards/martinavilimova.jpeg'
+import tomashampl from '../../assets/AuthorsCards/tomashampl.jpg'
+
 export const Wrapper = styled.section`
 	display: grid;
 	grid-template-columns: 2fr 3fr 3fr 2fr;
@@ -40,14 +46,15 @@ export const AuthorsTitle = styled.h1`
 	}
 `
 
-export const Card = styled.div`
+export const Card = styled.article`
+	position: relative;
+	border: 1px solid ${({ theme }) => theme.text.secondary};
 	border-radius: 0.8em;
+	box-shadow: #00000070 0 4px 11px -1px, #00000070 0 4px 11px -1px inset;
 
 	// Positioning magic
-	display: inline-grid;
-	overflow: hidden;
 	height: 0;
-	padding-top: 56.25%;
+	padding-top: 56.25%; // 16:9
 
 	// Background Image styles
 	background-repeat: no-repeat;
@@ -55,26 +62,79 @@ export const Card = styled.div`
 	background-position: center;
 `
 
-export const CardContent = styled.div`
-	position: absolute;
-	width: fit-content;
-	height: fit-content;
-	z-index: -1; // Otherwise absolute position overlaps menu!
-`
-
+// Jindřich Máca
 export const Card1 = styled(Card)`
 	grid-area: card1;
-	background-image: url('https://files3.uloziste.com/cba70a4a1100133c/profile.jpg');
+	background-image: url(${jindrichmaca});
 `
+
+// Jana Chaloupková
 export const Card2 = styled(Card)`
 	grid-area: card2;
-	background-image: url('https://files3.uloziste.com/cba70a4a1100133c/profile.jpg');
+	background-image: url(${janachaloupkova});
 `
+
+// Martina Vilímová
 export const Card3 = styled(Card)`
 	grid-area: card3;
-	background-image: url('https://files3.uloziste.com/cba70a4a1100133c/profile.jpg');
+	background-image: url(${martinavilimova});
 `
+
+// Tomáš Hampl
 export const Card4 = styled(Card)`
 	grid-area: card4;
-	background-image: url('https://files3.uloziste.com/cba70a4a1100133c/profile.jpg');
+	background-image: url(${tomashampl});
+`
+
+export const CardContent = styled.section`
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	justify-content: space-between;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	flex-direction: column;
+`
+
+export const CardText = styled.div`
+	text-align: center;
+`
+
+export const CardTitle = styled.h2`
+	color: ${({ theme }) => theme.text.secondary};
+	text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+		-1px 1px 0 #000, 1px 1px 0 #000;
+	margin-bottom: 0;
+`
+
+export const CardSubtitle = styled.span`
+	text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+		-1px 1px 0 #000, 1px 1px 0 #000;
+
+	@media (max-width: 80em) {
+		display: none;
+	}
+`
+
+export const IconBar = styled.div`
+	display: flex;
+	flex-flow: row nowrap;
+	margin: 1em;
+	align-self: center;
+	gap: 0.5em;
+`
+
+export const CardIcon = styled.a`
+	color: ${({ theme }) => theme.text.primary};
+	background: ${({ theme }) => theme.bg.secondary};
+	border: 1px solid ${({ theme }) => theme.bg.secondary};
+	border-radius: 50%;
+	width: 1em;
+	padding: 0.5em;
+	align-self: center;
+
+	&:hover {
+		cursor: pointer;
+	}
 `
