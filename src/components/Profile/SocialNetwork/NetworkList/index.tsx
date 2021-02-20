@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
-import { SocialNetworkContext } from '../Context'
+import { ProfileContext } from '../../Context'
+import { List } from '../../styled'
 import { Network } from '../Network'
-import { List, NoNetworks } from './styled'
 
 export const NetworkList: React.FC = () => {
-	const { network } = useContext(SocialNetworkContext)
+	const { network } = useContext(ProfileContext)
+
 	return (
 		<>
 			{network.length ? (
@@ -20,7 +21,7 @@ export const NetworkList: React.FC = () => {
 					})}
 				</List>
 			) : (
-				<NoNetworks>Nemám žádné sociální sítě</NoNetworks>
+				<div>Žádné sociální sítě nejsou k dispozici</div>
 			)}
 		</>
 	)

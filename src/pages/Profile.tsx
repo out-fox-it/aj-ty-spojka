@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import ContentProfile from '../components/ContentProfile'
 import Footer from '../components/Footer'
+import ContentProfile from '../components/Profile'
 import NavBar from '../components/NavBar'
 import { getProfileData, RandomUser } from '../utils/getUserData'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { EmailAccount } from './styled'
+import { EmailAccount } from '../styled'
 
 interface Props {
 	email: string
