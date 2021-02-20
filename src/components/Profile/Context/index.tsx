@@ -1,5 +1,9 @@
-import React, { createContext, useState } from 'react'
-import { uuid } from 'uuidv4'
+import React, { createContext, useEffect, useState } from 'react'
+import { v4 as uuid } from 'uuid'
+
+type Props = {
+	addresses: NetworkType[]
+}
 
 type NetworkType = {
 	address: string
@@ -10,12 +14,10 @@ type ContexType = {
 	network: NetworkType[]
 	addNetwork: (text: string) => void
 	removeNetwork: (id: string) => void
-	findNetwork: (id: string) => void
 	editNetwork: (text: string, id: string) => void
-	editItem: NetworkType | null
 }
 
-export const SocialNetworkContext = createContext<ContexType>({
+export const ProfileContext = createContext<ContexType>({
 	network: [],
 	addNetwork: () => {
 		return
@@ -23,22 +25,16 @@ export const SocialNetworkContext = createContext<ContexType>({
 	removeNetwork: () => {
 		return
 	},
-	findNetwork: () => {
-		return
-	},
 	editNetwork: () => {
 		return
 	},
-	editItem: {
-		address: '',
-		id: '',
-	},
 })
 
-export const SocialNetworkContextProvider: React.FC = (props) => {
+export const ProfileContextProvider: React.FC<Props> = ({
+	addresses,
+	children,
+}) => {
 	const [network, setNetwork] = useState<NetworkType[]>([])
-
-	const [editItem, setEditItem] = useState<NetworkType | null>(null)
 
 	const addNetwork = (text: string) => {
 		setNetwork([...network, { address: text, id: uuid() }])
@@ -48,31 +44,27 @@ export const SocialNetworkContextProvider: React.FC = (props) => {
 		setNetwork(network.filter((item) => item.id !== id))
 	}
 
-	const findNetwork = (id: string) => {
-		const item = network.find((item) => item.id === id)
-		setEditItem(item || null)
-	}
-
 	const editNetwork = (text: string, id: string) => {
 		const newNetwork = network.map((item) =>
-			item.id === id ? { address: text, id: uuid() } : item
+			item.id === id ? { address: text, id } : item
 		)
 		setNetwork(newNetwork)
-		setEditItem(null)
 	}
 
+	useEffect(() => {
+		setNetwork(addresses)
+	}, [addresses])
+
 	return (
-		<SocialNetworkContext.Provider
+		<ProfileContext.Provider
 			value={{
 				network,
 				addNetwork,
 				removeNetwork,
-				findNetwork,
 				editNetwork,
-				editItem,
 			}}
 		>
-			{props.children}
-		</SocialNetworkContext.Provider>
+			{children}
+		</ProfileContext.Provider>
 	)
 }
