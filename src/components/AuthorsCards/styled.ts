@@ -46,11 +46,10 @@ export const AuthorsTitle = styled.h1`
 	}
 `
 
-export const Card = styled.article`
+const Card = styled.article`
 	position: relative;
-	border: 1px solid ${({ theme }) => theme.text.secondary};
-	border-radius: 0.8em;
 	box-shadow: #00000070 0 4px 11px -1px, #00000070 0 4px 11px -1px inset;
+	border: 1px solid black;
 
 	// Positioning magic
 	height: 0;
@@ -60,6 +59,33 @@ export const Card = styled.article`
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+
+	// Border animation effect on hover
+	@property --angle {
+		syntax: '<angle>';
+		initial-value: 0deg;
+		inherits: false;
+	}
+
+	@keyframes rotate {
+		from {
+			--angle: 0deg;
+		}
+		to {
+			--angle: 360deg;
+		}
+	}
+
+	&:hover {
+		border: 1px solid;
+		border-image: conic-gradient(
+				from var(--angle),
+				black,
+				${({ theme }) => theme.text.secondary}
+			)
+			1;
+		animation: 7s rotate linear infinite;
+	}
 `
 
 // Jindřich Máca
