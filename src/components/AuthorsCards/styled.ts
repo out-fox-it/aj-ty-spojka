@@ -2,22 +2,12 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.section`
 	display: grid;
-	grid-template-columns: 2fr 3fr 3fr 2fr;
+	grid-template-columns: 1fr 3fr 3fr 1fr;
+	grid-template-rows: auto;
 	grid-gap: 1.5em;
-	grid-template-areas:
-		'. title title .'
-		'. card1 card2 .'
-		'. card3 card4 .';
-	justify-content: stretch;
 
 	@media (max-width: 50em) {
 		grid-template-columns: 1fr;
-		grid-template-areas:
-			'title'
-			'card1'
-			'card2'
-			'card3'
-			'card4';
 		margin: 2em;
 		grid-gap: 2em;
 		padding: 1.5em;
@@ -31,7 +21,7 @@ export const Wrapper = styled.section`
 `
 
 export const AuthorsTitle = styled.h1`
-	grid-area: title;
+	grid-column: 2 / 4;
 	font-size: 2em;
 	text-align: center;
 
@@ -42,19 +32,34 @@ export const AuthorsTitle = styled.h1`
 
 type CardProps = {
 	image: string
-
-	index: number // TODO: Remove later
 }
 
 export const Card = styled.article<CardProps>`
+	&:nth-child(n) {
+		grid-column: 3 / 4;
+	}
+
+	&:nth-child(2n) {
+		grid-column: 2 / 3;
+	}
+
 	position: relative;
 	box-shadow: #00000070 0 4px 11px -1px, #00000070 0 4px 11px -1px inset;
 	border: 1px solid black;
-	grid-area: ${({ index }) => `card${index}`};
 
 	// Positioning magic
 	height: 0;
 	padding-top: 56.25%; // 16:9
+
+	@media (max-width: 50em) {
+		&:nth-child(n) {
+			grid-column: 1;
+		}
+
+		&:nth-child(2n) {
+			grid-column: 1;
+		}
+	}
 
 	// Background Image styles
 	background-repeat: no-repeat;
