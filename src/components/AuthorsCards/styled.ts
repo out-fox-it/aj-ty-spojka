@@ -1,11 +1,5 @@
 import styled from 'styled-components'
 
-// AuthorsCards images
-import jindrichmaca from '../../assets/AuthorsCards/jindrichmaca.jpg'
-import janachaloupkova from '../../assets/AuthorsCards/janachaloupkova.jpg'
-import martinavilimova from '../../assets/AuthorsCards/martinavilimova.jpeg'
-import tomashampl from '../../assets/AuthorsCards/tomashampl.jpg'
-
 export const Wrapper = styled.section`
 	display: grid;
 	grid-template-columns: 2fr 3fr 3fr 2fr;
@@ -46,10 +40,17 @@ export const AuthorsTitle = styled.h1`
 	}
 `
 
-const Card = styled.article`
+type CardProps = {
+	image: string
+
+	index: number // TODO: Remove later
+}
+
+export const Card = styled.article<CardProps>`
 	position: relative;
 	box-shadow: #00000070 0 4px 11px -1px, #00000070 0 4px 11px -1px inset;
 	border: 1px solid black;
+	grid-area: ${({ index }) => `card${index}`};
 
 	// Positioning magic
 	height: 0;
@@ -59,6 +60,7 @@ const Card = styled.article`
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+	background-image: url(${({ image }) => image});
 
 	// Border animation effect on hover
 	@property --angle {
@@ -86,30 +88,6 @@ const Card = styled.article`
 			1;
 		animation: 7s rotate linear infinite;
 	}
-`
-
-// Jindřich Máca
-export const Card1 = styled(Card)`
-	grid-area: card1;
-	background-image: url(${jindrichmaca});
-`
-
-// Jana Chaloupková
-export const Card2 = styled(Card)`
-	grid-area: card2;
-	background-image: url(${janachaloupkova});
-`
-
-// Martina Vilímová
-export const Card3 = styled(Card)`
-	grid-area: card3;
-	background-image: url(${martinavilimova});
-`
-
-// Tomáš Hampl
-export const Card4 = styled(Card)`
-	grid-area: card4;
-	background-image: url(${tomashampl});
 `
 
 export const CardContent = styled.section`
