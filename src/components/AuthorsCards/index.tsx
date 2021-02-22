@@ -18,7 +18,7 @@ const AuthorsCards: React.FC = () => (
 		<AuthorsTitle>PROGRAMÁTOŘI (ČTI: KOUZELNÍCI)</AuthorsTitle>
 
 		{cardsData.map((cardData, index) => (
-			<Card key={index} index={(index % 4) + 1} image={cardData.image}>
+			<Card key={index} image={cardData.image}>
 				<CardContent>
 					<CardText>
 						<CardTitle>{cardData.cardTitle}</CardTitle>
