@@ -19,6 +19,15 @@ export const Wrapper = styled.nav`
 export const StyledButton = styled(Button)`
 	width: 100%;
 	height: 100%;
+
+	@media (min-width: 50em) {
+		border: none;
+
+		&:hover {
+			background-color: ${({ theme }) => theme.bg.secondary};
+			color: ${({ theme }) => theme.text.link};
+		}
+	}
 `
 
 export const StyledLink = styled(Link)`

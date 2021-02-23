@@ -2,31 +2,24 @@ import { DefaultTheme } from 'styled-components'
 
 export const DarkTheme: DefaultTheme = {
 	bg: {
-		primary: '#264653' /* japanese indigo */,
-		secondary: '#2a9d8f' /* jungle green */,
-		buttonBackground: '#1f6f66' /* viridian green */,
+		primary: '#2a2a2a' /* light gray */,
+		secondary: '#242424' /* dark gray */,
 	},
 	text: {
 		primary: '#ffffff' /* white */,
-		secondary: '#e9c46a' /* hansa yellow */,
-		link: '#f4a261' /* light red ochre */,
-		true: '#30c551' /* for validation - true */,
-		false: '#f46161' /* for validation - false */,
+		secondary: '#fdd269' /* yellow */,
+		link: '#7184c7' /* dark blue */,
 	},
 }
 
-// TODO: Define light theme color
 export const LightTheme: DefaultTheme = {
 	bg: {
-		primary: '#ffffff',
-		secondary: '#ffffff',
-		buttonBackground: '#ffffff',
+		primary: '#ffffff' /* white */,
+		secondary: '#bccbff' /* light blue */,
 	},
 	text: {
-		primary: '#000000',
-		secondary: '#000000',
-		link: '#000000',
-		true: '#30c551' /* for validation - true */,
-		false: '#f46161' /* for validation - false */,
+		primary: '#000000' /* black */,
+		secondary: '#fdd269' /* yellow */,
+		link: '#7184c7' /* dark blue */,
 	},
 }

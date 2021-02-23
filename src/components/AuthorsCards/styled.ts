@@ -45,7 +45,7 @@ export const Card = styled.article<CardProps>`
 
 	position: relative;
 	box-shadow: #00000070 0 4px 11px -1px, #00000070 0 4px 11px -1px inset;
-	border: 1px solid black;
+	border: 2px solid #000;
 
 	// Positioning magic
 	height: 0;
@@ -84,11 +84,11 @@ export const Card = styled.article<CardProps>`
 	}
 
 	&:hover {
-		border: 1px solid;
+		border: 2px solid;
 		border-image: conic-gradient(
 				from var(--angle),
 				black,
-				${({ theme }) => theme.text.secondary}
+				${({ theme }) => theme.text.link}
 			)
 			1;
 		animation: 7s rotate linear infinite;
@@ -118,6 +118,7 @@ export const CardTitle = styled.h2`
 `
 
 export const CardSubtitle = styled.span`
+	color: white;
 	text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
 		-1px 1px 0 #000, 1px 1px 0 #000;
 
@@ -136,8 +137,7 @@ export const IconBar = styled.div`
 
 export const CardIcon = styled.a`
 	color: ${({ theme }) => theme.text.primary};
-	background: ${({ theme }) => theme.bg.secondary};
-	border: 1px solid ${({ theme }) => theme.bg.secondary};
+	background-color: ${({ theme }) => theme.bg.secondary};
 	border-radius: 50%;
 	width: 1em;
 	padding: 0.5em;
@@ -145,5 +145,6 @@ export const CardIcon = styled.a`
 
 	&:hover {
 		cursor: pointer;
+		background-color: ${({ theme }) => theme.text.link};
 	}
 `

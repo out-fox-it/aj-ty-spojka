@@ -18,6 +18,7 @@ export const GlobalStyles = createGlobalStyle`
 	}
 
 	h1 {
+		color: ${({ theme }) => theme.text.secondary};
 		font-size: 2em;
 		text-align: center;
 	}

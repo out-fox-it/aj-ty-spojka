@@ -27,16 +27,16 @@ export const StyledButton = styled.button`
 	padding: 0.6em 1em;
 
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	color: ${({ theme }) => theme.text.secondary};
-	background-color: ${({ theme }) => theme.bg.buttonBackground};
+	color: ${({ theme }) => theme.text.primary};
+	background-color: ${({ theme }) => theme.bg.secondary};
 	cursor: pointer;
 
-	border: 0.1em solid ${({ theme }) => theme.bg.secondary};
+	border: 0.1em solid ${({ theme }) => theme.text.link};
 	border-radius: 0.8em;
 	outline: none;
 
 	&:hover {
-		color: ${({ theme }) => theme.bg.primary};
-		background-color: ${({ theme }) => theme.text.secondary};
+		background-color: ${({ theme }) => theme.text.link};
+		color: ${({ theme }) => theme.text.primary};
 	}
 `

@@ -29,7 +29,7 @@ export const Slider = styled.span`
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #ccc;
+	background-color: ${({ theme }) => theme.text.link};
 	-webkit-transition: 0.4s;
 	transition: 0.4s;
 
@@ -64,11 +64,11 @@ export const Checkbox = styled.input.attrs((props) => ({
 	height: 0;
 
 	&:checked + ${Slider} {
-		background-color: ${({ theme }) => theme.bg.secondary};
+		background-color: ${({ theme }) => theme.text.link};
 	}
 
 	&:focus + ${Slider} {
-		box-shadow: 0 0 1px ${({ theme }) => theme.bg.secondary};
+		box-shadow: 0 0 1px ${({ theme }) => theme.text.link};
 	}
 
 	&:checked + ${Slider}:before {

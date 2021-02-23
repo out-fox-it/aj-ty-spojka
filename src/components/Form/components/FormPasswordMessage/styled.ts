@@ -12,7 +12,9 @@ export const PasswordMessage = styled.div`
 export const ValidPassword = styled.p<{ validPassword?: boolean }>`
 	margin: 0;
 	color: ${(props) =>
-		props?.validPassword ? props.theme.text.true : props.theme.text.false};
+		props?.validPassword
+			? props.theme.text.link
+			: props.theme.text.secondary};
 
 	&:before {
 		position: relative;
