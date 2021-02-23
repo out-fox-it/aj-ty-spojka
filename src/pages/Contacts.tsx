@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../components/Footer'
 
 // Components
 import Message, { MessageData, MessageType } from '../components/Message'
@@ -109,6 +110,7 @@ const Contacts: React.FC = () => {
 					</MessageBoxBorder>
 				))}
 			</Wrapper>
+			<Footer />
 		</>
 	)
 }
