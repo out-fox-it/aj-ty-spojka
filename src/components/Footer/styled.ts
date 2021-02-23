@@ -6,7 +6,7 @@ export const Wrapper = styled.footer`
 	right: 0;
 	left: 0;
 	padding-top: 1em;
-	margin-top: 1em;
+	padding-bottom: 1em;
 	text-align: center;
 	z-index: -1; // Otherwise absolute position overlaps menu!
 
