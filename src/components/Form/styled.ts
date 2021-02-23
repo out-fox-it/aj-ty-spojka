@@ -5,11 +5,9 @@ import { StyledButton } from '../Button/styled'
 export const Form = styled.form`
 	display: grid;
 	grid-template-columns: 3fr 1fr 3fr 3fr;
-	padding: 2em;
 
 	@media (max-width: 75em) {
 		grid-template-columns: 1fr 5fr 1fr;
-		padding: 0em;
 	}
 `
 
@@ -94,7 +92,7 @@ export const Errors = styled.span`
 	grid-column: 2 / 4;
 	margin: 0;
 	text-align: center;
-	color: ${({ theme }) => theme.text.false};
+	color: ${({ theme }) => theme.text.secondary};
 
 	@media (max-width: 75em) {
 		grid-column: 2;

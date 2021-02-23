@@ -26,7 +26,7 @@ export const MessageBoxBorder = styled.div`
 	width: 80%;
 	padding: 2em;
 	margin: 2em;
-	border: 0.1em solid ${({ theme }) => theme.bg.secondary};
+	border: 0.3em solid ${({ theme }) => theme.bg.secondary};
 	border-radius: 0.8em;
 
 	@media (max-width: 80em) {
@@ -55,7 +55,7 @@ export const MessageBox = styled.div`
 `
 
 export const MessageAvatar = styled.div`
-	border: 0.4em solid ${({ theme }) => theme.bg.secondary};
+	border: 0.4em solid ${({ theme }) => theme.text.link};
 	border-radius: 50%;
 	width: 5vw;
 	height: 5vw;
@@ -96,8 +96,8 @@ export const MessageButton = styled(StyledButton)``
 
 export const BreakLine = styled.hr`
 	margin: 1.5em;
-	height: 0.15em;
-	background-color: #e9c46a;
+	height: 0.3em;
+	background-color: ${({ theme }) => theme.bg.secondary};
 	border-width: 0;
 	border-radius: 50%;
 

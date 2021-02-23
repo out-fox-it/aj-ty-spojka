@@ -22,6 +22,6 @@ export const FooterText = styled.p`
 `
 
 export const FooterLink = styled(Link)`
-	color: ${({ theme }) => theme.text.secondary};
+	color: ${({ theme }) => theme.text.link};
 	text-decoration: none;
 `

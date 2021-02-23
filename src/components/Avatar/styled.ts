@@ -14,5 +14,5 @@ export const Picture = styled.img`
 
 export const Icon = styled(User)`
 	${border};
-	background-color: ${({ theme }) => theme.bg.buttonBackground};
+	background-color: ${({ theme }) => theme.bg.primary};
 `
