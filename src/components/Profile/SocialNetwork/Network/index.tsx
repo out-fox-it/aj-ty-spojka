@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Edit } from '../../styled'
 import { ProfileContext } from '../../Context'
-import { Check, PencilAlt } from '@styled-icons/fa-solid'
-import { DeleteOutline } from '@styled-icons/material-outlined'
+import { Check, PencilAlt, Times } from '@styled-icons/fa-solid'
 import { Input } from '../../styled'
 
 type Props = {
@@ -28,7 +27,7 @@ export const Network: React.FC<Props> = ({ address, id }) => {
 						<PencilAlt />
 					</Edit>
 					<Edit onClick={() => removeNetwork(id)}>
-						<DeleteOutline />
+						<Times />
 					</Edit>
 				</li>
 			) : (
@@ -47,7 +46,7 @@ export const Network: React.FC<Props> = ({ address, id }) => {
 						<Check />
 					</Edit>
 					<Edit onClick={() => removeNetwork(id)}>
-						<DeleteOutline />
+						<Times />
 					</Edit>
 				</form>
 			)}
