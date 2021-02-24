@@ -1,7 +1,12 @@
 import React from 'react'
 import { StyledButton, Wrapper, StyledLink } from './styled'
-import { UserEdit, Users } from '@styled-icons/fa-solid'
-import { PermContactCalendar } from '@styled-icons/material-rounded'
+import {
+	UserEdit,
+	Users,
+	UserPlus,
+	UserLock,
+	IdCard,
+} from '@styled-icons/fa-solid'
 
 interface Props {
 	login: boolean
@@ -10,10 +15,10 @@ interface Props {
 const NavBeforeLogin = (
 	<Wrapper>
 		<StyledLink to="/register">
-			<StyledButton icon={UserEdit} title="Registrace" />
+			<StyledButton icon={UserPlus} title="Registrace" />
 		</StyledLink>
 		<StyledLink to="/login">
-			<StyledButton icon={PermContactCalendar} title="Přihlášení" />
+			<StyledButton icon={UserLock} title="Přihlášení" />
 		</StyledLink>
 	</Wrapper>
 )
@@ -27,7 +32,7 @@ const NavAfterLogin = (
 			<StyledButton icon={Users} title="Matching" />
 		</StyledLink>
 		<StyledLink to="/contacts">
-			<StyledButton icon={PermContactCalendar} title="Kontakty" />
+			<StyledButton icon={IdCard} title="Kontakty" />
 		</StyledLink>
 	</Wrapper>
 )

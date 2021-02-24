@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { User } from '@styled-icons/entypo/User'
+import { UserCircle } from '@styled-icons/fa-solid'
 
 const border = css`
 	border: 0.2em solid ${({ theme }) => theme.text.primary};
@@ -12,7 +12,7 @@ export const Picture = styled.img`
 	background-size: cover;
 `
 
-export const Icon = styled(User)`
+export const Icon = styled(UserCircle)`
 	${border};
 	background-color: ${({ theme }) => theme.bg.primary};
 `
