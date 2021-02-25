@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import Footer from '../components/Footer'
-import ContentProfile from '../components/Profile'
-import NavBar from '../components/NavBar'
 import { getProfileData, RandomUser } from '../utils/getUserData'
+
+// Components
+import NavBar from '../components/NavBar'
+import Page from '../components/Page'
+import ContentProfile from '../components/Profile'
+import Footer from '../components/Footer'
 
 const Profile: React.FC = () => {
 	const [userData, setUserData] = useState<RandomUser | null>(null)
@@ -21,7 +24,9 @@ const Profile: React.FC = () => {
 	return (
 		<>
 			<NavBar login={true} />
-			<ContentProfile fullName={fullName} email={email} />
+			<Page>
+				<ContentProfile fullName={fullName} email={email} />
+			</Page>
 			<Footer />
 		</>
 	)

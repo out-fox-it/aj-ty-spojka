@@ -1,15 +1,7 @@
 import styled from 'styled-components'
 import { StyledButton } from '../Button/styled'
 
-export const Wrapper = styled.section`
-	display: grid;
-	grid-template-columns: 1fr 5fr 1fr;
-	justify-items: center;
-	justify-content: center;
-`
-
 export const MessageBoxTitle = styled.h1`
-	grid-column: 2;
 	font-size: 1.8rem;
 	text-align: center;
 	margin: 0;
@@ -22,24 +14,14 @@ export const MessageBoxTitle = styled.h1`
 `
 
 export const MessageBoxBorder = styled.div`
-	grid-column: 2;
-	width: 80%;
-	padding: 2em;
-	margin: 2em;
+	padding: 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
 	border: 0.3em solid ${({ theme }) => theme.bg.secondary};
 	border-radius: 0.8em;
 
-	@media (max-width: 80em) {
-		width: 75%;
-	}
-
 	@media (max-width: 50em) {
-		grid-template-columns: 1fr;
-		width: 50%;
-		padding-left: 0.5em;
-		padding-right: 0.5em;
-		padding-top: 1.5em;
-		padding-bottom: 1.5em;
+		margin: 1em;
 	}
 `
 

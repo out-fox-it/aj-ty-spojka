@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-	Wrapper,
 	HomeSection,
 	HomeParagraph,
 	HomePictureLeft,
@@ -14,7 +13,7 @@ import czechtech20191 from '../../assets/Home/czechtech2019-1.jpg'
 import linuxdays20191 from '../../assets/Home/linuxdays2019-1.jpg'
 
 export const ContentHome: React.FC = () => (
-	<Wrapper>
+	<>
 		<HomeSection>
 			<HomePictureLeft
 				src={czechtech20191}
@@ -91,7 +90,7 @@ export const ContentHome: React.FC = () => (
 				title="Linux Days, ČVUT, Praha 2019"
 			/>
 		</HomeSection>
-	</Wrapper>
+	</>
 )
 
 export default ContentHome

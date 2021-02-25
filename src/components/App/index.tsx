@@ -4,20 +4,22 @@ import ThemeProvider from '../Theme'
 import { GlobalStyles } from './styled'
 
 // Pages
-import Home from '../../pages/Home'
-import Profile from '../../pages/Profile'
-import Login from '../../pages/Login'
-import Contacts from '../../pages/Contacts'
-import Register from '../../pages/Register'
 import Authors from '../../pages/Authors'
+import Contacts from '../../pages/Contacts'
+import Login from '../../pages/Login'
+import Matching from '../../pages/Matching'
+import Profile from '../../pages/Profile'
+import Register from '../../pages/Register'
+import Home from '../../pages/Home'
 
 const Routes: React.FC = () => (
 	<Switch>
 		<Route path="/authors" component={Authors} />
+		<Route path="/contacts" component={Contacts} />
 		<Route path="/login" component={Login} />
+		<Route path="/matching" component={Matching} />
 		<Route path="/profile" component={Profile} />
 		<Route path="/register" component={Register} />
-		<Route path="/contacts" component={Contacts} />
 		<Route path="/" component={Home} />
 	</Switch>
 )

@@ -1,14 +1,11 @@
 import React from 'react'
-import Footer from '../components/Footer'
+import Message, { MessageData, MessageType } from '../components/Message'
+import { MessageBoxBorder, MessageBoxTitle } from '../components/Message/styled'
 
 // Components
-import Message, { MessageData, MessageType } from '../components/Message'
-import {
-	MessageBoxBorder,
-	MessageBoxTitle,
-	Wrapper,
-} from '../components/Message/styled'
 import NavBar from '../components/NavBar'
+import Page from '../components/Page'
+import Footer from '../components/Footer'
 
 // TODO: Discard fakeMessages when our own API is ready
 const fakeMessages: MessageData[] = [
@@ -93,7 +90,7 @@ const Contacts: React.FC = () => {
 	return (
 		<>
 			<NavBar login={true} />
-			<Wrapper>
+			<Page>
 				{/* TODO: Add message in case of no messages in any cathegory */}
 				{/* TODO: Handle new/unread messages style and notifications */}
 				{Object.entries(messagesGroups).map(([type, messages]) => (
@@ -109,7 +106,7 @@ const Contacts: React.FC = () => {
 						))}
 					</MessageBoxBorder>
 				))}
-			</Wrapper>
+			</Page>
 			<Footer />
 		</>
 	)

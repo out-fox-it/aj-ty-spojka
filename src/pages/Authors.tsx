@@ -1,16 +1,19 @@
 import React from 'react'
 
 // Components
+import NavBar from '../components/NavBar'
+import Page from '../components/Page'
 import AuthorsCards from '../components/AuthorsCards'
 import Footer from '../components/Footer'
-import NavBar from '../components/NavBar'
 
 const Authors: React.FC = () => {
 	return (
 		<>
 			{/* TODO: This should be visible both before and after login! */}
 			<NavBar login={false} />
-			<AuthorsCards />
+			<Page>
+				<AuthorsCards />
+			</Page>
 			<Footer />
 		</>
 	)
