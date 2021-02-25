@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-	Wrapper,
+	CardsWrapper,
 	AuthorsTitle,
 	Card,
 	CardContent,
@@ -14,7 +14,7 @@ import { LinkedinIn, Github, Instagram } from '@styled-icons/fa-brands'
 import { cardsData } from './data'
 
 const AuthorsCards: React.FC = () => (
-	<Wrapper>
+	<CardsWrapper>
 		<AuthorsTitle>PROGRAMÁTOŘI (ČTI: KOUZELNÍCI)</AuthorsTitle>
 
 		{cardsData.map((cardData, index) => (
@@ -50,7 +50,7 @@ const AuthorsCards: React.FC = () => (
 				</CardContent>
 			</Card>
 		))}
-	</Wrapper>
+	</CardsWrapper>
 )
 
 export default AuthorsCards

@@ -6,9 +6,6 @@ export const Wrapper = styled.nav`
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 2em;
-
-	position: relative;
-	top: -10em;
 `
 
 export const StyledButton = styled(Button)`

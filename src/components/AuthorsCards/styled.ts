@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.section`
+export const CardsWrapper = styled.section`
 	display: grid;
-	grid-template-columns: 1fr 3fr 3fr 1fr;
+	grid-template-columns: 3fr 3fr;
 	grid-template-rows: auto;
 	grid-gap: 1.5em;
 
@@ -21,7 +21,7 @@ export const Wrapper = styled.section`
 `
 
 export const AuthorsTitle = styled.h1`
-	grid-column: 2 / 4;
+	grid-column: 1 / 3;
 	font-size: 2em;
 	text-align: center;
 
@@ -36,11 +36,11 @@ type CardProps = {
 
 export const Card = styled.article<CardProps>`
 	&:nth-child(n) {
-		grid-column: 3 / 4;
+		grid-column: 2 / 3;
 	}
 
 	&:nth-child(2n) {
-		grid-column: 2 / 3;
+		grid-column: 1 / 2;
 	}
 
 	position: relative;
