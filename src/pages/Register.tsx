@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 // Components
 import NavBar from '../components/NavBar'
 import SubmitMessage from '../components/RegisterForm/RegistrationMessage'
+import Page from '../components/Page'
 import RegisterForm from '../components/RegisterForm'
 import Footer from '../components/Footer'
 
@@ -12,11 +13,13 @@ const Register: React.FC = () => {
 	return (
 		<>
 			<NavBar login={false} />
-			{isSuccessful ? (
-				<SubmitMessage />
-			) : (
-				<RegisterForm onSuccess={() => setSuccessful(true)} />
-			)}
+			<Page>
+				{isSuccessful ? (
+					<SubmitMessage />
+				) : (
+					<RegisterForm onSuccess={() => setSuccessful(true)} />
+				)}
+			</Page>
 			<Footer />
 		</>
 	)
