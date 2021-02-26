@@ -6,6 +6,7 @@ import { MessageBoxBorder, MessageBoxTitle } from '../components/Message/styled'
 import NavBar from '../components/NavBar'
 import Page from '../components/Page'
 import Footer from '../components/Footer'
+import { TitleH1 } from '../components/Title'
 
 // TODO: Discard fakeMessages when our own API is ready
 const fakeMessages: MessageData[] = [
@@ -93,6 +94,7 @@ const Contacts: React.FC = () => {
 			<Page>
 				{/* TODO: Add message in case of no messages in any cathegory */}
 				{/* TODO: Handle new/unread messages style and notifications */}
+				<TitleH1 changeColor="darkBlue">ZPRÁVY A UPOZORNĚNÍ</TitleH1>
 				{Object.entries(messagesGroups).map(([type, messages]) => (
 					<MessageBoxBorder key={type} hidden={messages.length === 0}>
 						<MessageBoxTitle>

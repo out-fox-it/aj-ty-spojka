@@ -17,10 +17,4 @@ export const GlobalStyles = createGlobalStyle`
 			padding-bottom: 5em;
 		}
 	}
-
-	h1 {
-		color: ${({ theme }) => theme.text.secondary};
-		font-size: 2em;
-		text-align: center;
-	}
 `

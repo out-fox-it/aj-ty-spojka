@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Button from '../Button'
+import { TitleH1 } from '../Title'
 
 export const ProfileContent = styled.section`
 	display: flex;
@@ -8,11 +9,11 @@ export const ProfileContent = styled.section`
 	gap: 1.5em;
 `
 
-export const ProfileName = styled.h1`
+export const ProfileName = styled(TitleH1)`
 	display: flex;
-	align-items: center;
 	margin: 1em 0 0 0;
 	justify-content: center;
+	text-transform: none;
 `
 
 export const EmailAccount = styled.span`

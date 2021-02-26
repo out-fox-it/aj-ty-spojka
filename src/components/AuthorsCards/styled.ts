@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { TitleH1 } from '../Title'
 
 export const CardsWrapper = styled.section`
 	display: grid;
@@ -20,10 +21,8 @@ export const CardsWrapper = styled.section`
 	}
 `
 
-export const AuthorsTitle = styled.h1`
+export const AuthorsTitle = styled(TitleH1)`
 	grid-column: 1 / 3;
-	font-size: 2em;
-	text-align: center;
 
 	@media (max-width: 50em) {
 		grid-column: 1;
