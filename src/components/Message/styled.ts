@@ -1,12 +1,9 @@
 import styled from 'styled-components'
 import { StyledButton } from '../Button/styled'
+import { TitleH2 } from '../Title'
 
-export const MessageBoxTitle = styled.h1`
-	font-size: 1.8rem;
-	text-align: center;
+export const MessageBoxTitle = styled(TitleH2)`
 	margin: 0;
-	text-transform: uppercase;
-	color: ${({ theme }) => theme.text.secondary};
 
 	@media (max-width: 50em) {
 		margin-bottom: 0.7em;
