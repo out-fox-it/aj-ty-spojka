@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { StyledButton } from '../Button/styled'
+import { TitleH1 } from '../Title'
 
 export const Form = styled.form`
 	display: grid;
@@ -11,10 +12,8 @@ export const Form = styled.form`
 	}
 `
 
-export const FormTitle = styled.h1`
+export const FormTitle = styled(TitleH1)`
 	grid-column: 2 / 4;
-	font-size: 2em;
-	text-align: center;
 
 	@media (max-width: 75em) {
 		grid-column: 2;
