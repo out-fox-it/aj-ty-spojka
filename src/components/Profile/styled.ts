@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { MediaQueries } from '../../themes'
 import Button from '../Button'
-import { TitleH1 } from '../Title'
+import { TitleH1 } from '../StyledText/StyledTitle'
 
 export const ProfileContent = styled.section`
 	display: flex;

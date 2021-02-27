@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { MediaQueries } from '../../themes'
 import { StyledButton } from '../Button/styled'
-import { StyledLink } from '../Link'
-import { TitleH1 } from '../Title'
+import { StyledLink } from '../StyledText/StyledLink'
+import { TitleH1 } from '../StyledText/StyledTitle'
 
 export const Form = styled.form`
 	display: grid;

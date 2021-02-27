@@ -6,7 +6,7 @@ import { MessageBoxBorder, MessageBoxTitle } from '../components/Message/styled'
 import NavBar from '../components/NavBar'
 import Page from '../components/Page'
 import Footer from '../components/Footer'
-import { TitleH1 } from '../components/Title'
+import { TitleH1 } from '../components/StyledText/StyledTitle'
 
 // TODO: Discard fakeMessages when our own API is ready
 const fakeMessages: MessageData[] = [
