@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { StyledButton } from '../Button/styled'
+import { StyledLink } from '../Link'
 import { TitleH1 } from '../Title'
 
 export const Form = styled.form`
@@ -66,11 +66,9 @@ export const FormCheck = styled.input`
 	transform: scale(1.5);
 `
 
-export const FormLink = styled(Link)`
+export const FormLink = styled(StyledLink)`
 	color: ${({ theme }) => theme.text.primary};
 	grid-column: 2 / 4;
-	text-decoration: none;
-	text-align: center;
 	margin: 1em;
 
 	@media (max-width: 75em) {

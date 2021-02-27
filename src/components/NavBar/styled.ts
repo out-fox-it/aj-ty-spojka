@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import { StyledLink } from '../Link'
 import { Theme } from '../Theme'
 
 export const Wrapper = styled.header`
@@ -23,7 +23,7 @@ type Props = {
 	setColor: string
 }
 
-export const StyledLink = styled(Link)<Props>`
+export const NavBarLink = styled(StyledLink)<Props>`
 	color: ${({ setColor }) =>
 		setColor === Theme.Light
 			? ({ theme }) => theme.text.link

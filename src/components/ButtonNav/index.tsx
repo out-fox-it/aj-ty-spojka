@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyledButton, Wrapper, StyledLink } from './styled'
+import { StyledButton, Wrapper, ButtonLink } from './styled'
 import {
 	UserEdit,
 	Users,
@@ -15,16 +15,16 @@ interface Props {
 
 export const NavBeforeLogin = (theme: Theme): React.ReactElement => (
 	<Wrapper>
-		<StyledLink to="/register">
+		<ButtonLink to="/register">
 			<StyledButton setColor={theme} icon={UserPlus} title="Registrace" />
-		</StyledLink>
-		<StyledLink to="/login">
+		</ButtonLink>
+		<ButtonLink to="/login">
 			<StyledButton setColor={theme} icon={UserLock} title="Přihlášení" />
 			<StyledButton setColor={theme} icon={UserEdit} title="Registrace" />
-		</StyledLink>
-		<StyledLink to="/login">
+		</ButtonLink>
+		<ButtonLink to="/login">
 			<StyledButton setColor={theme} icon={IdCard} title="Přihlášení" />
-		</StyledLink>
+		</ButtonLink>
 	</Wrapper>
 )
 
@@ -33,19 +33,19 @@ export const NavAfterLogin: React.FC = () => {
 
 	return (
 		<Wrapper>
-			<StyledLink to="/profile">
+			<ButtonLink to="/profile">
 				<StyledButton
 					setColor={theme}
 					icon={UserEdit}
 					title="Můj profil"
 				/>
-			</StyledLink>
-			<StyledLink to="/matching">
+			</ButtonLink>
+			<ButtonLink to="/matching">
 				<StyledButton setColor={theme} icon={Users} title="Matching" />
-			</StyledLink>
-			<StyledLink to="/contacts">
+			</ButtonLink>
+			<ButtonLink to="/contacts">
 				<StyledButton setColor={theme} icon={IdCard} title="Kontakty" />
-			</StyledLink>
+			</ButtonLink>
 		</Wrapper>
 	)
 }
