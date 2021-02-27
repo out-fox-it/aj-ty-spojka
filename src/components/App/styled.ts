@@ -6,16 +6,22 @@ export const GlobalStyles = createGlobalStyle`
 		box-sizing: border-box;
 		width: 100%;
 		margin: 0 auto;
-		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-			'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-			'Helvetica Neue', sans-serif;
+		background-color: ${({ theme }) => theme.bg.primary};
+	
+		// Font settings
+		color: ${({ theme }) => theme.text.primary};
+		font-family: -apple-system, BlinkMacSystemFont, 
+		'TimesNewRoman', 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif; 
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		color: ${({ theme }) => theme.text.primary};
-		background-color: ${({ theme }) => theme.bg.primary};
 		
 		@media (max-width: ${MediaQueries.Ipad}) {
 			padding-bottom: 5em;
 		}
+	}
+
+	button, input, text-area {
+		font-family: -apple-system, BlinkMacSystemFont, 
+		'TimesNewRoman', 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif; 
 	}
 `

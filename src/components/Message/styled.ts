@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { MediaQueries } from '../../themes'
+import { FontSizes, MediaQueries } from '../../themes'
 import { StyledButton } from '../Button/styled'
 import { StyledParagraph } from '../StyledText/StyledParagraph'
 import { TitleH2 } from '../StyledText/StyledTitle'
@@ -13,7 +13,7 @@ export const MessageBoxTitle = styled(TitleH2)`
 `
 
 export const MessageBoxBorder = styled.div`
-	padding: 1em;
+	padding: 1.5em;
 	margin-top: 1em;
 	margin-bottom: 1em;
 	border: 0.3em solid ${({ theme }) => theme.bg.secondary};
@@ -38,8 +38,8 @@ export const MessageBox = styled.div`
 export const MessageAvatar = styled.div`
 	border: 0.4em solid ${({ theme }) => theme.text.link};
 	border-radius: 50%;
-	width: 5vw;
-	height: 5vw;
+	width: 4vw;
+	height: 4vw;
 
 	@media (max-width: ${MediaQueries.Ipad}) {
 		width: 11vw;
@@ -73,7 +73,9 @@ export const ButtonBox = styled.div`
 	row-gap: 1em;
 `
 
-export const MessageButton = styled(StyledButton)``
+export const MessageButton = styled(StyledButton)`
+	font-size: ${FontSizes.ButtonSmall};
+`
 
 export const BreakLine = styled.hr`
 	margin: 1.5em;

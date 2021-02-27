@@ -2,7 +2,6 @@ import React from 'react'
 import { StyledIcon } from '@styled-icons/styled-icon'
 import {
 	WrapperIcon,
-	ButtonSubtitle,
 	ButtonTitle,
 	ButtonTitleSmall,
 	StyledButton,
@@ -38,7 +37,6 @@ const Button: React.FC<Props> = ({
 		{icon && <WrapperIcon>{React.createElement(icon)}</WrapperIcon>}
 		{title && <ButtonTitle>{title}</ButtonTitle>}
 		{titleSmall && <ButtonTitleSmall>{titleSmall}</ButtonTitleSmall>}
-		{subtitle && <ButtonSubtitle>{subtitle}</ButtonSubtitle>}
 	</StyledButton>
 )
 

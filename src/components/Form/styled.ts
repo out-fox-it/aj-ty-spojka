@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { MediaQueries } from '../../themes'
+import { FontSizes, MediaQueries } from '../../themes'
 import { StyledButton } from '../Button/styled'
 import { StyledLink } from '../StyledText/StyledLink'
 import { TitleH1 } from '../StyledText/StyledTitle'
@@ -23,6 +23,7 @@ export const FormTitle = styled(TitleH1)`
 
 export const FormItem = styled.div`
 	grid-column: 2 / 4;
+	font-size: ${FontSizes.SizeDefault};
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
@@ -34,6 +35,7 @@ export const FormItem = styled.div`
 `
 
 export const FormInput = styled.input`
+	font-size: ${FontSizes.SizeSmall};
 	position: relative;
 	margin: 1em;
 	padding: 0.7em;
@@ -68,6 +70,7 @@ export const FormCheck = styled.input`
 `
 
 export const FormLink = styled(StyledLink)`
+	font-size: ${FontSizes.SizeDefault};
 	color: ${({ theme }) => theme.text.primary};
 	grid-column: 2 / 4;
 	margin: 1em;
@@ -87,6 +90,7 @@ export const Label = styled.label`
 `
 
 export const Errors = styled.span`
+	font-size: ${FontSizes.SizeDefault};
 	grid-column: 2 / 4;
 	margin: 0;
 	text-align: center;

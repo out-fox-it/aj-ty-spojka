@@ -34,11 +34,7 @@ export const NavAfterLogin: React.FC = () => {
 	return (
 		<Wrapper>
 			<ButtonLink to="/profile">
-				<StyledButton
-					setColor={theme}
-					icon={UserEdit}
-					title="Můj profil"
-				/>
+				<StyledButton setColor={theme} icon={UserEdit} title="Profil" />
 			</ButtonLink>
 			<ButtonLink to="/matching">
 				<StyledButton setColor={theme} icon={Users} title="Matching" />
