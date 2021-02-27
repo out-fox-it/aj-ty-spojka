@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import Button from '../Button'
+import { StyledLink } from '../Link'
 import { Theme } from '../Theme'
 
 export const Wrapper = styled.nav`
@@ -38,8 +38,7 @@ export const StyledButton = styled(Button)<Props>`
 	}
 `
 
-export const StyledLink = styled(Link)`
-	text-decoration: none;
+export const ButtonLink = styled(StyledLink)`
 	width: 25%;
 
 	@media (max-width: 50em) {

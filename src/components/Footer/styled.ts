@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Wrapper = styled.footer`
@@ -19,9 +18,4 @@ export const Wrapper = styled.footer`
 
 export const FooterText = styled.p`
 	color: ${({ theme }) => theme.text.primary};
-`
-
-export const FooterLink = styled(Link)`
-	color: ${({ theme }) => theme.text.link};
-	text-decoration: none;
 `
