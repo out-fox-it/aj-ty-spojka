@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { Theme } from '../Theme'
 
 export const Wrapper = styled.header`
 	display: grid;
@@ -18,8 +19,15 @@ export const Wrapper = styled.header`
 	}
 `
 
-export const StyledLink = styled(Link)`
-	color: ${({ theme }) => theme.text.link};
+type Props = {
+	setColor: string
+}
+
+export const StyledLink = styled(Link)<Props>`
+	color: ${({ setColor }) =>
+		setColor === Theme.Light
+			? ({ theme }) => theme.text.link
+			: ({ theme }) => theme.text.secondary};
 	grid-column: 2;
 	padding: 2em;
 

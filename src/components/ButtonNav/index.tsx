@@ -7,35 +7,52 @@ import {
 	UserLock,
 	IdCard,
 } from '@styled-icons/fa-solid'
+import { Theme, useThemeControl } from '../Theme'
 
 interface Props {
 	login: boolean
 }
 
-const NavBeforeLogin = (
+export const NavBeforeLogin = (theme: Theme): React.ReactElement => (
 	<Wrapper>
 		<StyledLink to="/register">
-			<StyledButton icon={UserPlus} title="Registrace" />
+			<StyledButton setColor={theme} icon={UserPlus} title="Registrace" />
 		</StyledLink>
 		<StyledLink to="/login">
-			<StyledButton icon={UserLock} title="Přihlášení" />
+			<StyledButton setColor={theme} icon={UserLock} title="Přihlášení" />
+			<StyledButton setColor={theme} icon={UserEdit} title="Registrace" />
+		</StyledLink>
+		<StyledLink to="/login">
+			<StyledButton setColor={theme} icon={IdCard} title="Přihlášení" />
 		</StyledLink>
 	</Wrapper>
 )
 
-const NavAfterLogin = (
-	<Wrapper>
-		<StyledLink to="/profile">
-			<StyledButton icon={UserEdit} title="Můj profil" />
-		</StyledLink>
-		<StyledLink to="/matching">
-			<StyledButton icon={Users} title="Matching" />
-		</StyledLink>
-		<StyledLink to="/contacts">
-			<StyledButton icon={IdCard} title="Kontakty" />
-		</StyledLink>
-	</Wrapper>
-)
+export const NavAfterLogin: React.FC = () => {
+	const [theme] = useThemeControl()
 
-export const ButtonNav: React.FC<Props> = ({ login }) =>
-	login ? NavAfterLogin : NavBeforeLogin
+	return (
+		<Wrapper>
+			<StyledLink to="/profile">
+				<StyledButton
+					setColor={theme}
+					icon={UserEdit}
+					title="Můj profil"
+				/>
+			</StyledLink>
+			<StyledLink to="/matching">
+				<StyledButton setColor={theme} icon={Users} title="Matching" />
+			</StyledLink>
+			<StyledLink to="/contacts">
+				<StyledButton setColor={theme} icon={IdCard} title="Kontakty" />
+			</StyledLink>
+		</Wrapper>
+	)
+}
+
+export const ButtonNav: React.FC<Props> = ({ login }) => {
+	const [theme] = useThemeControl()
+
+	// We use two different ways to pass the theme for learning purposes
+	return login ? <NavAfterLogin /> : NavBeforeLogin(theme)
+}
