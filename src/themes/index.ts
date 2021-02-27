@@ -7,6 +7,22 @@ export enum MediaQueries {
 	Mobile = '30em',
 }
 
+export enum FontSizes {
+	// Default Font Sizes
+	SizeTitleH1 = '2rem',
+	SizeTitleH2 = '1.5rem',
+	SizeDefault = '1.2rem',
+	SizeSmall = '0.9rem',
+
+	// Clip Text Mask
+	SizeClip = '3.7rem',
+
+	// Button Font Sizes
+	ButtonBig = '1.5rem',
+	ButtonDefault = '1.2rem',
+	ButtonSmall = '0.9rem',
+}
+
 export const DarkTheme: DefaultTheme = {
 	bg: {
 		primary: '#2a2a2a' /* light gray */,

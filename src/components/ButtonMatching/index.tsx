@@ -16,20 +16,9 @@ const ButtonMatching: React.FC = () => (
 			onClick={clickMe}
 			icon={ChalkboardTeacher}
 			title="Mentor"
-			subtitle="Najdi si lekora, který ti pomůže s učením."
 		/>
-		<StyledButton
-			onClick={clickMe}
-			icon={UserFriends}
-			title="Buddy"
-			subtitle="Poznej nové přátele."
-		/>
-		<StyledButton
-			onClick={clickMe}
-			icon={GraduationCap}
-			title="Mentee"
-			subtitle="Předej své vědomosti někomu dalšímu."
-		/>
+		<StyledButton onClick={clickMe} icon={UserFriends} title="Buddy" />
+		<StyledButton onClick={clickMe} icon={GraduationCap} title="Mentee" />
 	</Wrapper>
 )
 

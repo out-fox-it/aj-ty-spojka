@@ -14,7 +14,7 @@ const NavBar: React.FC<Props> = ({ login }) => {
 
 	return (
 		<Wrapper>
-			<NavBarLink setColor={theme} to="/">
+			<NavBarLink setcolor={theme} to="/">
 				<Logo />
 			</NavBarLink>
 			<ButtonNav login={login} />

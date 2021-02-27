@@ -1,10 +1,14 @@
 import React from 'react'
+import { StyledParagraph } from '../../StyledText/StyledParagraph'
+import { TitleH1 } from '../../StyledText/StyledTitle'
 import { RegistrationMessage } from './styled'
 
 const SubmitMessage: React.FC = () => (
 	<RegistrationMessage>
-		<h2>Registrace byla úspěšná!</h2>
-		<p>Po potvrzení e-mailu si můžete začít hledat nové kamarády. :)</p>
+		<TitleH1>Registrace byla úspěšná!</TitleH1>
+		<StyledParagraph>
+			Po potvrzení e-mailu si můžete začít hledat nové kamarády. :)
+		</StyledParagraph>
 	</RegistrationMessage>
 )
 

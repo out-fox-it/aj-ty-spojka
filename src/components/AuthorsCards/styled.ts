@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { MediaQueries } from '../../themes'
-import { TitleH1 } from '../StyledText/StyledTitle'
+import { StyledParagraph } from '../StyledText/StyledParagraph'
+import { TitleH1, TitleH2 } from '../StyledText/StyledTitle'
 
 export const CardsWrapper = styled.section`
 	display: grid;
@@ -110,14 +111,16 @@ export const CardText = styled.div`
 	text-align: center;
 `
 
-export const CardTitle = styled.h2`
+export const CardTitle = styled(TitleH2)`
 	color: ${({ theme }) => theme.text.secondary};
 	text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
 		-1px 1px 0 #000, 1px 1px 0 #000;
 	margin-bottom: 0;
 `
 
-export const CardSubtitle = styled.span`
+export const CardSubtitle = styled(StyledParagraph)`
+	text-align: center;
+	margin: 0;
 	color: white;
 	text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
 		-1px 1px 0 #000, 1px 1px 0 #000;

@@ -1,10 +1,10 @@
 import React from 'react'
 
 export const Logo: React.FC = () => (
-	<svg height="10em" width="10em" viewBox="0 0 300 300">
+	<svg height="9em" width="9em" viewBox="0 0 300 300">
 		<circle
-			cx="150"
-			cy="150"
+			cx="145"
+			cy="145"
 			r="145"
 			stroke="currentColor"
 			strokeWidth="0.2em"
@@ -15,7 +15,7 @@ export const Logo: React.FC = () => (
 			x="145"
 			y="135"
 			textAnchor="middle"
-			fontSize="3em"
+			fontSize="2.9rem"
 			fill="currentColor"
 		>
 			{' '}
@@ -25,7 +25,7 @@ export const Logo: React.FC = () => (
 			x="145"
 			y="200"
 			textAnchor="middle"
-			fontSize="3em"
+			fontSize="2.9rem"
 			fill="currentColor"
 		>
 			{' '}

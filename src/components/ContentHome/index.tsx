@@ -25,14 +25,14 @@ export const ContentHome: React.FC = () => {
 				/>
 				<StyledParagraph>
 					I v době globální pandemie jsme si dokázali zachovat skvělé
-					konference a komunitu, která je tvoří.Dál sdílíme své
+					konference a komunitu, která je tvoří. Dál sdílíme své
 					znalosti a zkušenosti nejen s kolegy a přáteli, ale i s
-					lidmi, s nimi nás spojuje pouze láska ke světu IT.Online
+					lidmi, s nimi nás spojuje pouze láska ke světu IT. Online
 					prostředí ovše nedokáže nahradit to, co následuje po
-					přednáškách.Ty okamžiky kdy si můžeme společně zanadávat na
+					přednáškách. Ty okamžiky kdy si můžeme společně zanadávat na
 					sto a jeden bug vtírající do našeho kódu a kdy se u piva
-					dohadujeme, který jazyk to d nejlépe.A to je[: aj tý:
-					]spojka - online networking pr programátory, podnět k
+					dohadujeme, který jazyk to d nejlépe. A to je [: aj tý :]
+					spojka - online networking pr programátory, podnět k
 					produktivní prokrastinaci uprostřed další karantény a
 					prostor pro týmovou práci.
 				</StyledParagraph>
@@ -47,7 +47,7 @@ export const ContentHome: React.FC = () => {
 					<StyledParagraph>
 						Menteee je začátečník v konkrétních technologiích, ať už
 						se jedná o jazyk, knihovnu či framework, nebo celkově
-						programování.Hledá mentora, který by ho navedl správným
+						programování. Hledá mentora, který by ho navedl správným
 						směrem a rád by s ním konzultoval své první projekty.
 					</StyledParagraph>
 				</HomeSubsection>
@@ -72,8 +72,8 @@ export const ContentHome: React.FC = () => {
 					</HomeSubtitle>
 					<StyledParagraph>
 						Mentor už má za sebou nejeden úspěšný projekt v
-						technologiích, jejichž znalost by rád předal dál.Baví ho
-						učení a/nebo má volnočasový projekt, na kterém je
+						technologiích, jejichž znalost by rád předal dál. Baví
+						ho učení a/nebo má volnočasový projekt, na kterém je
 						ochotný výměnou za pomoc nechat svého menteeho
 						experimentovat.
 					</StyledParagraph>
@@ -82,14 +82,14 @@ export const ContentHome: React.FC = () => {
 
 			<HomeSection>
 				<StyledParagraph>
-					A jak si mentora, buddyho nebo menteeho najít?Stačí našemu
-					matching algoritmu napovědět, koho hledáte.Recruiterů se
+					A jak si mentora, buddyho nebo menteeho najít? Stačí našemu
+					matching algoritmu napovědět, koho hledáte. Recruiterů se
 					přitom bát nemusíte, zobrazit totiž můžete pouze omezený
 					počet profilů v omezeném počtu vyhledávání, kteří odpovídají
-					vašemu hledání.V případě, že se vám někteří uživatelé
+					vašemu hledání. V případě, že se vám někteří uživatelé
 					zalíbí, jim pošlete žádos o spojení doplněnou o krátkou
 					personalizovanou zprávu.Dalš krok je na nich - musí
-					potvrdit, že se s vámi také chtě spojit.Teprve poté, co je
+					potvrdit, že se s vámi také chtě spojit. Teprve poté, co je
 					spojení potvrzeno, se vám vzájemně zviditelní kontaktní
 					údaje.
 					<br />
