@@ -17,15 +17,6 @@ test('renders button with titleSmall', () => {
 	expect(spanElement.tagName).toBe('SPAN')
 })
 
-test('renders button with subtitle', () => {
-	const { getByText } = renderWithTheme(
-		<Button subtitle="Poznej nové přátele." />
-	)
-
-	const pElement = getByText('Poznej nové přátele.')
-	expect(pElement.tagName).toBe('P')
-})
-
 test('renders button with function and tests call function when clicked', () => {
 	const mockFunction = jest.fn()
 
