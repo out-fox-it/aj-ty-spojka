@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MediaQueries } from '../../themes'
 import { StyledButton } from '../Button/styled'
 import { StyledLink } from '../Link'
 import { TitleH1 } from '../Title'
@@ -7,7 +8,7 @@ export const Form = styled.form`
 	display: grid;
 	grid-template-columns: 1fr 1fr 3fr 1fr;
 
-	@media (max-width: 75em) {
+	@media (max-width: ${MediaQueries.Desktop}) {
 		grid-template-columns: 1fr 5fr 1fr;
 	}
 `
@@ -15,7 +16,7 @@ export const Form = styled.form`
 export const FormTitle = styled(TitleH1)`
 	grid-column: 2 / 4;
 
-	@media (max-width: 75em) {
+	@media (max-width: ${MediaQueries.Desktop}) {
 		grid-column: 2;
 	}
 `
@@ -27,7 +28,7 @@ export const FormItem = styled.div`
 	align-items: center;
 	justify-content: space-between;
 
-	@media (max-width: 75em) {
+	@media (max-width: ${MediaQueries.Desktop}) {
 		grid-column: 2;
 	}
 `
@@ -43,19 +44,19 @@ export const FormInput = styled.input`
 		outline: none;
 	}
 
-	@media (min-width: 80em) {
+	@media (min-width: ${MediaQueries.Desktop}) {
 		min-width: 60%;
 	}
 
-	@media (min-width: 79em) {
+	@media (min-width: ${MediaQueries.Desktop}) {
 		min-width: 50%;
 	}
 
-	@media (min-width: 50em) {
+	@media (min-width: ${MediaQueries.Ipad}) {
 		min-width: 60%;
 	}
 
-	@media (max-width: 30em) {
+	@media (max-width: ${MediaQueries.Mobile}) {
 		max-width: 50%;
 	}
 `
@@ -71,7 +72,7 @@ export const FormLink = styled(StyledLink)`
 	grid-column: 2 / 4;
 	margin: 1em;
 
-	@media (max-width: 75em) {
+	@media (max-width: ${MediaQueries.Desktop}) {
 		grid-column: 2;
 	}
 `
@@ -91,7 +92,7 @@ export const Errors = styled.span`
 	text-align: center;
 	color: ${({ theme }) => theme.text.secondary};
 
-	@media (max-width: 75em) {
+	@media (max-width: ${MediaQueries.Desktop}) {
 		grid-column: 2;
 	}
 `

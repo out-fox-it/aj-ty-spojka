@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { MediaQueries } from '../../themes'
 
 export const GlobalStyles = createGlobalStyle`
 	body {
@@ -13,7 +14,7 @@ export const GlobalStyles = createGlobalStyle`
 		color: ${({ theme }) => theme.text.primary};
 		background-color: ${({ theme }) => theme.bg.primary};
 		
-		@media (max-width: 50em) {
+		@media (max-width: ${MediaQueries.Ipad}) {
 			padding-bottom: 5em;
 		}
 	}

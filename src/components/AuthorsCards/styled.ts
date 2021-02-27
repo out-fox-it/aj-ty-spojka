@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MediaQueries } from '../../themes'
 import { TitleH1 } from '../Title'
 
 export const CardsWrapper = styled.section`
@@ -7,14 +8,14 @@ export const CardsWrapper = styled.section`
 	grid-template-rows: auto;
 	grid-gap: 1.5em;
 
-	@media (max-width: 50em) {
+	@media (max-width: ${MediaQueries.Ipad}) {
 		grid-template-columns: 1fr;
 		margin: 2em;
 		grid-gap: 2em;
 		padding: 1.5em;
 	}
 
-	@media (max-width: 30em) {
+	@media (max-width: ${MediaQueries.Mobile}) {
 		margin: 0.5em;
 		grid-gap: 1em;
 		padding: 0.5em;
@@ -24,7 +25,7 @@ export const CardsWrapper = styled.section`
 export const AuthorsTitle = styled(TitleH1)`
 	grid-column: 1 / 3;
 
-	@media (max-width: 50em) {
+	@media (max-width: ${MediaQueries.Ipad}) {
 		grid-column: 1;
 	}
 `
@@ -50,7 +51,7 @@ export const Card = styled.article<CardProps>`
 	height: 0;
 	padding-top: 56.25%; // 16:9
 
-	@media (max-width: 50em) {
+	@media (max-width: ${MediaQueries.Ipad}) {
 		&:nth-child(n) {
 			grid-column: 1;
 		}
@@ -121,7 +122,7 @@ export const CardSubtitle = styled.span`
 	text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
 		-1px 1px 0 #000, 1px 1px 0 #000;
 
-	@media (max-width: 80em) {
+	@media (max-width: ${MediaQueries.Desktop}) {
 		display: none;
 	}
 `

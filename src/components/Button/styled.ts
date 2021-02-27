@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MediaQueries } from '../../themes'
 
 export const WrapperIcon = styled.div`
 	width: 3.2em;
@@ -10,7 +11,7 @@ export const ButtonTitle = styled.span`
 	font-size: 1.5em;
 	text-transform: uppercase;
 
-	@media (max-width: 50em) {
+	@media (max-width: ${MediaQueries.Ipad}) {
 		font-size: 1em;
 	}
 `
@@ -19,7 +20,7 @@ export const ButtonTitleSmall = styled.span`
 	font-size: 1em;
 	text-transform: uppercase;
 
-	@media (max-width: 51em) {
+	@media (max-width: ${MediaQueries.Ipad}) {
 		font-size: 0.7em;
 	}
 `

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MediaQueries } from '../../themes'
 import Button from '../Button'
 import { TitleH1 } from '../Title'
 
@@ -62,7 +63,7 @@ export const Input = styled.input`
 	border-radius: 0.8em;
 	outline: none;
 
-	@media (max-width: 50em) {
+	@media (max-width: ${MediaQueries.Ipad}) {
 		width: 100%;
 	}
 `
@@ -91,7 +92,7 @@ export const ProfileButton = styled(Button)`
 	width: 12.5em;
 	margin: auto;
 
-	@media (max-width: 50em) {
+	@media (max-width: ${MediaQueries.Ipad}) {
 		display: block;
 	}
 `
