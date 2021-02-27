@@ -35,11 +35,6 @@ export const HomeSectionMultipleItems = styled(HomeSection)`
 
 export const HomeSubsection = styled.div``
 
-export const HomeParagraph = styled.p`
-	font-size: 1rem;
-	line-height: 1.5em;
-`
-
 type Props = {
 	setColor: string
 }
