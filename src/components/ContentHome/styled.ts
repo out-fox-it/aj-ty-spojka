@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import czechtech20191 from '../../assets/Home/czechtech2019-1.jpg'
+import { MediaQueries } from '../../themes'
 import { Theme } from '../Theme'
 
 export const HomeSection = styled.section`
@@ -9,7 +10,7 @@ export const HomeSection = styled.section`
 	margin-top: 1em;
 	margin-bottom: 1em;
 
-	@media (max-width: 50em) {
+	@media (max-width: ${MediaQueries.Ipad}) {
 		flex-flow: column wrap;
 		justify-items: center;
 		gap: 1em;
@@ -22,11 +23,11 @@ export const HomeSectionMultipleItems = styled(HomeSection)`
 	background-color: ${({ theme }) => theme.bg.secondary};
 	padding: 2em;
 
-	@media (max-width: 110em) {
+	@media (max-width: ${MediaQueries.DesktopLarge}) {
 		flex-wrap: wrap;
 	}
 
-	@media (max-width: 30em) {
+	@media (max-width: ${MediaQueries.Mobile}) {
 		padding: 1em;
 		margin: 0 auto;
 	}

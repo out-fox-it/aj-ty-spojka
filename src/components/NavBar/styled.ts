@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MediaQueries } from '../../themes'
 import { StyledLink } from '../Link'
 import { Theme } from '../Theme'
 
@@ -9,11 +10,11 @@ export const Wrapper = styled.header`
 	background-color: ${({ theme }) => theme.bg.secondary};
 	margin-bottom: 1em;
 
-	@media (max-width: 80em) {
+	@media (max-width: ${MediaQueries.Desktop}) {
 		grid-template-columns: 1fr 4fr 1fr;
 	}
 
-	@media (max-width: 50em) {
+	@media (max-width: ${MediaQueries.Ipad}) {
 		grid-template-columns: 1fr;
 		padding-bottom: 1.5em;
 	}
@@ -31,7 +32,7 @@ export const NavBarLink = styled(StyledLink)<Props>`
 	grid-column: 2;
 	padding: 2em;
 
-	@media (max-width: 80em) {
+	@media (max-width: ${MediaQueries.Desktop}) {
 		grid-column: 1;
 	}
 `

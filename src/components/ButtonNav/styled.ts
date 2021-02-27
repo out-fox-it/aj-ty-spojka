@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MediaQueries } from '../../themes'
 import Button from '../Button'
 import { StyledLink } from '../Link'
 import { Theme } from '../Theme'
@@ -10,7 +11,7 @@ export const Wrapper = styled.nav`
 	justify-content: space-around;
 	align-content: center;
 
-	@media (max-width: 50em) {
+	@media (max-width: ${MediaQueries.Ipad}) {
 		position: fixed;
 		bottom: 0;
 		z-index: 999;
@@ -25,7 +26,7 @@ export const StyledButton = styled(Button)<Props>`
 	width: 100%;
 	height: 100%;
 
-	@media (min-width: 50em) {
+	@media (min-width: ${MediaQueries.Ipad}) {
 		border: none;
 
 		&:hover {
@@ -41,7 +42,7 @@ export const StyledButton = styled(Button)<Props>`
 export const ButtonLink = styled(StyledLink)`
 	width: 25%;
 
-	@media (max-width: 50em) {
+	@media (max-width: ${MediaQueries.Ipad}) {
 		flex: 1;
 		height: 6em;
 		& > button {
