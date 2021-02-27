@@ -2,7 +2,7 @@ import React from 'react'
 import { Theme, useThemeControl } from '../Theme'
 import Toggle from '../Toggle'
 import { ButtonNav } from '../ButtonNav'
-import { Wrapper, StyledLink } from './styled'
+import { Wrapper, NavBarLink } from './styled'
 import { Logo } from '../../assets/Logo'
 
 interface Props {
@@ -14,9 +14,9 @@ const NavBar: React.FC<Props> = ({ login }) => {
 
 	return (
 		<Wrapper>
-			<StyledLink setColor={theme} to="/">
+			<NavBarLink setColor={theme} to="/">
 				<Logo />
-			</StyledLink>
+			</NavBarLink>
 			<ButtonNav login={login} />
 			<Toggle
 				isRound={true}
