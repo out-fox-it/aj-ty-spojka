@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { MediaQueries } from '../../themes'
-import { TitleH1 } from '../Title'
+import { TitleH1 } from '../StyledText/StyledTitle'
 
 export const CardsWrapper = styled.section`
 	display: grid;

@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import { MediaQueries } from '../../themes'
 import { StyledButton } from '../Button/styled'
-import { TitleH2 } from '../Title'
+import { StyledParagraph } from '../StyledText/StyledParagraph'
+import { TitleH2 } from '../StyledText/StyledTitle'
 
 export const MessageBoxTitle = styled(TitleH2)`
 	margin: 0;
@@ -51,7 +52,7 @@ export const MessageAvatar = styled.div`
 	}
 `
 
-export const MessageBody = styled.p`
+export const MessageBody = styled(StyledParagraph)`
 	margin: 2em;
 	width: 70ch;
 

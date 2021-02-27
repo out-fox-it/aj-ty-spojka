@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { MediaQueries } from '../../themes'
-import { StyledLink } from '../Link'
+import { StyledLink } from '../StyledText/StyledLink'
 import { Theme } from '../Theme'
 
 export const Wrapper = styled.header`

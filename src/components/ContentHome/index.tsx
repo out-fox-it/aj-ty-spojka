@@ -1,7 +1,6 @@
 import React from 'react'
 import {
 	HomeSection,
-	HomeParagraph,
 	HomePictureLeft,
 	HomePictureRight,
 	HomePictureClip,
@@ -12,6 +11,7 @@ import {
 import czechtech20191 from '../../assets/Home/czechtech2019-1.jpg'
 import linuxdays20191 from '../../assets/Home/linuxdays2019-1.jpg'
 import { useThemeControl } from '../Theme'
+import { StyledParagraph } from '../StyledText/StyledParagraph'
 
 export const ContentHome: React.FC = () => {
 	const [theme] = useThemeControl()
@@ -23,7 +23,7 @@ export const ContentHome: React.FC = () => {
 					src={czechtech20191}
 					title="CzechFuture.Tech, Plzeň 2019"
 				/>
-				<HomeParagraph>
+				<StyledParagraph>
 					I v době globální pandemie jsme si dokázali zachovat skvělé
 					konference a komunitu, která je tvoří.Dál sdílíme své
 					znalosti a zkušenosti nejen s kolegy a přáteli, ale i s
@@ -35,7 +35,7 @@ export const ContentHome: React.FC = () => {
 					]spojka - online networking pr programátory, podnět k
 					produktivní prokrastinaci uprostřed další karantény a
 					prostor pro týmovou práci.
-				</HomeParagraph>
+				</StyledParagraph>
 			</HomeSection>
 
 			<HomeSectionMultipleItems>
@@ -44,12 +44,12 @@ export const ContentHome: React.FC = () => {
 					<HomeSubtitle setColor={theme}>
 						~ ŽÁDNÝ UČENÝ Z NEBE NESPADL ~
 					</HomeSubtitle>
-					<HomeParagraph>
+					<StyledParagraph>
 						Menteee je začátečník v konkrétních technologiích, ať už
 						se jedná o jazyk, knihovnu či framework, nebo celkově
 						programování.Hledá mentora, který by ho navedl správným
 						směrem a rád by s ním konzultoval své první projekty.
-					</HomeParagraph>
+					</StyledParagraph>
 				</HomeSubsection>
 
 				<HomeSubsection>
@@ -57,12 +57,12 @@ export const ContentHome: React.FC = () => {
 					<HomeSubtitle setColor={theme}>
 						~ VÍC HLAV VÍC VÍ ~
 					</HomeSubtitle>
-					<HomeParagraph>
+					<StyledParagraph>
 						Buddy je parťák pro volnočasový projekt v technologiích,
 						ve kterých už se umí orientovat (nebo které se oba
 						učíte) Společné deadliny vás udrží aktivní a dovedou
 						každý projekt nebo katu ke zdárnému spuštění.
-					</HomeParagraph>
+					</StyledParagraph>
 				</HomeSubsection>
 
 				<HomeSubsection>
@@ -70,18 +70,18 @@ export const ContentHome: React.FC = () => {
 					<HomeSubtitle setColor={theme}>
 						~ NEJVÍC SE NAUČÍŠ UČENÍM ~
 					</HomeSubtitle>
-					<HomeParagraph>
+					<StyledParagraph>
 						Mentor už má za sebou nejeden úspěšný projekt v
 						technologiích, jejichž znalost by rád předal dál.Baví ho
 						učení a/nebo má volnočasový projekt, na kterém je
 						ochotný výměnou za pomoc nechat svého menteeho
 						experimentovat.
-					</HomeParagraph>
+					</StyledParagraph>
 				</HomeSubsection>
 			</HomeSectionMultipleItems>
 
 			<HomeSection>
-				<HomeParagraph>
+				<StyledParagraph>
 					A jak si mentora, buddyho nebo menteeho najít?Stačí našemu
 					matching algoritmu napovědět, koho hledáte.Recruiterů se
 					přitom bát nemusíte, zobrazit totiž můžete pouze omezený
@@ -98,7 +98,7 @@ export const ContentHome: React.FC = () => {
 					matching můžete nastavit i tak, že vám dorazí e-mail
 					pokaždé, kdy se objeví nový uživatel kompatibilní s vaším
 					hledáním.
-				</HomeParagraph>
+				</StyledParagraph>
 				<HomePictureRight
 					src={linuxdays20191}
 					title="Linux Days, ČVUT, Praha 2019"

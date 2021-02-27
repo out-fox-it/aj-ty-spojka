@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { MediaQueries } from '../../themes'
+import { StyledParagraph } from '../StyledText/StyledParagraph'
 
 export const Wrapper = styled.footer`
 	bottom: 0;
@@ -17,6 +18,6 @@ export const Wrapper = styled.footer`
 	}
 `
 
-export const FooterText = styled.p`
-	color: ${({ theme }) => theme.text.primary};
+export const FooterText = styled(StyledParagraph)`
+	text-align: center;
 `
