@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import czechtech20191 from '../../assets/Home/czechtech2019-1.jpg'
+import { Theme } from '../Theme'
 
 export const HomeSection = styled.section`
 	display: flex;
@@ -38,12 +39,19 @@ export const HomeParagraph = styled.p`
 	line-height: 1.5em;
 `
 
-// TODO: If theme is light theme, HomeSubtitle should have different color
-export const HomeSubtitle = styled.p`
-	color: ${({ theme }) => theme.text.secondary};
+type Props = {
+	setColor: string
+}
+
+export const HomeSubtitle = styled.p<Props>`
+	color: ${({ setColor }) =>
+		setColor === Theme.Dark
+			? ({ theme }) => theme.text.secondary
+			: ({ theme }) => theme.bg.primary};
 	text-align: center;
-	font-size: 1rem;
+	font-size: 0.9rem;
 	margin: 0;
+	font-weight: bold;
 `
 
 export const HomePictureClip = styled.div`
