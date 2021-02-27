@@ -1,13 +1,18 @@
 import styled from 'styled-components'
-import { MediaQueries } from '../../themes'
+import { FontSizes, MediaQueries } from '../../themes'
 import Button from '../Button'
-import { TitleH1 } from '../StyledText/StyledTitle'
+import { StyledParagraph } from '../StyledText/StyledParagraph'
+import { TitleH1, TitleH2 } from '../StyledText/StyledTitle'
 
 export const ProfileContent = styled.section`
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	gap: 1.5em;
+
+	@media (max-width: ${MediaQueries.Ipad}) {
+		padding: 1em;
+	}
 `
 
 export const ProfileName = styled(TitleH1)`
@@ -19,18 +24,15 @@ export const ProfileName = styled(TitleH1)`
 
 export const EmailAccount = styled.span`
 	display: block;
-	font-size: 1.4em;
+	font-size: ${FontSizes.SizeDefault};
 	text-align: center;
 `
 
-export const Description = styled.pre`
-	text-align: justify;
-	white-space: pre-wrap;
-	word-break: break-all;
+export const Description = styled(StyledParagraph)`
 	margin: 0;
 `
 
-export const Title = styled.h2`
+export const Title = styled(TitleH2)`
 	margin: 1em 0 0 0;
 `
 
@@ -89,7 +91,7 @@ export const Edit = styled.button`
 
 export const ProfileButton = styled(Button)`
 	display: inline;
-	width: 12.5em;
+	width: 15em;
 	margin: auto;
 
 	@media (max-width: ${MediaQueries.Ipad}) {

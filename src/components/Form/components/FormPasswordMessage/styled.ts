@@ -1,6 +1,8 @@
 import styled from 'styled-components'
+import { FontSizes } from '../../../../themes'
 
 export const PasswordMessage = styled.div`
+	font-size: ${FontSizes.SizeDefault};
 	grid-column: 2 / 4;
 	display: ${(props) => (props?.hidden ? 'none' : 'grid')};
 	grid: repeat(2, 1fr) / repeat(2, 1fr);

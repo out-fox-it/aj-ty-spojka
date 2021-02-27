@@ -1,11 +1,12 @@
 import styled from 'styled-components'
+import { FontSizes } from '../../../themes'
 
 type Props = {
 	changeColor?: string
 }
 
 export const TitleH1 = styled.h1<Props>`
-	font-size: 2rem;
+	font-size: ${FontSizes.SizeTitleH1};
 	text-align: center;
 	text-transform: uppercase;
 	color: ${({ changeColor }) =>
@@ -15,7 +16,7 @@ export const TitleH1 = styled.h1<Props>`
 `
 
 export const TitleH2 = styled.h2`
-	font-size: 1.5rem;
+	font-size: ${FontSizes.SizeTitleH2};
 	text-align: center;
 	text-transform: uppercase;
 	color: ${({ theme }) => theme.text.secondary};

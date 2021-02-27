@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { MediaQueries } from '../../themes'
+import { FontSizes, MediaQueries } from '../../themes'
 
 export const WrapperIcon = styled.div`
 	width: 3.2em;
@@ -8,25 +8,21 @@ export const WrapperIcon = styled.div`
 `
 
 export const ButtonTitle = styled.span`
-	font-size: 1.5em;
+	font-size: ${FontSizes.ButtonBig};
 	text-transform: uppercase;
 
 	@media (max-width: ${MediaQueries.Ipad}) {
-		font-size: 1em;
+		font-size: ${FontSizes.ButtonSmall};
 	}
 `
 
 export const ButtonTitleSmall = styled.span`
-	font-size: 1em;
+	font-size: ${FontSizes.ButtonDefault};
 	text-transform: uppercase;
 
 	@media (max-width: ${MediaQueries.Ipad}) {
-		font-size: 0.7em;
+		font-size: ${FontSizes.ButtonSmall};
 	}
-`
-
-export const ButtonSubtitle = styled.p`
-	font-size: 0.7em;
 `
 
 export const StyledButton = styled.button`
@@ -36,7 +32,6 @@ export const StyledButton = styled.button`
 	flex-direction: column;
 	padding: 0.6em 1em;
 
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	color: ${({ theme }) => theme.text.primary};
 	background-color: ${({ theme }) => theme.bg.secondary};
 	cursor: pointer;

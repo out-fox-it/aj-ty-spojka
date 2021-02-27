@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import czechtech20191 from '../../assets/Home/czechtech2019-1.jpg'
-import { MediaQueries } from '../../themes'
+import { FontSizes, MediaQueries } from '../../themes'
 import { Theme } from '../Theme'
 
 export const HomeSection = styled.section`
@@ -10,7 +10,7 @@ export const HomeSection = styled.section`
 	margin-top: 1em;
 	margin-bottom: 1em;
 
-	@media (max-width: ${MediaQueries.Ipad}) {
+	@media (max-width: ${MediaQueries.Desktop}) {
 		flex-flow: column wrap;
 		justify-items: center;
 		gap: 1em;
@@ -45,13 +45,13 @@ export const HomeSubtitle = styled.p<Props>`
 			? ({ theme }) => theme.text.secondary
 			: ({ theme }) => theme.bg.primary};
 	text-align: center;
-	font-size: 0.9rem;
+	font-size: ${FontSizes.SizeSmall};
 	margin: 0;
 	font-weight: bold;
 `
 
 export const HomePictureClip = styled.div`
-	font-size: 4rem;
+	font-size: ${FontSizes.SizeClip};
 	font-weight: bold;
 	text-align: center;
 	text-transform: uppercase;
