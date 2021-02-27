@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import Button from '../Button'
+import { Theme } from '../Theme'
 
 export const Wrapper = styled.nav`
 	display: flex;
@@ -16,7 +17,11 @@ export const Wrapper = styled.nav`
 	}
 `
 
-export const StyledButton = styled(Button)`
+type Props = {
+	setColor: string
+}
+
+export const StyledButton = styled(Button)<Props>`
 	width: 100%;
 	height: 100%;
 
@@ -25,7 +30,10 @@ export const StyledButton = styled(Button)`
 
 		&:hover {
 			background-color: ${({ theme }) => theme.bg.secondary};
-			color: ${({ theme }) => theme.text.link};
+			color: ${({ setColor }) =>
+				setColor === Theme.Dark
+					? ({ theme }) => theme.text.link
+					: ({ theme }) => theme.bg.primary};
 		}
 	}
 `
