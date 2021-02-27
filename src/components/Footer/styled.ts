@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MediaQueries } from '../../themes'
 
 export const Wrapper = styled.footer`
 	bottom: 0;
@@ -9,7 +10,7 @@ export const Wrapper = styled.footer`
 	text-align: center;
 	z-index: -1; // Otherwise absolute position overlaps menu!
 
-	@media (max-width: 50em) {
+	@media (max-width: ${MediaQueries.Ipad}) {
 		position: relative;
 		padding-top: 1em;
 		padding-bottom: 1em;

@@ -1,11 +1,12 @@
 import styled from 'styled-components'
+import { MediaQueries } from '../../themes'
 import { StyledButton } from '../Button/styled'
 import { TitleH2 } from '../Title'
 
 export const MessageBoxTitle = styled(TitleH2)`
 	margin: 0;
 
-	@media (max-width: 50em) {
+	@media (max-width: ${MediaQueries.Ipad}) {
 		margin-bottom: 0.7em;
 	}
 `
@@ -17,7 +18,7 @@ export const MessageBoxBorder = styled.div`
 	border: 0.3em solid ${({ theme }) => theme.bg.secondary};
 	border-radius: 0.8em;
 
-	@media (max-width: 50em) {
+	@media (max-width: ${MediaQueries.Ipad}) {
 		margin: 1em;
 	}
 `
@@ -28,7 +29,7 @@ export const MessageBox = styled.div`
 	justify-content: space-around;
 	align-items: center;
 
-	@media (max-width: 50em) {
+	@media (max-width: ${MediaQueries.Ipad}) {
 		flex-wrap: wrap;
 	}
 `
@@ -39,12 +40,12 @@ export const MessageAvatar = styled.div`
 	width: 5vw;
 	height: 5vw;
 
-	@media (max-width: 50em) {
+	@media (max-width: ${MediaQueries.Ipad}) {
 		width: 11vw;
 		height: 11vw;
 	}
 
-	@media (max-width: 30em) {
+	@media (max-width: ${MediaQueries.Mobile}) {
 		width: 17vw;
 		height: 17vw;
 	}
@@ -54,12 +55,12 @@ export const MessageBody = styled.p`
 	margin: 2em;
 	width: 70ch;
 
-	@media (max-width: 80em) {
+	@media (max-width: ${MediaQueries.Desktop}) {
 		margin: 1.5em;
 		width: 60ch;
 	}
 
-	@media (max-width: 50em) {
+	@media (max-width: ${MediaQueries.Ipad}) {
 		margin: 1em;
 		width: 45ch;
 	}
@@ -84,11 +85,11 @@ export const BreakLine = styled.hr`
 		display: none;
 	}
 
-	@media (max-width: 50em) {
+	@media (max-width: ${MediaQueries.Ipad}) {
 		margin: 1em;
 	}
 
-	@media (max-width: 30em) {
+	@media (max-width: ${MediaQueries.Mobile}) {
 		margin: 1.5em;
 	}
 `

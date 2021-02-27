@@ -1,5 +1,12 @@
 import { DefaultTheme } from 'styled-components'
 
+export enum MediaQueries {
+	DesktopLarge = '110em',
+	Desktop = '80em',
+	Ipad = '50em',
+	Mobile = '30em',
+}
+
 export const DarkTheme: DefaultTheme = {
 	bg: {
 		primary: '#2a2a2a' /* light gray */,
