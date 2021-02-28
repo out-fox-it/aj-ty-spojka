@@ -42,7 +42,7 @@ export const LightTheme: DefaultTheme = {
 	},
 	text: {
 		primary: '#000000' /* black */,
-		secondary: '#fdd269' /* yellow */,
+		secondary: '#f4a936' /* yellow */,
 		link: '#7184c7' /* dark blue */,
 	},
 }

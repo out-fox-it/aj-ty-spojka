@@ -16,14 +16,10 @@ interface Props {
 const NavBeforeLogin = (theme: Theme): React.ReactElement => (
 	<Wrapper>
 		<ButtonLink to="/register">
-			<StyledButton setColor={theme} icon={UserPlus} title="Registrace" />
+			<StyledButton color={theme} icon={UserPlus} title="Registrace" />
 		</ButtonLink>
 		<ButtonLink to="/login">
-			<StyledButton setColor={theme} icon={UserLock} title="Přihlášení" />
-			<StyledButton setColor={theme} icon={UserEdit} title="Registrace" />
-		</ButtonLink>
-		<ButtonLink to="/login">
-			<StyledButton setColor={theme} icon={IdCard} title="Přihlášení" />
+			<StyledButton color={theme} icon={UserLock} title="Přihlášení" />
 		</ButtonLink>
 	</Wrapper>
 )
@@ -31,13 +27,13 @@ const NavBeforeLogin = (theme: Theme): React.ReactElement => (
 const NavAfterLogin = (theme: Theme): React.ReactElement => (
 	<Wrapper>
 		<ButtonLink to="/profile">
-			<StyledButton setColor={theme} icon={UserEdit} title="Profil" />
+			<StyledButton color={theme} icon={UserEdit} title="Profil" />
 		</ButtonLink>
 		<ButtonLink to="/matching">
-			<StyledButton setColor={theme} icon={Users} title="Matching" />
+			<StyledButton color={theme} icon={Users} title="Matching" />
 		</ButtonLink>
 		<ButtonLink to="/contacts">
-			<StyledButton setColor={theme} icon={IdCard} title="Kontakty" />
+			<StyledButton color={theme} icon={IdCard} title="Kontakty" />
 		</ButtonLink>
 	</Wrapper>
 )

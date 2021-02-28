@@ -21,13 +21,12 @@ export const Wrapper = styled.header`
 `
 
 type Props = {
-	// "setcolor" doesn't use camelCase due to it being passed on DOM (Link)
-	setcolor: string
+	color: string
 }
 
 export const NavBarLink = styled(StyledLink)<Props>`
-	color: ${({ setcolor }) =>
-		setcolor === Theme.Light
+	color: ${({ color }) =>
+		color === Theme.Light
 			? ({ theme }) => theme.text.link
 			: ({ theme }) => theme.text.secondary};
 	grid-column: 2;

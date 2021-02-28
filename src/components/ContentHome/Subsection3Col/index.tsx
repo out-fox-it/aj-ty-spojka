@@ -19,7 +19,7 @@ const Subsection3Col: React.FC = () => {
 					<HomePictureClip>
 						{sectionsData.homePictureClip}
 					</HomePictureClip>
-					<HomeSubtitle setColor={theme}>
+					<HomeSubtitle color={theme}>
 						{sectionsData.homeSubtitle}
 					</HomeSubtitle>
 					<StyledParagraph>
