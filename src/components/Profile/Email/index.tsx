@@ -1,7 +1,7 @@
 import React from 'react'
 import { EmailAccount } from '../styled'
 
-interface Props {
+type Props = {
 	email: string
 }
 

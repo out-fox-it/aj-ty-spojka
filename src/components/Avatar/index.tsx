@@ -1,7 +1,7 @@
 import React from 'react'
 import { Picture, Icon } from './styled'
 
-interface Props {
+type Props = {
 	picture?: string
 	fullName?: string
 }
