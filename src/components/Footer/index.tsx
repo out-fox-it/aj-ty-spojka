@@ -1,13 +1,11 @@
 import React from 'react'
 import { StyledLink } from '../StyledText/StyledLink'
-import { Wrapper, FooterText } from './styled'
+import { FooterText } from './styled'
 
 const Footer: React.FC = () => (
-	<Wrapper>
-		<FooterText>
-			© 2021 | <StyledLink to="/authors">AUTOŘI</StyledLink>
-		</FooterText>
-	</Wrapper>
+	<FooterText>
+		© 2021 | <StyledLink to="/authors">AUTOŘI</StyledLink>
+	</FooterText>
 )
 
 export default Footer
