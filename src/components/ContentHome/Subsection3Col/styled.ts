@@ -3,7 +3,6 @@ import { FontSizes, MediaQueries } from '../../../themes'
 import { HomeSection } from '../styled'
 import { Theme } from '../../Theme'
 
-// Images
 import czechtech20191 from '../../../assets/Home/czechtech2019-1.jpg'
 
 export const HomeSectionMultipleItems = styled(HomeSection)`
@@ -23,12 +22,12 @@ export const HomeSectionMultipleItems = styled(HomeSection)`
 export const HomeSubsection = styled.div``
 
 type Props = {
-	setColor: string
+	color: string
 }
 
 export const HomeSubtitle = styled.p<Props>`
-	color: ${({ setColor }) =>
-		setColor === Theme.Dark
+	color: ${({ color }) =>
+		color === Theme.Dark
 			? ({ theme }) => theme.text.secondary
 			: ({ theme }) => theme.bg.primary};
 	text-align: center;

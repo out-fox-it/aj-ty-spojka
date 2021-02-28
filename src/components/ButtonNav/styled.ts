@@ -19,7 +19,7 @@ export const Wrapper = styled.nav`
 `
 
 type Props = {
-	setColor: string
+	color: string
 }
 
 export const StyledButton = styled(Button)<Props>`
@@ -31,8 +31,8 @@ export const StyledButton = styled(Button)<Props>`
 
 		&:hover {
 			background-color: ${({ theme }) => theme.bg.secondary};
-			color: ${({ setColor }) =>
-				setColor === Theme.Dark
+			color: ${({ color }) =>
+				color === Theme.Dark
 					? ({ theme }) => theme.text.link
 					: ({ theme }) => theme.bg.primary};
 		}

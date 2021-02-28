@@ -93,7 +93,7 @@ const Contacts: React.FC = () => {
 			<Page>
 				{/* TODO: Add message in case of no messages in any cathegory */}
 				{/* TODO: Handle new/unread messages style and notifications */}
-				<TitleH1 changeColor="darkBlue">ZPRÁVY A UPOZORNĚNÍ</TitleH1>
+				<TitleH1 color="darkBlue">ZPRÁVY A UPOZORNĚNÍ</TitleH1>
 				{Object.entries(messagesGroups).map(([type, messages]) => (
 					<MessageBoxBorder key={type} hidden={messages.length === 0}>
 						<MessageBoxTitle>

@@ -3,7 +3,6 @@ import { HomeSection, HomePicture } from './styled'
 import { StyledParagraph } from '../StyledText/StyledParagraph'
 import Subsection3Col from './Subsection3Col'
 
-// Images
 import czechtech20191 from '../../assets/Home/czechtech2019-1.jpg'
 import linuxdays20191 from '../../assets/Home/linuxdays2019-1.jpg'
 
