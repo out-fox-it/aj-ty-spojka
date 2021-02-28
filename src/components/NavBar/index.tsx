@@ -5,7 +5,7 @@ import { ButtonNav } from '../ButtonNav'
 import { Wrapper, NavBarLink } from './styled'
 import { Logo } from '../../assets/Logo'
 
-interface Props {
+type Props = {
 	login: boolean
 }
 

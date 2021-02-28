@@ -9,7 +9,7 @@ import {
 } from '@styled-icons/fa-solid'
 import { Theme, useThemeControl } from '../Theme'
 
-interface Props {
+type Props = {
 	login: boolean
 }
 

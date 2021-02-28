@@ -9,7 +9,7 @@ import {
 	Wrapper,
 } from './styled'
 
-interface Props {
+type Props = {
 	onChange: (checked: boolean) => void
 	isChecked?: boolean
 	isRound?: boolean

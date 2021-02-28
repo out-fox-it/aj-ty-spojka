@@ -7,7 +7,7 @@ import {
 	StyledButton,
 } from './styled'
 
-interface Props {
+type Props = {
 	icon?: StyledIcon
 	title?: string
 	titleSmall?: string

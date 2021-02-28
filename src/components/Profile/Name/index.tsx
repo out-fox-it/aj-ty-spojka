@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Check, PencilAlt } from '@styled-icons/fa-solid'
 import { Edit, ProfileName, Input } from '../styled'
 
-interface Props {
+type Props = {
 	fullName: string
 }
 
