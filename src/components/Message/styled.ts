@@ -13,13 +13,14 @@ export const MessageBoxTitle = styled(TitleH2)`
 `
 
 export const MessageBoxBorder = styled.div`
-	padding: 1.5em;
+	padding: 2em 1.5em 0.5em 1.5em;
 	margin-top: 1em;
 	margin-bottom: 1em;
 	border: 0.3em solid ${({ theme }) => theme.bg.secondary};
 	border-radius: 0.8em;
 
 	@media (max-width: ${MediaQueries.Ipad}) {
+		padding: 2em 1.5em 1.7em 1.5em;
 		margin: 1em;
 	}
 `
@@ -40,6 +41,7 @@ export const MessageAvatar = styled.div`
 	border-radius: 50%;
 	width: 4vw;
 	height: 4vw;
+	min-width: 4vw;
 
 	@media (max-width: ${MediaQueries.Ipad}) {
 		width: 11vw;
@@ -78,7 +80,6 @@ export const MessageButton = styled(StyledButton)`
 `
 
 export const BreakLine = styled.hr`
-	margin: 1.5em;
 	height: 0.3em;
 	background-color: ${({ theme }) => theme.bg.secondary};
 	border-width: 0;
@@ -89,10 +90,10 @@ export const BreakLine = styled.hr`
 	}
 
 	@media (max-width: ${MediaQueries.Ipad}) {
-		margin: 1em;
+		margin: 1.5em;
 	}
 
 	@media (max-width: ${MediaQueries.Mobile}) {
-		margin: 1.5em;
+		margin: 2em;
 	}
 `
