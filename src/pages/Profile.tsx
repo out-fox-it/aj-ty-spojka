@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getProfileData, RandomUser } from '../utils/getUserData'
 
-// Components
 import NavBar from '../components/NavBar'
 import Page from '../components/Page'
 import ContentProfile from '../components/Profile'

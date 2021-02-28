@@ -29,6 +29,8 @@ export const EmailAccount = styled.span`
 `
 
 export const Description = styled(StyledParagraph)`
+	white-space: pre-wrap;
+	word-break: break-all;
 	margin: 0;
 `
 
