@@ -1,7 +1,5 @@
 import styled from 'styled-components'
-import czechtech20191 from '../../assets/Home/czechtech2019-1.jpg'
-import { FontSizes, MediaQueries } from '../../themes'
-import { Theme } from '../Theme'
+import { MediaQueries } from '../../themes'
 
 export const HomeSection = styled.section`
 	display: flex;
@@ -19,68 +17,15 @@ export const HomeSection = styled.section`
 	}
 `
 
-export const HomeSectionMultipleItems = styled(HomeSection)`
-	background-color: ${({ theme }) => theme.bg.secondary};
-	padding: 2em;
-
-	@media (max-width: ${MediaQueries.DesktopLarge}) {
-		flex-wrap: wrap;
-	}
-
-	@media (max-width: ${MediaQueries.Mobile}) {
-		padding: 1em;
-		margin: 0 auto;
-	}
-`
-
-export const HomeSubsection = styled.div``
-
 type Props = {
-	setColor: string
+	borderRadius: string
 }
 
-export const HomeSubtitle = styled.p<Props>`
-	color: ${({ setColor }) =>
-		setColor === Theme.Dark
-			? ({ theme }) => theme.text.secondary
-			: ({ theme }) => theme.bg.primary};
-	text-align: center;
-	font-size: ${FontSizes.SizeSmall};
-	margin: 0;
-	font-weight: bold;
-`
-
-export const HomePictureClip = styled.div`
-	font-size: ${FontSizes.SizeClip};
-	font-weight: bold;
-	text-align: center;
-	text-transform: uppercase;
-	background-image: url(${czechtech20191});
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 200% auto;
-
-	@include background-clip(text);
-	-webkit-background-clip: text;
-	-moz-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: #7184c7b5;
-`
-
-export const HomePictureLeft = styled.img`
+export const HomePicture = styled.img<Props>`
 	width: 15em;
 	height: 12em;
 	border: 2px solid ${({ theme }) => theme.text.link};
-	border-radius: 2em 2em 0 2em;
-	object-fit: cover;
-	align-self: center;
-`
-
-export const HomePictureRight = styled.img`
-	width: 15em;
-	height: 12em;
-	border: 2px solid ${({ theme }) => theme.text.link};
-	border-radius: 0 2em 2em 2em;
+	border-radius: ${({ borderRadius }) => borderRadius};
 	object-fit: cover;
 	align-self: center;
 `
