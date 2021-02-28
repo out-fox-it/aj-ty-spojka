@@ -41,6 +41,5 @@ const NavAfterLogin = (theme: Theme): React.ReactElement => (
 export const ButtonNav: React.FC<Props> = ({ login }) => {
 	const [theme] = useThemeControl()
 
-	// We use two different ways to pass the theme for learning purposes
 	return login ? NavAfterLogin(theme) : NavBeforeLogin(theme)
 }
