@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-// Components
 import NavBar from '../components/NavBar'
 import SubmitMessage from '../components/RegisterForm/RegistrationMessage'
 import Page from '../components/Page'

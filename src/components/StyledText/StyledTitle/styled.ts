@@ -11,8 +11,8 @@ export const TitleH1 = styled.h1<Props>`
 	text-transform: uppercase;
 	color: ${({ changeColor }) =>
 		changeColor === 'darkBlue'
-			? ({ theme }) => theme.text.link // Dark blue color
-			: ({ theme }) => theme.text.secondary}; // Default yellow color
+			? ({ theme }) => theme.text.link
+			: ({ theme }) => theme.text.secondary}; // Default Title color
 `
 
 export const TitleH2 = styled.h2`
