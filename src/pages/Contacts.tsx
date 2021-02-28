@@ -2,7 +2,6 @@ import React from 'react'
 import Message, { MessageData, MessageType } from '../components/Message'
 import { MessageBoxBorder, MessageBoxTitle } from '../components/Message/styled'
 
-// Components
 import NavBar from '../components/NavBar'
 import Page from '../components/Page'
 import Footer from '../components/Footer'

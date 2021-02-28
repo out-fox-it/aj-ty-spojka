@@ -11,6 +11,6 @@ export const StyledLink = styled(Link)<Props>`
 	text-transform: uppercase;
 	color: ${({ changeColor }) =>
 		changeColor === 'darkBlue'
-			? ({ theme }) => theme.text.secondary // Yellow color
+			? ({ theme }) => theme.text.secondary
 			: ({ theme }) => theme.text.link}; // Default Link color
 `
