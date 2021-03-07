@@ -10,6 +10,7 @@ Web application that connects programmers based on their experience, interests a
 ## Getting Started 🚀
 
 -   type `yarn` to install dependencies
+-   copy `.env.sample` file to `.env` and fill missing Firebase IDs marked with `XXX`, which you can obtain from project authors
 -   type `yarn start` and open [http://localhost:3000](http://localhost:3000) to view project in the browser.
 
 ## Available Scripts 📃
