@@ -7,9 +7,18 @@ import FormNickname from '../Form/components/FormNickname'
 import FormPassword from '../Form/components/FormPassword'
 import FormPasswordMessage from '../Form/components/FormPasswordMessage'
 import FormCheckbox from '../Form/components/FormCheckbox'
+import { authentication } from '../../firebase'
 
 type Props = {
 	onSuccess: () => void
+}
+
+type FormData = {
+	email: string
+	nickname: string
+	password: string
+	passwordConfirm: string
+	check: boolean
 }
 
 const RegisterForm: React.FC<Props> = ({ onSuccess }) => {
@@ -50,11 +59,22 @@ const RegisterForm: React.FC<Props> = ({ onSuccess }) => {
 	const hasUpperCase = /[A-Z]/.test(password.current)
 	const hasNumber = /\d/.test(password.current)
 
-	const onSubmit = handleSubmit(
-		() => onSuccess()
+	const onSubmit = handleSubmit(async (formData) => {
+		const { email, nickname, password } = formData
+
+		const { user } = await authentication.createUserWithEmailAndPassword(
+			email,
+			password
+		)
+
+		if (user) {
+			user.updateProfile({ displayName: nickname })
+
+			onSuccess()
+		}
 
 		// TODO: HANDLE ERRORS
-	)
+	})
 
 	return (
 		<Form onSubmit={onSubmit} noValidate>
