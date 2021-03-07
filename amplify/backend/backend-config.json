@@ -1,10 +1,1 @@
-{
-	"auth": {
-		"ajtyspojkac2740606": {
-			"service": "Cognito",
-			"providerPlugin": "awscloudformation",
-			"dependsOn": [],
-			"customAuth": false
-		}
-	}
-}
+{}
