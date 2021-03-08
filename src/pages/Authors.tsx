@@ -7,7 +7,7 @@ import Footer from '../components/Footer'
 
 const Authors: React.FC = () => (
 	<>
-		<NavBar login={false} />
+		<NavBar />
 		<Page>
 			<AuthorsCards />
 		</Page>

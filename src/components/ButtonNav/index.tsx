@@ -8,10 +8,7 @@ import {
 	IdCard,
 } from '@styled-icons/fa-solid'
 import { Theme, useThemeControl } from '../Theme'
-
-type Props = {
-	login: boolean
-}
+import { useUser } from '../User'
 
 const NavBeforeLogin = (theme: Theme): React.ReactElement => (
 	<Wrapper>
@@ -38,8 +35,9 @@ const NavAfterLogin = (theme: Theme): React.ReactElement => (
 	</Wrapper>
 )
 
-export const ButtonNav: React.FC<Props> = ({ login }) => {
+export const ButtonNav: React.FC = () => {
 	const [theme] = useThemeControl()
+	const { isLoggedIn } = useUser()
 
-	return login ? NavAfterLogin(theme) : NavBeforeLogin(theme)
+	return isLoggedIn ? NavAfterLogin(theme) : NavBeforeLogin(theme)
 }
