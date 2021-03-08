@@ -9,7 +9,7 @@ import { TitleH1 } from '../components/StyledText/StyledTitle'
 
 const Matching: React.FC = () => (
 	<>
-		<NavBar login={true} />
+		<NavBar />
 		<Page>
 			<TitleH1>MATCHING</TitleH1>
 			<ButtonMatching />

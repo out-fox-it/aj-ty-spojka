@@ -7,7 +7,7 @@ import Footer from '../components/Footer'
 
 const Home: React.FC = () => (
 	<>
-		<NavBar login={true} />
+		<NavBar />
 		<Page>
 			<ContentHome />
 		</Page>

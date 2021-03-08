@@ -5,11 +5,7 @@ import { ButtonNav } from '../ButtonNav'
 import { Wrapper, NavBarLink } from './styled'
 import { Logo } from '../../assets/Logo'
 
-type Props = {
-	login: boolean
-}
-
-const NavBar: React.FC<Props> = ({ login }) => {
+const NavBar: React.FC = () => {
 	const [theme, setTheme] = useThemeControl()
 
 	return (
@@ -17,7 +13,7 @@ const NavBar: React.FC<Props> = ({ login }) => {
 			<NavBarLink color={theme} to="/">
 				<Logo />
 			</NavBarLink>
-			<ButtonNav login={login} />
+			<ButtonNav />
 			<Toggle
 				isRound={true}
 				label={['☀️', '🌙']}

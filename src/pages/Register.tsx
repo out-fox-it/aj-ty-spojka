@@ -11,7 +11,7 @@ const Register: React.FC = () => {
 
 	return (
 		<>
-			<NavBar login={false} />
+			<NavBar />
 			<Page>
 				{isSuccessful ? (
 					<SubmitMessage />

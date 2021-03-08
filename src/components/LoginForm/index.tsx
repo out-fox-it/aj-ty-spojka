@@ -1,36 +1,48 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
 
 import { useForm } from 'react-hook-form'
-import { Form, FormButton, FormItem, FormTitle } from '../Form/styled'
+import { Errors, Form, FormButton, FormItem, FormTitle } from '../Form/styled'
 
 import FormEmail from '../Form/components/FormEmail'
 import FormPassword from '../Form/components/FormPassword'
 import FormCheckbox from '../Form/components/FormCheckbox'
 import ForgottenPassword from './ForgottenPassword'
+import { useHistory } from 'react-router-dom'
+import { authentication } from '../../firebase'
+
+type UserData = {
+	email: string
+	password: string
+}
 
 const LoginForm: React.FC = () => {
 	const { handleSubmit, errors, register } = useForm<FormData>({
 		mode: 'onChange',
 		reValidateMode: 'onChange',
 	})
-	// Mode is set to default (onSubmit)
 
 	const history = useHistory()
+	const [firebaseError, setFirebaseError] = useState(false)
 
-	const onSubmit = handleSubmit(
-		() => history.push('/')
+	const onSubmit = async (data: UserData) => {
+		try {
+			await authentication.signInWithEmailAndPassword(
+				data.email,
+				data.password
+			)
+			history.push('/home')
+		} catch (error) {
+			setFirebaseError(true)
+		}
+	}
 
-		// TODO: HANDLE ERRORS
-	)
-
+	// TODO: HANDLE ERRORS
 	// Password eye icon shows or hides the password
 	const [passwordShown, setPasswordShown] = useState(false)
 
 	return (
-		<Form onSubmit={onSubmit} noValidate>
+		<Form onSubmit={handleSubmit(onSubmit)} noValidate>
 			<FormTitle>PŘIHLAŠOVACÍ FORMULÁŘ</FormTitle>
-
 			<FormEmail register={register} errors={errors} />
 
 			<FormPassword
@@ -46,6 +58,13 @@ const LoginForm: React.FC = () => {
 
 			{/* TODO: Remember login info */}
 			<FormCheckbox register={register} errors={errors} />
+
+			{/* TODO: Call an error when the user's data does not match the database */}
+			{firebaseError && (
+				<Errors>
+					<p>Přihlášení se nepodařilo. Zkontrolujte své údaje.</p>
+				</Errors>
+			)}
 
 			{/* SUBMIT */}
 			<FormItem>

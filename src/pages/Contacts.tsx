@@ -89,7 +89,7 @@ const Contacts: React.FC = () => {
 
 	return (
 		<>
-			<NavBar login={true} />
+			<NavBar />
 			<Page>
 				{/* TODO: Add message in case of no messages in any cathegory */}
 				{/* TODO: Handle new/unread messages style and notifications */}

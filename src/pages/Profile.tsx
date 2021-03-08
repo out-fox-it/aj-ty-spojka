@@ -5,9 +5,11 @@ import NavBar from '../components/NavBar'
 import Page from '../components/Page'
 import ContentProfile from '../components/Profile'
 import Footer from '../components/Footer'
+import { useUser } from '../components/User'
 
 const Profile: React.FC = () => {
 	const [userData, setUserData] = useState<RandomUser | null>(null)
+	const { user } = useUser()
 
 	useEffect(() => {
 		getProfileData().then(setUserData)
@@ -18,11 +20,11 @@ const Profile: React.FC = () => {
 	const last = userData?.name?.last ?? ''
 	const fullName = `${title} ${first} ${last}`
 
-	const email = userData?.email ?? ''
+	const email = user?.email ?? ''
 
 	return (
 		<>
-			<NavBar login={true} />
+			<NavBar />
 			<Page>
 				<ContentProfile fullName={fullName} email={email} />
 			</Page>

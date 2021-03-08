@@ -6,11 +6,12 @@ import { GlobalStyles } from './styled'
 // Pages
 import Authors from '../../pages/Authors'
 import Contacts from '../../pages/Contacts'
-import Login from '../../pages/Login'
 import Matching from '../../pages/Matching'
 import Profile from '../../pages/Profile'
 import Register from '../../pages/Register'
 import Home from '../../pages/Home'
+import UserProvider from '../User'
+import Login from '../../pages/Login'
 
 const Routes: React.FC = () => (
 	<Switch>
@@ -26,8 +27,10 @@ const Routes: React.FC = () => (
 
 const App: React.FC = () => (
 	<ThemeProvider>
-		<GlobalStyles />
-		<Routes />
+		<UserProvider>
+			<GlobalStyles />
+			<Routes />
+		</UserProvider>
 	</ThemeProvider>
 )
 
