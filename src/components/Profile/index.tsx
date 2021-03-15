@@ -9,6 +9,7 @@ import { useHistory } from 'react-router'
 import { authentication } from '../../firebase'
 import Avatar from '../Avatar'
 import { Motto } from './Motto'
+import SkillQueue from '../SkillQueue'
 
 type Props = {
 	fullName: string
@@ -41,6 +42,7 @@ const ContentProfile: React.FC<Props> = ({
 				<Email email={email} />
 				<AboutMe />
 				<SocialNetwork />
+				<SkillQueue />
 				<ProfileButton titleSmall="Propojit" />
 				<ProfileButton title="Odhlásit se" onClick={() => signOut()} />
 			</ProfileContent>
