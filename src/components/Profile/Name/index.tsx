@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { Check, PencilAlt } from '@styled-icons/fa-solid'
-import { Edit, ProfileName, Input } from '../styled'
+import { Edit, ProfileName } from '../styled'
+import FormText from '../../Form/components/FormText'
 
 type Props = {
 	fullName: string
@@ -8,11 +10,16 @@ type Props = {
 
 export const Name: React.FC<Props> = ({ fullName }) => {
 	const [element, setElement] = useState<boolean>(true)
-	const [text, setText] = useState<string>('')
+
+	const [text, setText] = useState<string | undefined>()
 
 	useEffect(() => {
 		setText(fullName)
 	}, [fullName])
+
+	const { errors, register, handleSubmit } = useForm<FormData>()
+
+	const changeText = (text: string | undefined) => setText(text)
 
 	return (
 		<>
@@ -25,16 +32,18 @@ export const Name: React.FC<Props> = ({ fullName }) => {
 				</ProfileName>
 			) : (
 				<form
-					onSubmit={() => {
+					onSubmit={handleSubmit(() => {
 						setElement(true)
-					}}
+					})}
 				>
-					<Input
-						type="text"
+					<FormText
+						register={register}
+						errors={errors}
+						required={'Jméno musí být vyplněno'}
 						value={text}
-						onChange={(e) => setText(e.target.value)}
+						change={changeText}
 					/>
-					<Edit type="submit">
+					<Edit name="submit" type="submit">
 						<Check />
 					</Edit>
 				</form>

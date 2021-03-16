@@ -1,22 +1,30 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { Edit } from '../../styled'
 import { ProfileContext } from '../../Context'
 import { Check, PencilAlt, Times } from '@styled-icons/fa-solid'
-import { Input } from '../../styled'
+import FormText from '../../../Form/components/FormText'
 
 type Props = {
-	address: string
+	address: string | undefined
 	id: string
 }
 
 export const Network: React.FC<Props> = ({ address, id }) => {
 	const { removeNetwork, editNetwork } = useContext(ProfileContext)
+
 	const [element, setElement] = useState<boolean>(true)
-	const [actualAddress, setActualAddress] = useState<string>('')
+
+	const [actualAddress, setActualAddress] = useState<string | undefined>()
 
 	useEffect(() => {
 		setActualAddress(address)
 	}, [address])
+
+	const { errors, register, handleSubmit } = useForm<FormData>()
+
+	const changeText = (actualAddress: string | undefined) =>
+		setActualAddress(actualAddress)
 
 	return (
 		<>
@@ -32,17 +40,23 @@ export const Network: React.FC<Props> = ({ address, id }) => {
 				</li>
 			) : (
 				<form
-					onSubmit={() => {
-						setElement(true)
-						editNetwork(actualAddress, id)
-					}}
+					onSubmit={handleSubmit(() => {
+						if (actualAddress !== '') {
+							setElement(true)
+							editNetwork(actualAddress, id)
+						} else {
+							removeNetwork(id)
+						}
+					})}
 				>
-					<Input
-						type="text"
+					<FormText
+						register={register}
+						errors={errors}
+						required={false}
 						value={actualAddress}
-						onChange={(e) => setActualAddress(e.target.value)}
+						change={changeText}
 					/>
-					<Edit type="submit">
+					<Edit name="submit" type="submit">
 						<Check />
 					</Edit>
 					<Edit onClick={() => removeNetwork(id)}>

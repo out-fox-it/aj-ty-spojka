@@ -3,10 +3,10 @@ import { useForm } from 'react-hook-form'
 
 import { Form, FormButton, FormItem, FormTitle, Errors } from '../Form/styled'
 import FormEmail from '../Form/components/FormEmail'
-import FormNickname from '../Form/components/FormNickname'
 import FormPassword from '../Form/components/FormPassword'
 import FormPasswordMessage from '../Form/components/FormPasswordMessage'
 import FormCheckbox from '../Form/components/FormCheckbox'
+import FormText from '../Form/components/FormText'
 
 import { authentication } from '../../firebase'
 
@@ -98,7 +98,13 @@ const RegisterForm: React.FC<Props> = ({ onSuccess }) => {
 				onChange={() => setValue('nickname', newNickname)}
 			/>
 
-			<FormNickname register={register} errors={errors} />
+			<FormText
+				register={register}
+				errors={errors}
+				label={'Přezdívka:'}
+				required={'Musíte zadat přezdívku!'}
+				placeholder={'Přezdívka1'}
+			/>
 
 			<FormPassword
 				passwordName="password"
