@@ -6,15 +6,15 @@ type Props = {
 }
 
 type NetworkType = {
-	address: string
+	address: string | undefined
 	id: string
 }
 
 type ContexType = {
 	network: NetworkType[]
-	addNetwork: (text: string) => void
+	addNetwork: (text: string | undefined) => void
 	removeNetwork: (id: string) => void
-	editNetwork: (text: string, id: string) => void
+	editNetwork: (text: string | undefined, id: string) => void
 }
 
 export const ProfileContext = createContext<ContexType>({
@@ -36,7 +36,7 @@ export const ProfileContextProvider: React.FC<Props> = ({
 }) => {
 	const [network, setNetwork] = useState<NetworkType[]>([])
 
-	const addNetwork = (text: string) => {
+	const addNetwork = (text: string | undefined) => {
 		setNetwork([...network, { address: text, id: uuid() }])
 	}
 
@@ -44,7 +44,7 @@ export const ProfileContextProvider: React.FC<Props> = ({
 		setNetwork(network.filter((item) => item.id !== id))
 	}
 
-	const editNetwork = (text: string, id: string) => {
+	const editNetwork = (text: string | undefined, id: string) => {
 		const newNetwork = network.map((item) =>
 			item.id === id ? { address: text, id } : item
 		)
