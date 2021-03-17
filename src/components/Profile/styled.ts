@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { FontSizes, MediaQueries } from '../../themes'
+import { Picture, Icon } from '../Avatar/styled'
 import Button from '../Button'
 import { StyledParagraph } from '../StyledText/StyledParagraph'
 import { TitleH1, TitleH2 } from '../StyledText/StyledTitle'
@@ -17,7 +18,7 @@ export const ProfileContent = styled.section`
 
 export const ProfileName = styled(TitleH1)`
 	display: flex;
-	margin: 1em 0 0 0;
+	margin: 1em 0.5em 0 0.5em;
 	justify-content: center;
 	text-transform: none;
 `
@@ -99,4 +100,33 @@ export const ProfileButton = styled(Button)`
 	@media (max-width: ${MediaQueries.Ipad}) {
 		display: block;
 	}
+`
+
+export const Photo = styled.div`
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	justify-content: center;
+	align-items: center;
+
+	& ${Picture}, ${Icon} {
+		width: 90%;
+		grid-row: 1 / 3;
+		width: 14.5em;
+		height: 14.5em;
+		margin: auto;
+	}
+
+	@media (max-width: ${MediaQueries.Desktop}) {
+		grid-template-columns: 1fr;
+
+		& ${Picture}, ${Icon} {
+			grid-row: 1 / 2;
+		}
+	}
+`
+
+export const Motto = styled.p`
+	margin: 0;
+	padding: 1em;
+	text-align: center;
 `
