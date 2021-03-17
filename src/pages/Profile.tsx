@@ -12,11 +12,21 @@ const Profile: React.FC = () => {
 	const fullName = user?.displayName ?? ''
 	const email = user?.email ?? ''
 
+	const motto =
+		'Jedná se pouze o provizorní text kvůli správnému nastylování avatara. Editovatelné motto se zprovozní později stejně jako nějaké nastavení v db.'
+
+	const photo = userData?.picture?.large ?? ''
+
 	return (
 		<>
 			<NavBar />
 			<Page>
-				<ContentProfile fullName={fullName} email={email} />
+				<ContentProfile
+					fullName={fullName}
+					email={email}
+					motto={motto}
+					picture={photo}
+				/>
 			</Page>
 			<Footer />
 		</>
