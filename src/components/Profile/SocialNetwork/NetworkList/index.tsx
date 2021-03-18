@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { ProfileContext } from '../../Context'
-import { List } from '../../styled'
+import { List, PlaceholderText } from '../../styled'
 import { Network } from '../Network'
 
 export const NetworkList: React.FC = () => {
@@ -21,7 +21,9 @@ export const NetworkList: React.FC = () => {
 					})}
 				</List>
 			) : (
-				<div>Žádné sociální sítě nejsou k dispozici</div>
+				<PlaceholderText>
+					Žádné sociální sítě nejsou k dispozici
+				</PlaceholderText>
 			)}
 		</>
 	)

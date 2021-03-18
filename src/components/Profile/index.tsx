@@ -3,11 +3,12 @@ import { ProfileContextProvider } from './Context'
 import { Name } from './Name'
 import { SocialNetwork } from './SocialNetwork'
 import { Email } from './Email'
-import { ProfileButton, ProfileContent, Photo, Motto } from './styled'
+import { ProfileButton, ProfileContent, ProfileHeader } from './styled'
 import { AboutMe } from './AboutMe'
 import { useHistory } from 'react-router'
 import { authentication } from '../../firebase'
 import Avatar from '../Avatar'
+import { Motto } from './Motto'
 
 type Props = {
 	fullName: string
@@ -32,11 +33,11 @@ const ContentProfile: React.FC<Props> = ({
 	return (
 		<ProfileContextProvider addresses={[]}>
 			<ProfileContent>
-				<Photo>
+				<ProfileHeader>
 					<Avatar picture={picture} />
 					<Name fullName={fullName} />
-					{motto && <Motto>{motto}</Motto>}
-				</Photo>
+					<Motto motto={motto} />
+				</ProfileHeader>
 				<Email email={email} />
 				<AboutMe />
 				<SocialNetwork />

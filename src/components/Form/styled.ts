@@ -3,6 +3,7 @@ import { FontSizes, MediaQueries } from '../../themes'
 import { StyledButton } from '../Button/styled'
 import { StyledLink } from '../StyledText/StyledLink'
 import { TitleH1 } from '../StyledText/StyledTitle'
+import { SizeTextarea } from './components/FormTextArea'
 
 export const Form = styled.form`
 	display: grid;
@@ -124,4 +125,14 @@ export const FormIcon = styled.div`
 	&:hover {
 		cursor: pointer;
 	}
+`
+export const FormTextBlock = styled.textarea<{ size: SizeTextarea }>`
+	box-sizing: border-box;
+	width: 95%;
+	margin: auto;
+	height: ${({ size }) => size};
+	padding: 0.5em;
+	border: 0.1em solid ${({ theme }) => theme.bg.secondary};
+	border-radius: 0.8em;
+	outline: none;
 `

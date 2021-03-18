@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { FontSizes, MediaQueries } from '../../themes'
 import { Picture, Icon } from '../Avatar/styled'
 import Button from '../Button'
@@ -37,16 +37,6 @@ export const Description = styled(StyledParagraph)`
 
 export const Title = styled(TitleH2)`
 	margin: 1em 0 0 0;
-`
-
-export const EditDescription = styled.textarea`
-	box-sizing: border-box;
-	width: 100%;
-	height: 12em;
-	padding: 0.5em;
-	border: 0.1em solid ${({ theme }) => theme.bg.secondary};
-	border-radius: 0.8em;
-	outline: none;
 `
 
 export const List = styled.ul`
@@ -102,18 +92,34 @@ export const ProfileButton = styled(Button)`
 	}
 `
 
-export const Photo = styled.div`
+const SameStyles = css`
+	margin: 0;
+	padding: 0;
+	align-self: flex-start;
+	text-align: center;
+`
+
+export const ProfileHeader = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 2fr;
-	justify-content: center;
-	align-items: center;
+	margin: 0.7em;
+	gap: 0.7em;
 
 	& ${Picture}, ${Icon} {
-		width: 90%;
 		grid-row: 1 / 3;
-		width: 14.5em;
-		height: 14.5em;
+		width: 12em;
+		height: 12em;
 		margin: auto;
+	}
+
+	& h1 {
+		${SameStyles};
+		align-self: flex-end;
+	}
+
+	& p {
+		${SameStyles};
+		align-self: flex-start;
 	}
 
 	@media (max-width: ${MediaQueries.Desktop}) {
@@ -125,8 +131,6 @@ export const Photo = styled.div`
 	}
 `
 
-export const Motto = styled.p`
-	margin: 0;
-	padding: 1em;
-	text-align: center;
+export const PlaceholderText = styled.span`
+	color: ${({ theme }) => theme.text.primary}80;
 `
