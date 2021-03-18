@@ -1,12 +1,13 @@
 import React, { useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Form, FormButton, FormItem, FormTitle } from '../Form/styled'
 
+import { Form, FormButton, FormItem, FormTitle, Errors } from '../Form/styled'
 import FormEmail from '../Form/components/FormEmail'
 import FormNickname from '../Form/components/FormNickname'
 import FormPassword from '../Form/components/FormPassword'
 import FormPasswordMessage from '../Form/components/FormPasswordMessage'
 import FormCheckbox from '../Form/components/FormCheckbox'
+
 import { authentication } from '../../firebase'
 
 type Props = {
@@ -35,6 +36,8 @@ const RegisterForm: React.FC<Props> = ({ onSuccess }) => {
 		criteriaMode: 'all',
 	})
 
+	const [submitError, setSubmitError] = useState('')
+
 	// Nickname prompter
 	const email = useRef('')
 	email.current = watch('email', '')
@@ -62,18 +65,26 @@ const RegisterForm: React.FC<Props> = ({ onSuccess }) => {
 	const onSubmit = handleSubmit(async (formData) => {
 		const { email, nickname, password } = formData
 
-		const { user } = await authentication.createUserWithEmailAndPassword(
-			email,
-			password
-		)
+		try {
+			const {
+				user,
+			} = await authentication.createUserWithEmailAndPassword(
+				email,
+				password
+			)
 
-		if (user) {
-			user.updateProfile({ displayName: nickname })
+			if (user) {
+				await user.updateProfile({ displayName: nickname })
 
-			onSuccess()
+				onSuccess()
+			}
+		} catch (error) {
+			if (error?.code === 'auth/email-already-in-use') {
+				setSubmitError('Tento e-mail již existuje!')
+			} else {
+				console.error(error)
+			}
 		}
-
-		// TODO: HANDLE ERRORS
 	})
 
 	return (
@@ -131,6 +142,8 @@ const RegisterForm: React.FC<Props> = ({ onSuccess }) => {
 					ODESLAT
 				</FormButton>
 			</FormItem>
+
+			{submitError && <Errors>{submitError}</Errors>}
 		</Form>
 	)
 }
