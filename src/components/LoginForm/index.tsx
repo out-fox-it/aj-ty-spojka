@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 
 import { useForm } from 'react-hook-form'
-import { Errors, Form, FormButton, FormItem, FormTitle } from '../Form/styled'
+import {
+	Errors,
+	Form,
+	FormButton,
+	FormItemForm,
+	FormTitle,
+} from '../Form/styled'
 
 import FormEmail from '../Form/components/FormEmail'
 import FormPassword from '../Form/components/FormPassword'
@@ -67,11 +73,11 @@ const LoginForm: React.FC = () => {
 			)}
 
 			{/* SUBMIT */}
-			<FormItem>
+			<FormItemForm>
 				<FormButton name="submit" type="submit">
 					ODESLAT
 				</FormButton>
-			</FormItem>
+			</FormItemForm>
 
 			{/* TODO: Forgotten password */}
 			<ForgottenPassword />

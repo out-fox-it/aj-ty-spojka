@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Errors, FormItem, Label, FormCheck } from '../../styled'
+import { Errors, FormItemForm, Label, FormCheck } from '../../styled'
 
 type Props = {
 	register: ReturnType<typeof useForm>['register']
@@ -9,7 +9,7 @@ type Props = {
 
 const FormCheckbox: React.FC<Props> = ({ register, errors }) => (
 	<>
-		<FormItem>
+		<FormItemForm>
 			<Label htmlFor="check">Souhlasím s XY:</Label>
 			<FormCheck
 				name="check"
@@ -19,7 +19,7 @@ const FormCheckbox: React.FC<Props> = ({ register, errors }) => (
 						'Registrace bez souhlasu s podmínkami není možná!',
 				})}
 			/>
-		</FormItem>
+		</FormItemForm>
 		<Errors>{errors.check && <p>{errors.check.message}</p>}</Errors>
 	</>
 )

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Errors, FormItem, Label, FormInput } from '../../styled'
+import { Errors, FormItemForm, Label, FormInput } from '../../styled'
 
 type Props = {
 	register: ReturnType<typeof useForm>['register']
@@ -12,7 +12,7 @@ const emailRegex = /^[A-Z0-9._-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
 
 const FormEmail: React.FC<Props> = ({ register, errors, onChange }) => (
 	<>
-		<FormItem>
+		<FormItemForm>
 			<Label htmlFor="email">E-mail:</Label>
 			<FormInput
 				name="email"
@@ -32,7 +32,7 @@ const FormEmail: React.FC<Props> = ({ register, errors, onChange }) => (
 				})}
 				onChange={onChange}
 			/>
-		</FormItem>
+		</FormItemForm>
 		<Errors>{errors.email && <p>{errors.email.message}</p>}</Errors>
 	</>
 )

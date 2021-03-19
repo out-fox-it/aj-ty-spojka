@@ -1,7 +1,13 @@
 import React, { useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import {
+	Form,
+	FormButton,
+	FormItemForm,
+	FormTitle,
+	Errors,
+} from '../Form/styled'
 
-import { Form, FormButton, FormItem, FormTitle, Errors } from '../Form/styled'
 import FormEmail from '../Form/components/FormEmail'
 import FormPassword from '../Form/components/FormPassword'
 import FormPasswordMessage from '../Form/components/FormPasswordMessage'
@@ -98,13 +104,15 @@ const RegisterForm: React.FC<Props> = ({ onSuccess }) => {
 				onChange={() => setValue('nickname', newNickname)}
 			/>
 
-			<FormText
-				register={register}
-				errors={errors}
-				label={'Přezdívka:'}
-				required={'Musíte zadat přezdívku!'}
-				placeholder={'Přezdívka1'}
-			/>
+			<FormItemForm>
+				<FormText
+					register={register}
+					errors={errors}
+					label={'Přezdívka:'}
+					required={'Musíte zadat přezdívku!'}
+					placeholder={'Přezdívka1'}
+				/>
+			</FormItemForm>
 
 			<FormPassword
 				passwordName="password"
@@ -143,11 +151,11 @@ const RegisterForm: React.FC<Props> = ({ onSuccess }) => {
 			<FormCheckbox register={register} errors={errors} />
 
 			{/* SUBMIT */}
-			<FormItem>
+			<FormItemForm>
 				<FormButton name="submit" type="submit">
 					ODESLAT
 				</FormButton>
-			</FormItem>
+			</FormItemForm>
 
 			{submitError && <Errors>{submitError}</Errors>}
 		</Form>

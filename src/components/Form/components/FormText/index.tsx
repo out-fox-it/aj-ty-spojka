@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Errors, FormItem, Label, FormInput } from '../../styled'
+import { v4 as uuid } from 'uuid'
+import { Errors, Label, FormInput } from '../../styled'
 
 type Props = {
 	register: ReturnType<typeof useForm>['register']
@@ -20,12 +21,14 @@ const FormText: React.FC<Props> = ({
 	placeholder,
 	value,
 	change,
-}) => (
-	<>
-		<FormItem>
-			{label && <Label htmlFor="textField">{label}</Label>}
+}) => {
+	const uniqueId = uuid()
+
+	return (
+		<>
+			{label && <Label htmlFor={uniqueId}>{label}</Label>}
 			<FormInput
-				id="textField"
+				id={uniqueId}
 				name="textField"
 				type="text"
 				placeholder={placeholder}
@@ -39,9 +42,9 @@ const FormText: React.FC<Props> = ({
 					},
 				})}
 			/>
-		</FormItem>
-		{errors.textField && <Errors>{errors.textField.message}</Errors>}
-	</>
-)
+			{errors.textField && <Errors>{errors.textField.message}</Errors>}
+		</>
+	)
+}
 
 export default FormText

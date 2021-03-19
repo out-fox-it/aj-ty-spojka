@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { Check, PencilAlt } from '@styled-icons/fa-solid'
 import { Edit, ProfileName } from '../styled'
 import FormText from '../../Form/components/FormText'
+import { FormItemFullWidth } from '../../Form/styled'
 
 type Props = {
 	fullName: string
@@ -36,13 +37,15 @@ export const Name: React.FC<Props> = ({ fullName }) => {
 						setElement(true)
 					})}
 				>
-					<FormText
-						register={register}
-						errors={errors}
-						required={'Jméno musí být vyplněno'}
-						value={text}
-						change={changeText}
-					/>
+					<FormItemFullWidth>
+						<FormText
+							register={register}
+							errors={errors}
+							required={'Jméno musí být vyplněno'}
+							value={text}
+							change={changeText}
+						/>
+					</FormItemFullWidth>
 					<Edit name="submit" type="submit">
 						<Check />
 					</Edit>

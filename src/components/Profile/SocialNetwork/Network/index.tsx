@@ -4,6 +4,7 @@ import { Edit } from '../../styled'
 import { ProfileContext } from '../../Context'
 import { Check, PencilAlt, Times } from '@styled-icons/fa-solid'
 import FormText from '../../../Form/components/FormText'
+import { FormItemFullWidth } from '../../../Form/styled'
 
 type Props = {
 	address: string | undefined
@@ -49,13 +50,15 @@ export const Network: React.FC<Props> = ({ address, id }) => {
 						}
 					})}
 				>
-					<FormText
-						register={register}
-						errors={errors}
-						required={false}
-						value={actualAddress}
-						change={changeText}
-					/>
+					<FormItemFullWidth>
+						<FormText
+							register={register}
+							errors={errors}
+							required={false}
+							value={actualAddress}
+							change={changeText}
+						/>
+					</FormItemFullWidth>
 					<Edit name="submit" type="submit">
 						<Check />
 					</Edit>
