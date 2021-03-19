@@ -10,6 +10,7 @@ import {
 	SearchBoxContainer,
 } from './styled'
 import { TitleH2 } from '../StyledText/StyledTitle'
+import { skillsData } from './data'
 
 const labelTexts = ['Dělal jsem:', 'Dělám/učím se:', 'Zajímá mě:']
 
@@ -31,60 +32,9 @@ const SkillQueue: React.FC = () => (
 			<SearchBoxContainer>
 				<SearchBox />
 			</SearchBoxContainer>
-
-			<Skill>JavaScript</Skill>
-			<Skill>Haskell</Skill>
-			<Skill>TypeScript</Skill>
-			<Skill>React</Skill>
-			<Skill>Clojure</Skill>
-			<Skill>JavaScript</Skill>
-			<Skill>Haskell</Skill>
-			<Skill>TypeScript</Skill>
-			<Skill>React</Skill>
-			<Skill>Clojure</Skill>
-			<Skill>JavaScript</Skill>
-			<Skill>Haskell</Skill>
-			<Skill>TypeScript</Skill>
-			<Skill>React</Skill>
-			<Skill>Clojure</Skill>
-			<Skill>JavaScript</Skill>
-			<Skill>Haskell</Skill>
-			<Skill>TypeScript</Skill>
-			<Skill>React</Skill>
-			<Skill>Clojure</Skill>
-			<Skill>JavaScript</Skill>
-			<Skill>Haskell</Skill>
-			<Skill>TypeScript</Skill>
-			<Skill>React</Skill>
-			<Skill>Clojure</Skill>
-			<Skill>JavaScript</Skill>
-			<Skill>Haskell</Skill>
-			<Skill>TypeScript</Skill>
-			<Skill>React</Skill>
-			<Skill>Clojure</Skill>
-			<Skill>JavaScript</Skill>
-			<Skill>Haskell</Skill>
-			<Skill>TypeScript</Skill>
-			<Skill>React</Skill>
-			<Skill>Clojure</Skill>
-			<Skill>JavaScript</Skill>
-			<Skill>Haskell</Skill>
-			<Skill>TypeScript</Skill>
-			<Skill>React</Skill>
-			<Skill>Clojure</Skill>
-			<Skill>JavaScript</Skill>
-			<Skill>Haskell</Skill>
-			<Skill>TypeScript</Skill>
-			<Skill>React</Skill>
-			<Skill>Clojure</Skill>
-			<Skill>TypeScript</Skill>
-			<Skill>React</Skill>
-			<Skill>Clojure</Skill>
-			<Skill>JavaScript</Skill>
-			<Skill>Haskell</Skill>
-			<Skill>TypeScript</Skill>
-			<Skill>React</Skill>
-			<Skill>Clojure</Skill>
+			{skillsData.map((skillsData, index) => (
+				<Skill key={index}>{skillsData.skillTitle}</Skill>
+			))}
 		</AllSkillsBox>
 	</>
 )
