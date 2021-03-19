@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Errors, FormItem, Label, FormInput, FormIcon } from '../../styled'
+import { Errors, FormItemForm, Label, FormInput, FormIcon } from '../../styled'
 import { Eye } from '@styled-icons/fa-solid'
 
 type Props = {
@@ -29,7 +29,7 @@ const FormPassword: React.FC<Props> = ({
 	validate,
 }) => (
 	<>
-		<FormItem>
+		<FormItemForm>
 			<Label htmlFor="password">{passwordLabel}</Label>
 
 			<FormInput
@@ -43,7 +43,7 @@ const FormPassword: React.FC<Props> = ({
 				})}
 				onFocus={onFocus}
 			/>
-		</FormItem>
+		</FormItemForm>
 
 		<FormIcon>
 			<Eye onClick={onClick} />

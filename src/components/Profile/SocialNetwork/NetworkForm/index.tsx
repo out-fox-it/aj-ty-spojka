@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import FormText from '../../../Form/components/FormText'
+import { FormItemFullWidth } from '../../../Form/styled'
 import { ProfileContext } from '../../Context'
 import { ProfileButton } from '../../styled'
 
@@ -12,22 +13,26 @@ export const NetworkForm: React.FC = () => {
 	const { errors, register, handleSubmit } = useForm<FormData>()
 
 	const submit = () => {
-		addNetwork(address)
-		setAddress('')
+		if (address?.replace(/\s/g, '') !== '') {
+			addNetwork(address)
+			setAddress('')
+		}
 	}
 
 	const changeAddress = (address: string | undefined) => setAddress(address)
 
 	return (
 		<form onSubmit={handleSubmit(submit)}>
-			<FormText
-				register={register}
-				errors={errors}
-				required={false}
-				placeholder="Vložte url adresu Vaší sociální sítě"
-				change={changeAddress}
-				value={address}
-			/>
+			<FormItemFullWidth>
+				<FormText
+					register={register}
+					errors={errors}
+					required={false}
+					placeholder="Vložte url adresu Vaší sociální sítě"
+					change={changeAddress}
+					value={address}
+				/>
+			</FormItemFullWidth>
 			<ProfileButton
 				name="submit"
 				type="submit"

@@ -21,19 +21,6 @@ export const FormTitle = styled(TitleH1)`
 	}
 `
 
-export const FormItem = styled.div`
-	grid-column: 2 / 4;
-	font-size: ${FontSizes.SizeDefault};
-	display: flex;
-	flex-flow: row nowrap;
-	align-items: center;
-	justify-content: space-between;
-
-	@media (max-width: ${MediaQueries.Desktop}) {
-		grid-column: 2;
-	}
-`
-
 export const FormInput = styled.input`
 	font-size: ${FontSizes.SizeSmall};
 	position: relative;
@@ -98,6 +85,32 @@ export const Errors = styled.span`
 
 	@media (max-width: ${MediaQueries.Desktop}) {
 		grid-column: 2;
+	}
+`
+
+// Position FormItem inside of Form
+export const FormItemForm = styled.div`
+	grid-column: 2 / 4;
+	font-size: ${FontSizes.SizeDefault};
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: space-between;
+
+	@media (max-width: ${MediaQueries.Desktop}) {
+		grid-column: 2;
+	}
+`
+
+// Position FormItem on other pages
+export const FormItemFullWidth = styled(FormItemForm)`
+	justify-content: center;
+
+	& > ${FormInput} {
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+		min-width: 95%;
 	}
 `
 
