@@ -11,6 +11,8 @@ type Props = {
 	placeholder?: string
 	value?: string
 	change?: (text: string | undefined) => void
+	disabled?: boolean
+	className?: string
 }
 
 const FormText: React.FC<Props> = ({
@@ -21,6 +23,8 @@ const FormText: React.FC<Props> = ({
 	placeholder,
 	value,
 	change,
+	disabled,
+	className,
 }) => {
 	const uniqueId = uuid()
 
@@ -34,6 +38,8 @@ const FormText: React.FC<Props> = ({
 				placeholder={placeholder}
 				value={value}
 				onChange={(e) => !change || change(e.target.value)}
+				disabled={disabled}
+				className={className}
 				ref={register({
 					required: required,
 					maxLength: {

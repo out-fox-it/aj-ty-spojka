@@ -2,14 +2,19 @@ import React, { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 import { Form, FormItemFullWidth } from '../Form/styled'
 import { SearchBox, SearchIcon } from './styled'
-import { Skill } from '../SkillQueue/data'
+import { Skill } from '../SkillQueue/types'
 
 type Props = {
 	onQueueChange: (results: ReadonlyArray<Skill>) => void
 	searchableSkills: ReadonlyArray<Skill>
+	disabled?: boolean
 }
 
-const Search: React.FC<Props> = ({ onQueueChange, searchableSkills }) => {
+const Search: React.FC<Props> = ({
+	onQueueChange,
+	searchableSkills,
+	disabled,
+}) => {
 	const queueChange = useCallback(
 		(queue: string | undefined) => {
 			if (queue && queue.length > 0) {
@@ -47,6 +52,7 @@ const Search: React.FC<Props> = ({ onQueueChange, searchableSkills }) => {
 					required={''}
 					placeholder={'Hledám...'}
 					change={queueChange}
+					disabled={disabled}
 				/>
 			</FormItemFullWidth>
 		</Form>
