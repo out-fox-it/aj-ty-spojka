@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 import { FontSizes } from '../../themes'
 
-type LabelProps = {
-	labelText: string
-}
-
 export const Row = styled.div`
 	display: flex;
 	flex-flow: row;
@@ -17,7 +13,7 @@ export const MySkills = styled.div`
 	margin-top: -1.5em;
 `
 
-export const Label = styled.div<LabelProps>`
+export const Label = styled.div`
 	font-size: ${FontSizes.SizeDefault};
 	font-weight: bold;
 	color: ${({ theme }) => theme.text.secondary};
@@ -28,13 +24,14 @@ export const Label = styled.div<LabelProps>`
 export const ChosenSkills = styled.div``
 
 export const AllSkillsBox = styled.div`
-	width: 100%;
 	height: 15em;
 	background-color: ${({ theme }) => theme.bg.secondary};
 	border-radius: 0.8em;
 	text-align: center;
 	overflow: auto;
 	border: 1.7em solid ${({ theme }) => theme.bg.secondary};
+	padding-left: 1em;
+	padding-right: 1em;
 
 	// Scrollbar styles
 	&::-webkit-scrollbar {
@@ -71,14 +68,4 @@ export const Skill = styled.button`
 `
 export const SearchBoxContainer = styled.div`
 	padding-bottom: 1em;
-`
-
-export const SearchBox = styled.input`
-	font-size: ${FontSizes.SizeDefault};
-	padding: 0.5em;
-	margin: 0.5em;
-	width: 50%;
-	border-radius: 0.8em;
-	outline: none;
-	border: 0.2em solid ${({ theme }) => theme.text.link};
 `
