@@ -1,19 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import {
-	AllSkillsBox,
-	ChosenSkills,
-	Label,
-	MySkills,
-	Row,
-	Skill,
-	SearchBoxContainer,
-} from './styled'
+import { AllSkillsBox, Skill, SearchBoxContainer } from './styled'
 import { TitleH2 } from '../StyledText/StyledTitle'
 import Search from '../Search'
 import { firestore } from '../../firebase'
 import { Skill as SkillType } from './types'
-
-const labelTexts = ['Dělal jsem:', 'Dělám/učím se:', 'Zajímá mě:']
+import SQProfile from './SQProfile'
 
 const SkillQueue: React.FC = () => {
 	const [results, setResults] = useState<ReadonlyArray<SkillType>>([])
@@ -44,17 +35,9 @@ const SkillQueue: React.FC = () => {
 	return (
 		<>
 			<TitleH2>TECHNOLOGIE</TitleH2>
-			<MySkills>
-				{labelTexts.map((labelTexts, index) => (
-					<Row key={index}>
-						<Label>{labelTexts}</Label>
-						<ChosenSkills>
-							<Skill>JavaScript</Skill>
-							<Skill>Clojure</Skill>
-						</ChosenSkills>
-					</Row>
-				))}
-			</MySkills>
+
+			<SQProfile />
+
 			<AllSkillsBox>
 				<SearchBoxContainer>
 					<Search
