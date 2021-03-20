@@ -10,13 +10,14 @@ import Avatar from '../Avatar'
 import { Motto } from './Motto'
 import SkillQueue from '../SkillQueue'
 import { authentication, firestore } from '../../firebase'
+import { useUser } from '../User'
 
 type Props = {
 	email: string
 	picture?: string
 }
 
-type ProfileTypes = {
+type ProfileType = {
 	nickname: string
 	motto?: string
 	about: string
@@ -25,28 +26,26 @@ type ProfileTypes = {
 }
 
 const ContentProfile: React.FC<Props> = ({ email, picture }) => {
-	const [profileData, setProfileData] = useState<Array<ProfileTypes>>([])
+	const [profileData, setProfileData] = useState<ProfileType | null>(null)
+	const { user } = useUser()
 
 	useEffect(() => {
-		firestore
-			.collection('profiles')
-			.get()
-			.then((collectionSnapshot) => {
-				const profileData: ProfileTypes[] = []
-
-				collectionSnapshot.forEach((document) =>
-					profileData.push(document.data() as ProfileTypes)
+		if (user) {
+			firestore
+				.collection('profiles')
+				.doc(user.uid)
+				.get()
+				.then((documentSnapshot) => {
+					setProfileData(documentSnapshot.data() as ProfileType)
+				})
+				.catch((error) =>
+					console.error(
+						'Firestore failed to deliver profileData collection:',
+						error
+					)
 				)
-
-				setProfileData(profileData)
-			})
-			.catch((error) =>
-				console.error(
-					'Firestore failed to deliver profileData collection:',
-					error
-				)
-			)
-	}, [])
+		}
+	}, [user])
 
 	const history = useHistory()
 
@@ -57,12 +56,12 @@ const ContentProfile: React.FC<Props> = ({ email, picture }) => {
 
 	return (
 		<ProfileContextProvider addresses={[]}>
-			{profileData.map((data, index) => (
-				<ProfileContent key={index}>
+			{profileData && (
+				<ProfileContent>
 					<ProfileHeader>
 						<Avatar picture={picture} />
-						<Name fullName={data.nickname} />
-						<Motto motto={data.motto} />
+						<Name fullName={profileData.nickname} />
+						<Motto motto={profileData.motto} />
 					</ProfileHeader>
 					<Email email={email} />
 					<AboutMe />
@@ -74,7 +73,7 @@ const ContentProfile: React.FC<Props> = ({ email, picture }) => {
 						onClick={() => signOut()}
 					/>
 				</ProfileContent>
-			))}
+			)}
 		</ProfileContextProvider>
 	)
 }
