@@ -41,8 +41,8 @@ const ContentProfile: React.FC<Props> = ({
 				</ProfileHeader>
 				<Email email={email} />
 				<AboutMe />
-				<SocialNetwork />
 				<SkillQueue />
+				<SocialNetwork />
 				<ProfileButton titleSmall="Propojit" />
 				<ProfileButton title="Odhlásit se" onClick={() => signOut()} />
 			</ProfileContent>
