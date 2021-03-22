@@ -24,7 +24,7 @@ export const Label = styled.div`
 export const ChosenSkills = styled.div``
 
 export const AllSkillsBox = styled.div`
-	height: 15em;
+	height: 16em;
 	background-color: ${({ theme }) => theme.bg.secondary};
 	border-radius: 0.8em;
 	text-align: center;
@@ -68,4 +68,7 @@ export const Skill = styled.button`
 `
 export const SearchBoxContainer = styled.div`
 	padding-bottom: 1em;
+	position: sticky;
+	top: 0;
+	background-color: ${({ theme }) => theme.bg.secondary};
 `
