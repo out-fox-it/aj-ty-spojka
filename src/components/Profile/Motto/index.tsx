@@ -1,9 +1,11 @@
 import { Check, PencilAlt } from '@styled-icons/fa-solid'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import FormTextArea, { SizeTextarea } from '../../Form/components/FormTextArea'
 import { StyledParagraph } from '../../StyledText/StyledParagraph'
 import { Edit, PlaceholderText } from '../styled'
+import { firestore } from '../../../firebase'
+import { useUser } from '../../User'
 
 type Props = {
 	motto: string | undefined
@@ -12,20 +14,46 @@ type Props = {
 export const Motto: React.FC<Props> = ({ motto }) => {
 	const [element, setElement] = useState<boolean>(false)
 
-	const [text, setText] = useState<string | undefined>('')
+	const [text, setText] = useState<string | undefined>()
+
+	const { user } = useUser()
 
 	useEffect(() => {
 		setText(motto)
 	}, [motto])
 
-	const { register, handleSubmit, errors } = useForm()
+	const { register, errors } = useForm()
 
 	const changeText = (text: string | undefined) => setText(text)
+
+	const updateUserMotto = useCallback(
+		(motto: string): void => {
+			if (user) {
+				firestore
+					.collection('profiles')
+					.doc(user.uid)
+					.update({ motto })
+					.catch((error) =>
+						console.error(
+							'Firestore failed to deliver profileData collection:',
+							error
+						)
+					)
+			}
+		},
+		[user]
+	)
 
 	return (
 		<>
 			{element ? (
-				<form onSubmit={handleSubmit(() => setElement(false))}>
+				<form
+					onSubmit={(event) => {
+						event.preventDefault()
+						setElement(false)
+						updateUserMotto(text ?? '')
+					}}
+				>
 					<FormTextArea
 						register={register}
 						errors={errors}

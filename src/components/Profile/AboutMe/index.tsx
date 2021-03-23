@@ -1,17 +1,47 @@
 import { Check, PencilAlt } from '@styled-icons/fa-solid'
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { firestore } from '../../../firebase'
 import FormTextArea, { SizeTextarea } from '../../Form/components/FormTextArea'
 import { Description, Edit, PlaceholderText, Title } from '../styled'
+import { useUser } from '../../User'
 
-export const AboutMe: React.FC = () => {
+type Props = {
+	aboutMe: string
+}
+
+export const AboutMe: React.FC<Props> = ({ aboutMe }) => {
 	const [element, setElement] = useState<boolean>(false)
 
-	const [text, setText] = useState<string | undefined>('')
+	const [text, setText] = useState<string | undefined>()
 
-	const { register, handleSubmit, errors } = useForm()
+	const { user } = useUser()
+
+	useEffect(() => {
+		setText(aboutMe)
+	}, [aboutMe])
+
+	const { register, errors } = useForm()
 
 	const changeText = (text: string | undefined) => setText(text)
+
+	const updateUserAboutMe = useCallback(
+		(about: string): void => {
+			if (user) {
+				firestore
+					.collection('profiles')
+					.doc(user.uid)
+					.update({ about })
+					.catch((error) =>
+						console.error(
+							'Firestore failed to deliver profileData collection:',
+							error
+						)
+					)
+			}
+		},
+		[user]
+	)
 
 	return (
 		<>
@@ -25,9 +55,11 @@ export const AboutMe: React.FC = () => {
 			</Title>
 			{element ? (
 				<form
-					onSubmit={handleSubmit(() => {
+					onSubmit={(event) => {
+						event.preventDefault()
 						setElement(false)
-					})}
+						updateUserAboutMe(text ?? '')
+					}}
 				>
 					<FormTextArea
 						register={register}
