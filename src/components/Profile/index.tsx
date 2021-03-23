@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { ProfileContextProvider } from './Context'
+import { NetworkType, ProfileContextProvider } from './Context'
 import { Name } from './Name'
 import { SocialNetwork } from './SocialNetwork'
 import { Email } from './Email'
@@ -12,22 +12,20 @@ import SkillQueue from '../SkillQueue'
 import { authentication, firestore } from '../../firebase'
 import { useUser } from '../User'
 
-type Props = {
-	email: string
-	picture?: string
-}
-
 type ProfileType = {
 	nickname: string
 	motto?: string
 	about: string
 	skills: string[]
-	socialNetworks: string[]
+	socialNetworks: NetworkType[]
 }
 
-const ContentProfile: React.FC<Props> = ({ email, picture }) => {
+const ContentProfile: React.FC = () => {
 	const [profileData, setProfileData] = useState<ProfileType | null>(null)
 	const { user } = useUser()
+
+	// TODO: Add avatar later
+	const photo = ''
 
 	useEffect(() => {
 		if (user) {
@@ -55,26 +53,30 @@ const ContentProfile: React.FC<Props> = ({ email, picture }) => {
 	}
 
 	return (
-		<ProfileContextProvider addresses={[]}>
+		<>
 			{profileData && (
-				<ProfileContent>
-					<ProfileHeader>
-						<Avatar picture={picture} />
-						<Name fullName={profileData.nickname} />
-						<Motto motto={profileData.motto} />
-					</ProfileHeader>
-					<Email email={email} />
-					<AboutMe />
-					<SkillQueue />
-					<SocialNetwork />
-					<ProfileButton titleSmall="Propojit" />
-					<ProfileButton
-						title="Odhlásit se"
-						onClick={() => signOut()}
-					/>
-				</ProfileContent>
+				<ProfileContextProvider
+					addresses={profileData.socialNetworks || []}
+				>
+					<ProfileContent>
+						<ProfileHeader>
+							<Avatar picture={photo} />
+							<Name fullName={profileData.nickname} />
+							<Motto motto={profileData.motto} />
+						</ProfileHeader>
+						<Email email={user?.email || ''} />
+						<AboutMe aboutMe={profileData.about} />
+						<SkillQueue />
+						<SocialNetwork />
+						<ProfileButton titleSmall="Propojit" />
+						<ProfileButton
+							title="Odhlásit se"
+							onClick={() => signOut()}
+						/>
+					</ProfileContent>
+				</ProfileContextProvider>
 			)}
-		</ProfileContextProvider>
+		</>
 	)
 }
 

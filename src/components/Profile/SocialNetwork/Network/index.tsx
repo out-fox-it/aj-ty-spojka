@@ -22,7 +22,7 @@ export const Network: React.FC<Props> = ({ address, id }) => {
 		setActualAddress(address)
 	}, [address])
 
-	const { errors, register, handleSubmit } = useForm<FormData>()
+	const { errors, register } = useForm<FormData>()
 
 	const changeText = (actualAddress: string | undefined) =>
 		setActualAddress(actualAddress)
@@ -41,14 +41,15 @@ export const Network: React.FC<Props> = ({ address, id }) => {
 				</li>
 			) : (
 				<form
-					onSubmit={handleSubmit(() => {
+					onSubmit={(event) => {
+						event.preventDefault()
 						if (actualAddress !== '') {
 							setElement(true)
 							editNetwork(actualAddress, id)
 						} else {
 							removeNetwork(id)
 						}
-					})}
+					}}
 				>
 					<FormItemFullWidth>
 						<FormText
