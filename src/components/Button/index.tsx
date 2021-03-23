@@ -11,7 +11,6 @@ type Props = {
 	icon?: StyledIcon
 	title?: string
 	titleSmall?: string
-	subtitle?: string
 	onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 	className?: string
 	name?: string
@@ -22,7 +21,6 @@ const Button: React.FC<Props> = ({
 	icon,
 	title,
 	titleSmall,
-	subtitle,
 	onClick,
 	className,
 	name,
