@@ -34,7 +34,7 @@ const NavAfterLogin: React.FC = () => (
 		<ButtonLink to="/profile">
 			<ThemedStyledButton icon={UserEdit} title="Profil" />
 		</ButtonLink>
-		<ButtonLink to="/matching">
+		<ButtonLink to="/matching/buddy">
 			<ThemedStyledButton icon={Users} title="Matching" />
 		</ButtonLink>
 		<ButtonLink to="/contacts">
