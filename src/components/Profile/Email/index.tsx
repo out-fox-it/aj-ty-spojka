@@ -5,6 +5,8 @@ type Props = {
 	email: string
 }
 
-export const Email: React.FC<Props> = ({ email }) => (
+const Email: React.FC<Props> = ({ email }) => (
 	<EmailAccount>{email}</EmailAccount>
 )
+
+export default Email

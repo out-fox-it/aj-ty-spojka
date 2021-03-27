@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import Button from '../Button'
 
 export const Wrapper = styled.section`
@@ -25,6 +25,11 @@ export const ContentTabs = styled.div`
 	background-color: ${({ theme }) => theme.text.link};
 `
 
+const ActiveStyle = css`
+	background-color: ${({ theme }) => theme.text.link};
+	border: none;
+`
+
 export const StyledButton = styled(Button)<{ active: boolean }>`
 	width: 100%;
 	height: 100%;
@@ -33,10 +38,5 @@ export const StyledButton = styled(Button)<{ active: boolean }>`
 	border-bottom-right-radius: 0;
 	border: 0.25em solid ${({ theme }) => theme.bg.primary};
 
-	${({ active, theme }) =>
-		active &&
-		`
-		background-color: ${theme.text.link};
-		border: none;
-	`}
+	${({ active }) => active && ActiveStyle}
 `

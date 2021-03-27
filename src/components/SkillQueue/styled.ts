@@ -66,6 +66,7 @@ export const Skill = styled.button`
 	outline: none;
 	cursor: pointer;
 `
+
 export const SearchBoxContainer = styled.div`
 	padding-bottom: 1em;
 	position: sticky;

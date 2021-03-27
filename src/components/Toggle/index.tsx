@@ -41,7 +41,7 @@ const Toggle: React.FC<Props> = ({
 			<Switch>
 				<Checkbox
 					checked={checked}
-					onChange={(e) => change(e.target.checked)}
+					onChange={(event) => change(event.target.checked)}
 				/>
 				{isRound ? <RoundSlider /> : <Slider />}
 			</Switch>

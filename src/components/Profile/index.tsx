@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { NetworkType, ProfileContextProvider } from './Context'
-import { Name } from './Name'
-import { SocialNetwork } from './SocialNetwork'
-import { Email } from './Email'
+import ProfileContextProvider, { NetworkType } from './Context'
+import Name from './Name'
+import SocialNetwork from './SocialNetwork'
+import Email from './Email'
 import { ProfileButton, ProfileContent, ProfileHeader } from './styled'
-import { AboutMe } from './AboutMe'
+import AboutMe from './AboutMe'
 import { useHistory } from 'react-router'
 import Avatar from '../Avatar'
-import { Motto } from './Motto'
+import Motto from './Motto'
 import SkillQueue from '../SkillQueue'
 import { authentication, firestore } from '../../firebase'
 import { useUser } from '../User'
@@ -56,7 +56,7 @@ const ContentProfile: React.FC = () => {
 		<>
 			{profileData && (
 				<ProfileContextProvider
-					addresses={profileData.socialNetworks || []}
+					addresses={profileData.socialNetworks ?? []}
 				>
 					<ProfileContent>
 						<ProfileHeader>
@@ -64,7 +64,7 @@ const ContentProfile: React.FC = () => {
 							<Name fullName={profileData.nickname} />
 							<Motto motto={profileData.motto} />
 						</ProfileHeader>
-						<Email email={user?.email || ''} />
+						<Email email={user?.email ?? ''} />
 						<AboutMe aboutMe={profileData.about} />
 						<SkillQueue />
 						<SocialNetwork />

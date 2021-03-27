@@ -1,7 +1,7 @@
 import React from 'react'
-import Message, { MessageData, MessageType } from '../components/Message'
+import Message from '../components/Message'
+import { MessageData, MessageType } from '../components/Message/types'
 import { MessageBoxBorder, MessageBoxTitle } from '../components/Message/styled'
-
 import NavBar from '../components/NavBar'
 import Page from '../components/Page'
 import Footer from '../components/Footer'
@@ -84,33 +84,36 @@ const messageTypeTitles = {
 	[MessageType.IGNORED]: 'Odmítnuté žádosti o spojení',
 }
 
-const Contacts: React.FC = () => {
+const Messages: React.FC = () => {
 	const messagesGroups = groupMessagesByType(fakeMessages)
 
 	return (
 		<>
-			<NavBar />
-			<Page>
-				{/* TODO: Add message in case of no messages in any cathegory */}
-				{/* TODO: Handle new/unread messages style and notifications */}
-				<TitleH1 color="darkBlue">ZPRÁVY A UPOZORNĚNÍ</TitleH1>
-				{Object.entries(messagesGroups).map(([type, messages]) => (
-					<MessageBoxBorder key={type} hidden={messages.length === 0}>
-						<MessageBoxTitle>
-							{messageTypeTitles[type as MessageType]}
-						</MessageBoxTitle>
-						{messages.map((message, index) => (
-							<Message
-								key={`${type}_${index}`}
-								message={message}
-							/>
-						))}
-					</MessageBoxBorder>
-				))}
-			</Page>
-			<Footer />
+			{/* TODO: Add message in case of no messages in any category */}
+			{Object.entries(messagesGroups).map(([type, messages]) => (
+				<MessageBoxBorder key={type} hidden={messages.length === 0}>
+					<MessageBoxTitle>
+						{messageTypeTitles[type as MessageType]}
+					</MessageBoxTitle>
+					{messages.map((message, index) => (
+						<Message key={`${type}_${index}`} message={message} />
+					))}
+				</MessageBoxBorder>
+			))}
 		</>
 	)
 }
+
+const Contacts: React.FC = () => (
+	<>
+		<NavBar />
+		<Page>
+			<TitleH1 color="darkBlue">ZPRÁVY A UPOZORNĚNÍ</TitleH1>
+			{/* TODO: Handle new/unread messages style and notifications */}
+			<Messages />
+		</Page>
+		<Footer />
+	</>
+)
 
 export default Contacts

@@ -1,18 +1,13 @@
 import styled from 'styled-components'
 import { FontSizes } from '../../../themes'
 
-type Props = {
-	color?: string
-}
-
-export const TitleH1 = styled.h1<Props>`
+export const TitleH1 = styled.h1<{ color?: string }>`
 	font-size: ${FontSizes.SizeTitleH1};
 	text-align: center;
 	text-transform: uppercase;
-	color: ${({ color }) =>
-		color === 'darkBlue'
-			? ({ theme }) => theme.text.link
-			: ({ theme }) => theme.text.secondary}; // Default Title color
+	color: ${({ color, theme }) =>
+		// TODO: Why is static string value here?
+		color === 'darkBlue' ? theme.text.link : theme.text.secondary};
 `
 
 export const TitleH2 = styled.h2`

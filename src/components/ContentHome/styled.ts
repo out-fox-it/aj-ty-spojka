@@ -17,11 +17,7 @@ export const HomeSection = styled.section`
 	}
 `
 
-type Props = {
-	borderRadius: string
-}
-
-export const HomePicture = styled.img<Props>`
+export const HomePicture = styled.img<{ borderRadius: string }>`
 	width: 15em;
 	height: 12em;
 	border: 2px solid ${({ theme }) => theme.text.link};

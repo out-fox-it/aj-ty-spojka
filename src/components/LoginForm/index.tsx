@@ -1,24 +1,23 @@
 import React, { useState } from 'react'
-
 import { useForm } from 'react-hook-form'
 import {
 	Errors,
 	Form,
 	FormButton,
 	FormItemForm,
+	FormLink,
 	FormTitle,
 } from '../Form/styled'
-
 import FormEmail from '../Form/components/FormEmail'
 import FormPassword from '../Form/components/FormPassword'
 import FormCheckbox from '../Form/components/FormCheckbox'
-import ForgottenPassword from './ForgottenPassword'
 import { useHistory } from 'react-router-dom'
 import { authentication } from '../../firebase'
 
-type UserData = {
+type FormData = {
 	email: string
 	password: string
+	check: boolean
 }
 
 const LoginForm: React.FC = () => {
@@ -30,24 +29,25 @@ const LoginForm: React.FC = () => {
 	const history = useHistory()
 	const [firebaseError, setFirebaseError] = useState(false)
 
-	const onSubmit = async (data: UserData) => {
+	const onSubmit = handleSubmit(async (formData) => {
 		try {
 			await authentication.signInWithEmailAndPassword(
-				data.email,
-				data.password
+				formData.email,
+				formData.password
 			)
+
 			history.push('/home')
 		} catch (error) {
 			setFirebaseError(true)
 		}
-	}
+	})
 
 	// TODO: HANDLE ERRORS
 	// Password eye icon shows or hides the password
 	const [passwordShown, setPasswordShown] = useState(false)
 
 	return (
-		<Form onSubmit={handleSubmit(onSubmit)} noValidate>
+		<Form onSubmit={onSubmit} noValidate>
 			<FormTitle>PŘIHLAŠOVACÍ FORMULÁŘ</FormTitle>
 			<FormEmail register={register} errors={errors} />
 
@@ -80,7 +80,8 @@ const LoginForm: React.FC = () => {
 			</FormItemForm>
 
 			{/* TODO: Forgotten password */}
-			<ForgottenPassword />
+			{/* TODO: Add correct link! */}
+			<FormLink to="/">Zapomněli jste své heslo?</FormLink>
 		</Form>
 	)
 }

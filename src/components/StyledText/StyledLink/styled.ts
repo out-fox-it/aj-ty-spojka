@@ -1,16 +1,11 @@
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-type Props = {
-	color?: string
-}
-
-export const StyledLink = styled(Link)<Props>`
+export const StyledLink = styled(Link)<{ color?: string }>`
 	text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
-	color: ${({ color }) =>
-		color === 'darkBlue'
-			? ({ theme }) => theme.text.secondary
-			: ({ theme }) => theme.text.link}; // Default Link color
+	color: ${({ color, theme }) =>
+		// TODO: Why is static string value here?
+		color === 'darkBlue' ? theme.text.secondary : theme.text.link};
 `

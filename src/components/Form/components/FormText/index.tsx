@@ -10,7 +10,7 @@ type Props = {
 	label?: string
 	placeholder?: string
 	value?: string
-	change?: (text: string | undefined) => void
+	change?: (text?: string) => void
 	disabled?: boolean
 	className?: string
 }
@@ -37,7 +37,7 @@ const FormText: React.FC<Props> = ({
 				type="text"
 				placeholder={placeholder}
 				value={value}
-				onChange={(e) => !change || change(e.target.value)}
+				onChange={(event) => !change || change(event.target.value)}
 				disabled={disabled}
 				className={className}
 				ref={register({

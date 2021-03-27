@@ -20,15 +20,9 @@ export const Wrapper = styled.header`
 	}
 `
 
-type Props = {
-	color: string
-}
-
-export const NavBarLink = styled(StyledLink)<Props>`
-	color: ${({ color }) =>
-		color === Theme.Light
-			? ({ theme }) => theme.text.link
-			: ({ theme }) => theme.text.secondary};
+export const NavBarLink = styled(StyledLink)<{ $theme: Theme }>`
+	color: ${({ $theme, theme }) =>
+		$theme === Theme.Light ? theme.text.link : theme.text.secondary};
 	grid-column: 2;
 	padding: 2em;
 

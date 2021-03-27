@@ -18,11 +18,7 @@ export const Wrapper = styled.nav`
 	}
 `
 
-type Props = {
-	color: string
-}
-
-export const StyledButton = styled(Button)<Props>`
+export const StyledButton = styled(Button)<{ $theme: Theme }>`
 	width: 100%;
 	height: 100%;
 
@@ -31,10 +27,8 @@ export const StyledButton = styled(Button)<Props>`
 
 		&:hover {
 			background-color: ${({ theme }) => theme.bg.secondary};
-			color: ${({ color }) =>
-				color === Theme.Dark
-					? ({ theme }) => theme.text.link
-					: ({ theme }) => theme.bg.primary};
+			color: ${({ $theme, theme }) =>
+				$theme === Theme.Dark ? theme.text.link : theme.bg.primary};
 		}
 	}
 `
@@ -45,6 +39,7 @@ export const ButtonLink = styled(StyledLink)`
 	@media (max-width: ${MediaQueries.Ipad}) {
 		flex: 1;
 		height: 6em;
+
 		& > button {
 			border-radius: 0;
 		}

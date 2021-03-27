@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import { ProfileContext } from '../../Context'
 import { List, PlaceholderText } from '../../styled'
-import { Network } from '../Network'
+import Network from '../Network'
 
-export const NetworkList: React.FC = () => {
+const NetworkList: React.FC = () => {
 	const { network } = useContext(ProfileContext)
 
 	return (
@@ -28,3 +28,5 @@ export const NetworkList: React.FC = () => {
 		</>
 	)
 }
+
+export default NetworkList

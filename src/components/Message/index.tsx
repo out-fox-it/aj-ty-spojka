@@ -1,44 +1,25 @@
 import React from 'react'
-
-// Message Components
 import AwaitingResponseMessage from './components/AwaitingResponseMessage'
 import IgnoredMessage from './components/IgnoredMessage'
 import MatchMessage from './components/MatchMessage'
 import NewMatchMessage from './components/NewMatchMessage'
-
-export enum MessageType {
-	NEW_MATCH = 'NEW_MATCH',
-	MATCH = 'MATCH',
-	AWAITING_RESPONSE = 'AWAITING_RESPONSE',
-	IGNORED = 'IGNORED',
-}
-
-export type MessageData = {
-	type: MessageType
-	content: string
-}
+import { MessageType, MessageData } from './types'
 
 type Props = {
 	message: MessageData
 }
 
-const chooseMessageByType = (message: MessageData) => {
-	switch (message.type) {
-		case MessageType.NEW_MATCH:
-			return <NewMatchMessage message={message.content} />
-		case MessageType.MATCH:
-			return <MatchMessage message={message.content} />
-		case MessageType.AWAITING_RESPONSE:
-			return <AwaitingResponseMessage message={message.content} />
-		case MessageType.IGNORED:
-			return <IgnoredMessage message={message.content} />
-		default:
-		// Invalid message type
+const Message: React.FC<Props> = ({ message }) => {
+	const messageTypes = {
+		[MessageType.NEW_MATCH]: <NewMatchMessage message={message.content} />,
+		[MessageType.MATCH]: <MatchMessage message={message.content} />,
+		[MessageType.AWAITING_RESPONSE]: (
+			<AwaitingResponseMessage message={message.content} />
+		),
+		[MessageType.IGNORED]: <IgnoredMessage message={message.content} />,
 	}
-}
 
-const Message: React.FC<Props> = ({ message }) => (
-	<>{chooseMessageByType(message)}</>
-)
+	return messageTypes[message.type]
+}
 
 export default Message

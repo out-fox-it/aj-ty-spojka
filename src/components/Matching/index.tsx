@@ -1,30 +1,11 @@
 import React, { useState } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { StyledLink } from '../StyledText/StyledLink'
+import { dataTabs } from './data'
 import { StyledButton, Wrapper, TitleTabs, ContentTabs } from './styled'
 
-type TabsType = {
-	title: string
-	route: string
-}
-
-const dataTabs: TabsType[] = [
-	{
-		title: 'Mentor',
-		route: '/matching/mentor',
-	},
-	{
-		title: 'Buddy',
-		route: '/matching/buddy',
-	},
-	{
-		title: 'Mentee',
-		route: '/matching/mentee',
-	},
-]
-
 const MatchingTabs: React.FC = () => {
-	const [active, setActive] = useState(dataTabs[1])
+	const [active, setActive] = useState<number>(1)
 
 	return (
 		<Wrapper>
@@ -33,8 +14,8 @@ const MatchingTabs: React.FC = () => {
 					<StyledLink key={index} to={tab.route}>
 						<StyledButton
 							title={tab.title}
-							active={active === tab}
-							onClick={() => setActive(tab)}
+							active={active === index}
+							onClick={() => setActive(index)}
 						/>
 					</StyledLink>
 				))}

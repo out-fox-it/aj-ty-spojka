@@ -1,7 +1,7 @@
 import React from 'react'
 import { Theme, useThemeControl } from '../Theme'
 import Toggle from '../Toggle'
-import { ButtonNav } from '../ButtonNav'
+import ButtonNav from '../ButtonNav'
 import { Wrapper, NavBarLink } from './styled'
 import { Logo } from '../../assets/Logo'
 
@@ -10,7 +10,7 @@ const NavBar: React.FC = () => {
 
 	return (
 		<Wrapper>
-			<NavBarLink color={theme} to="/">
+			<NavBarLink $theme={theme} to="/">
 				<Logo />
 			</NavBarLink>
 			<ButtonNav />
