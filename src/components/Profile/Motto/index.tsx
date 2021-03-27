@@ -8,13 +8,13 @@ import { firestore } from '../../../firebase'
 import { useUser } from '../../User'
 
 type Props = {
-	motto: string | undefined
+	motto?: string
 }
 
-export const Motto: React.FC<Props> = ({ motto }) => {
+const Motto: React.FC<Props> = ({ motto }) => {
 	const [element, setElement] = useState<boolean>(false)
 
-	const [text, setText] = useState<string | undefined>()
+	const [text, setText] = useState<string>()
 
 	const { user } = useUser()
 
@@ -24,7 +24,7 @@ export const Motto: React.FC<Props> = ({ motto }) => {
 
 	const { register, errors } = useForm()
 
-	const changeText = (text: string | undefined) => setText(text)
+	const changeText = (text?: string) => setText(text)
 
 	const updateUserMotto = useCallback(
 		(motto: string): void => {
@@ -90,3 +90,5 @@ export const Motto: React.FC<Props> = ({ motto }) => {
 		</>
 	)
 }
+
+export default Motto

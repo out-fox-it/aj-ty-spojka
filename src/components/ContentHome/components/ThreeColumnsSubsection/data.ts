@@ -1,8 +1,4 @@
-type SectionData = {
-	homePictureClip: string
-	homeSubtitle: string
-	styledParagraph: string
-}
+import { SectionData } from './types'
 
 export const sectionsData: Readonly<SectionData[]> = [
 	{

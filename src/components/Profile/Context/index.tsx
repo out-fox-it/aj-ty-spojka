@@ -4,7 +4,7 @@ import { firestore } from '../../../firebase'
 import { useUser } from '../../User'
 
 export type NetworkType = {
-	address: string | undefined
+	address?: string
 	id: string
 }
 
@@ -14,9 +14,9 @@ type Props = {
 
 type ContexType = {
 	network: NetworkType[]
-	addNetwork: (text: string | undefined) => void
+	addNetwork: (text?: string) => void
 	removeNetwork: (id: string) => void
-	editNetwork: (text: string | undefined, id: string) => void
+	editNetwork: (id: string, text?: string) => void
 }
 
 export const ProfileContext = createContext<ContexType>({
@@ -32,10 +32,7 @@ export const ProfileContext = createContext<ContexType>({
 	},
 })
 
-export const ProfileContextProvider: React.FC<Props> = ({
-	addresses,
-	children,
-}) => {
+const ProfileContextProvider: React.FC<Props> = ({ addresses, children }) => {
 	const [networks, setNetworks] = useState<NetworkType[]>([])
 
 	const { user } = useUser()
@@ -58,7 +55,7 @@ export const ProfileContextProvider: React.FC<Props> = ({
 		[user]
 	)
 
-	const addNetwork = (text: string | undefined) => {
+	const addNetwork = (text?: string) => {
 		const newNetwork = [...networks, { address: text, id: uuid() }]
 		setNetworks(newNetwork)
 		updateUserNetwork(newNetwork)
@@ -70,7 +67,7 @@ export const ProfileContextProvider: React.FC<Props> = ({
 		updateUserNetwork(newNetwork)
 	}
 
-	const editNetwork = (text: string | undefined, id: string) => {
+	const editNetwork = (id: string, text?: string) => {
 		const newNetwork = networks.map((network) =>
 			network.id === id ? { address: text, id } : network
 		)
@@ -95,3 +92,5 @@ export const ProfileContextProvider: React.FC<Props> = ({
 		</ProfileContext.Provider>
 	)
 }
+
+export default ProfileContextProvider

@@ -1,6 +1,6 @@
 import React from 'react'
-import { StyledParagraph } from '../../StyledText/StyledParagraph'
-import { useThemeControl } from '../../Theme'
+import { StyledParagraph } from '../../../StyledText/StyledParagraph'
+import { useThemeControl } from '../../../Theme'
 import {
 	HomePictureClip,
 	HomeSectionMultipleItems,
@@ -9,7 +9,7 @@ import {
 } from './styled'
 import { sectionsData } from './data'
 
-const Subsection3Col: React.FC = () => {
+const ThreeColumnsSubsection: React.FC = () => {
 	const [theme] = useThemeControl()
 
 	return (
@@ -19,7 +19,7 @@ const Subsection3Col: React.FC = () => {
 					<HomePictureClip>
 						{sectionsData.homePictureClip}
 					</HomePictureClip>
-					<HomeSubtitle color={theme}>
+					<HomeSubtitle $theme={theme}>
 						{sectionsData.homeSubtitle}
 					</HomeSubtitle>
 					<StyledParagraph>
@@ -31,4 +31,4 @@ const Subsection3Col: React.FC = () => {
 	)
 }
 
-export default Subsection3Col
+export default ThreeColumnsSubsection

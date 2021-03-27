@@ -5,10 +5,10 @@ import { FormItemFullWidth } from '../../../Form/styled'
 import { ProfileContext } from '../../Context'
 import { ProfileButton } from '../../styled'
 
-export const NetworkForm: React.FC = () => {
+const NetworkForm: React.FC = () => {
 	const { addNetwork } = useContext(ProfileContext)
 
-	const [address, setAddress] = useState<string | undefined>()
+	const [address, setAddress] = useState<string>()
 
 	const { errors, register, handleSubmit } = useForm<FormData>()
 
@@ -19,7 +19,7 @@ export const NetworkForm: React.FC = () => {
 		}
 	}
 
-	const changeAddress = (address: string | undefined) => setAddress(address)
+	const changeAddress = (address?: string) => setAddress(address)
 
 	return (
 		<form onSubmit={handleSubmit(submit)}>
@@ -41,3 +41,5 @@ export const NetworkForm: React.FC = () => {
 		</form>
 	)
 }
+
+export default NetworkForm

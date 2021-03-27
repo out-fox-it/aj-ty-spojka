@@ -6,8 +6,7 @@ type Props = {
 	fullName?: string
 }
 
-const Avatar: React.FC<Props> = ({ picture, fullName }) => (
-	<>{picture ? <Picture src={picture} alt={fullName} /> : <Icon />}</>
-)
+const Avatar: React.FC<Props> = ({ picture, fullName }) =>
+	picture ? <Picture src={picture} alt={fullName} /> : <Icon />
 
 export default Avatar

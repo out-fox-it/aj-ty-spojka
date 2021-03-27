@@ -10,7 +10,11 @@ import {
 	IconBar,
 	CardIcon,
 } from './styled'
-import { LinkedinIn, Github, Instagram } from '@styled-icons/fa-brands'
+import {
+	LinkedinIn as LinkedIn,
+	Github,
+	Instagram,
+} from '@styled-icons/fa-brands'
 import { cardsData } from './data'
 
 const AuthorsCards: React.FC = () => (
@@ -25,7 +29,6 @@ const AuthorsCards: React.FC = () => (
 						<CardSubtitle>{cardData.cardSubtitle}</CardSubtitle>
 					</CardText>
 					<IconBar>
-						{/* DISPLAY LINKS AND ICONS BASED ON AVAILABLE DATA */}
 						<CardIcon
 							href={cardData.socialMediaLinks.gitHub}
 							target="_blank"
@@ -36,7 +39,7 @@ const AuthorsCards: React.FC = () => (
 							href={cardData.socialMediaLinks.linkedIn}
 							target="_blank"
 						>
-							<LinkedinIn />
+							<LinkedIn />
 						</CardIcon>
 						{cardData.socialMediaLinks.instagram && (
 							<CardIcon

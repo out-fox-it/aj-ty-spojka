@@ -126,6 +126,7 @@ export const FormIcon = styled.div`
 		cursor: pointer;
 	}
 `
+
 export const FormTextBlock = styled.textarea<{ size: SizeTextarea }>`
 	box-sizing: border-box;
 	width: 95%;

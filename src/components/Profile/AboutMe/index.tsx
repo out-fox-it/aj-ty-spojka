@@ -10,10 +10,10 @@ type Props = {
 	aboutMe: string
 }
 
-export const AboutMe: React.FC<Props> = ({ aboutMe }) => {
+const AboutMe: React.FC<Props> = ({ aboutMe }) => {
 	const [element, setElement] = useState<boolean>(false)
 
-	const [text, setText] = useState<string | undefined>()
+	const [text, setText] = useState<string>()
 
 	const { user } = useUser()
 
@@ -23,7 +23,7 @@ export const AboutMe: React.FC<Props> = ({ aboutMe }) => {
 
 	const { register, errors } = useForm()
 
-	const changeText = (text: string | undefined) => setText(text)
+	const changeText = (text?: string) => setText(text)
 
 	const updateUserAboutMe = useCallback(
 		(about: string): void => {
@@ -92,3 +92,5 @@ export const AboutMe: React.FC<Props> = ({ aboutMe }) => {
 		</>
 	)
 }
+
+export default AboutMe

@@ -7,16 +7,16 @@ import FormText from '../../../Form/components/FormText'
 import { FormItemFullWidth } from '../../../Form/styled'
 
 type Props = {
-	address: string | undefined
+	address?: string
 	id: string
 }
 
-export const Network: React.FC<Props> = ({ address, id }) => {
+const Network: React.FC<Props> = ({ address, id }) => {
 	const { removeNetwork, editNetwork } = useContext(ProfileContext)
 
 	const [element, setElement] = useState<boolean>(true)
 
-	const [actualAddress, setActualAddress] = useState<string | undefined>()
+	const [actualAddress, setActualAddress] = useState<string>()
 
 	useEffect(() => {
 		setActualAddress(address)
@@ -24,7 +24,7 @@ export const Network: React.FC<Props> = ({ address, id }) => {
 
 	const { errors, register } = useForm<FormData>()
 
-	const changeText = (actualAddress: string | undefined) =>
+	const changeText = (actualAddress?: string) =>
 		setActualAddress(actualAddress)
 
 	return (
@@ -45,7 +45,7 @@ export const Network: React.FC<Props> = ({ address, id }) => {
 						event.preventDefault()
 						if (actualAddress !== '') {
 							setElement(true)
-							editNetwork(actualAddress, id)
+							editNetwork(id, actualAddress)
 						} else {
 							removeNetwork(id)
 						}
@@ -71,3 +71,5 @@ export const Network: React.FC<Props> = ({ address, id }) => {
 		</>
 	)
 }
+
+export default Network

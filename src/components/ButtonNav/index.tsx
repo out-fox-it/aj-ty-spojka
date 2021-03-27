@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ComponentProps } from 'react'
 import { StyledButton, Wrapper, ButtonLink } from './styled'
 import {
 	UserEdit,
@@ -7,37 +7,46 @@ import {
 	UserLock,
 	IdCard,
 } from '@styled-icons/fa-solid'
-import { Theme, useThemeControl } from '../Theme'
 import { useUser } from '../User'
+import { useThemeControl } from '../Theme'
 
-const NavBeforeLogin = (theme: Theme): React.ReactElement => (
+const ThemedStyledButton: React.FC<ComponentProps<typeof StyledButton>> = ({
+	...props
+}) => {
+	const [theme] = useThemeControl()
+
+	return <StyledButton $theme={theme} {...props} />
+}
+
+const NavBeforeLogin: React.FC = () => (
 	<Wrapper>
 		<ButtonLink to="/register">
-			<StyledButton color={theme} icon={UserPlus} title="Registrace" />
+			<ThemedStyledButton icon={UserPlus} title="Registrace" />
 		</ButtonLink>
 		<ButtonLink to="/login">
-			<StyledButton color={theme} icon={UserLock} title="Přihlášení" />
+			<ThemedStyledButton icon={UserLock} title="Přihlášení" />
 		</ButtonLink>
 	</Wrapper>
 )
 
-const NavAfterLogin = (theme: Theme): React.ReactElement => (
+const NavAfterLogin: React.FC = () => (
 	<Wrapper>
 		<ButtonLink to="/profile">
-			<StyledButton color={theme} icon={UserEdit} title="Profil" />
+			<ThemedStyledButton icon={UserEdit} title="Profil" />
 		</ButtonLink>
 		<ButtonLink to="/matching">
-			<StyledButton color={theme} icon={Users} title="Matching" />
+			<ThemedStyledButton icon={Users} title="Matching" />
 		</ButtonLink>
 		<ButtonLink to="/contacts">
-			<StyledButton color={theme} icon={IdCard} title="Kontakty" />
+			<ThemedStyledButton icon={IdCard} title="Kontakty" />
 		</ButtonLink>
 	</Wrapper>
 )
 
-export const ButtonNav: React.FC = () => {
-	const [theme] = useThemeControl()
+const ButtonNav: React.FC = () => {
 	const { isLoggedIn } = useUser()
 
-	return isLoggedIn ? NavAfterLogin(theme) : NavBeforeLogin(theme)
+	return isLoggedIn ? <NavAfterLogin /> : <NavBeforeLogin />
 }
+
+export default ButtonNav

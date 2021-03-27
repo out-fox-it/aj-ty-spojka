@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { FontSizes, MediaQueries } from '../../../themes'
-import { HomeSection } from '../styled'
-import { Theme } from '../../Theme'
+import { FontSizes, MediaQueries } from '../../../../themes'
+import { HomeSection } from '../../styled'
+import { Theme } from '../../../Theme'
 
-import czechtech20191 from '../../../assets/Home/czechtech2019-1.jpg'
+import czechtech20191 from '../../../../assets/Home/czechtech2019-1.jpg'
 
 export const HomeSectionMultipleItems = styled(HomeSection)`
 	background-color: ${({ theme }) => theme.bg.secondary};
@@ -21,15 +21,9 @@ export const HomeSectionMultipleItems = styled(HomeSection)`
 
 export const HomeSubsection = styled.div``
 
-type Props = {
-	color: string
-}
-
-export const HomeSubtitle = styled.p<Props>`
-	color: ${({ color }) =>
-		color === Theme.Dark
-			? ({ theme }) => theme.text.secondary
-			: ({ theme }) => theme.bg.primary};
+export const HomeSubtitle = styled.p<{ $theme: Theme }>`
+	color: ${({ $theme, theme }) =>
+		$theme === Theme.Dark ? theme.text.secondary : theme.bg.primary};
 	text-align: center;
 	font-size: ${FontSizes.SizeSmall};
 	margin: 0;
@@ -41,6 +35,7 @@ export const HomePictureClip = styled.div`
 	font-weight: bold;
 	text-align: center;
 	text-transform: uppercase;
+
 	background-image: url(${czechtech20191});
 	background-repeat: no-repeat;
 	background-position: center;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { HomeSection, HomePicture } from './styled'
 import { StyledParagraph } from '../StyledText/StyledParagraph'
-import Subsection3Col from './Subsection3Col'
+import ThreeColumnsSubsection from './components/ThreeColumnsSubsection'
 
 import czechtech20191 from '../../assets/Home/czechtech2019-1.jpg'
 import linuxdays20191 from '../../assets/Home/linuxdays2019-1.jpg'
@@ -13,6 +13,7 @@ export const ContentHome: React.FC = () => (
 				src={czechtech20191}
 				borderRadius="2em 2em 0 2em"
 				title="CzechFuture.Tech, Plzeň 2019"
+				alt="CzechFuture.Tech, Plzeň 2019"
 			/>
 			<StyledParagraph>
 				I v době globální pandemie jsme si dokázali zachovat skvělé
@@ -28,7 +29,7 @@ export const ContentHome: React.FC = () => (
 			</StyledParagraph>
 		</HomeSection>
 
-		<Subsection3Col />
+		<ThreeColumnsSubsection />
 
 		<HomeSection>
 			<StyledParagraph>
@@ -51,6 +52,7 @@ export const ContentHome: React.FC = () => (
 				src={linuxdays20191}
 				borderRadius="0 2em 2em 2em"
 				title="Linux Days, ČVUT, Praha 2019"
+				alt="Linux Days, ČVUT, Praha 2019"
 			/>
 		</HomeSection>
 	</>

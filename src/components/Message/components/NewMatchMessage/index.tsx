@@ -7,13 +7,10 @@ import {
 	MessageBody,
 	MessageButton,
 } from '../../styled'
+import { MessageProps } from '../../types'
 import ReadMore from '../ReadMore'
 
-type Props = {
-	message: string
-}
-
-const NewMatchMessage: React.FC<Props> = ({ message }) => (
+const NewMatchMessage: React.FC<MessageProps> = ({ message }) => (
 	<>
 		<MessageBox>
 			{/* TODO: Add this avatar of last-message author */}

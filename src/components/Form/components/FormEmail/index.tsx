@@ -23,7 +23,6 @@ const FormEmail: React.FC<Props> = ({ register, errors, onChange }) => (
 					pattern: {
 						value: emailRegex,
 						message: 'Neplatný formát e-mailové adresy!',
-						// TODO: Must be unique!
 					},
 					maxLength: {
 						value: 254,

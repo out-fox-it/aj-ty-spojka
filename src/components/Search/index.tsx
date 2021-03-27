@@ -10,25 +10,26 @@ type Props = {
 	disabled?: boolean
 }
 
+const toLocaleLowerCaseString = (value: string): string =>
+	value
+		.normalize('NFD')
+		.replace(/[\u0300-\u036f]/g, '')
+		.toLowerCase()
+
 const Search: React.FC<Props> = ({
 	onQueueChange,
 	searchableSkills,
 	disabled,
 }) => {
 	const queueChange = useCallback(
-		(queue: string | undefined) => {
+		(queue?: string) => {
 			if (queue && queue.length > 0) {
-				const searchableQueue = queue
-					.toLowerCase()
-					.normalize('NFD')
-					.replace(/[\u0300-\u036f]/g, '')
+				const searchableQueue = toLocaleLowerCaseString(queue)
 
 				const results = searchableSkills.filter((skill) =>
-					skill.title
-						.toLowerCase()
-						.normalize('NFD')
-						.replace(/[\u0300-\u036f]/g, '')
-						.includes(searchableQueue)
+					toLocaleLowerCaseString(skill.title).includes(
+						searchableQueue
+					)
 				)
 
 				return onQueueChange(results)

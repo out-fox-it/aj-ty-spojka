@@ -31,11 +31,7 @@ export const AuthorsTitle = styled(TitleH1)`
 	}
 `
 
-type CardProps = {
-	image: string
-}
-
-export const Card = styled.article<CardProps>`
+export const Card = styled.article<{ image: string }>`
 	&:nth-child(n) {
 		grid-column: 2 / 3;
 	}

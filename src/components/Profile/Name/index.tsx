@@ -11,10 +11,10 @@ type Props = {
 	fullName: string
 }
 
-export const Name: React.FC<Props> = ({ fullName }) => {
+const Name: React.FC<Props> = ({ fullName }) => {
 	const [element, setElement] = useState<boolean>(true)
 
-	const [text, setText] = useState<string | undefined>()
+	const [text, setText] = useState<string>()
 
 	const { user } = useUser()
 
@@ -24,7 +24,7 @@ export const Name: React.FC<Props> = ({ fullName }) => {
 
 	const { errors, register } = useForm<FormData>()
 
-	const changeText = (text: string | undefined) => setText(text)
+	const changeText = (text?: string) => setText(text)
 
 	const updateUserNickname = useCallback(
 		(nickname: string): void => {
@@ -78,3 +78,5 @@ export const Name: React.FC<Props> = ({ fullName }) => {
 		</>
 	)
 }
+
+export default Name

@@ -1,5 +1,4 @@
 import React from 'react'
-
 import NavBar from '../components/NavBar'
 import Page from '../components/Page'
 import ContentProfile from '../components/Profile'
