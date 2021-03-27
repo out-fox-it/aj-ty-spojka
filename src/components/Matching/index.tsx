@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import React from 'react'
+import { Route, Switch, useLocation } from 'react-router-dom'
 import { StyledLink } from '../StyledText/StyledLink'
 import { dataTabs } from './data'
 import { StyledButton, Wrapper, TitleTabs, ContentTabs } from './styled'
 
 const MatchingTabs: React.FC = () => {
-	const [active, setActive] = useState<number>(1)
+	const { pathname } = useLocation()
 
 	return (
 		<Wrapper>
@@ -14,8 +14,7 @@ const MatchingTabs: React.FC = () => {
 					<StyledLink key={index} to={tab.route}>
 						<StyledButton
 							title={tab.title}
-							active={active === index}
-							onClick={() => setActive(index)}
+							active={pathname === tab.route}
 						/>
 					</StyledLink>
 				))}
