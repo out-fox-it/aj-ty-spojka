@@ -1,13 +1,15 @@
 import React from 'react'
-import NavBar from '../../components/NavBar'
-import Page from '../../components/Page'
-import Footer from '../../components/Footer'
-import { StyledParagraph } from '../../components/StyledText/StyledParagraph'
+
+import czechtech20191 from 'assets/Home/czechtech2019-1.jpg'
+import linuxdays20191 from 'assets/Home/linuxdays2019-1.jpg'
+
+import NavBar from 'components/NavBar'
+import Page from 'components/Page'
+import Footer from 'components/Footer'
+import { StyledParagraph } from 'components/StyledText/StyledParagraph'
+
 import { HomeSection, HomePicture } from './styled'
 import ThreeColumnsSubsection from './components/ThreeColumnsSubsection'
-
-import czechtech20191 from '../../assets/Home/czechtech2019-1.jpg'
-import linuxdays20191 from '../../assets/Home/linuxdays2019-1.jpg'
 
 const Home: React.FC = () => (
 	<>

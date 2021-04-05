@@ -1,7 +1,8 @@
 import styled from 'styled-components'
-import { MediaQueries } from '../../themes'
-import { StyledParagraph } from '../../components/StyledText/StyledParagraph'
-import { TitleH1, TitleH2 } from '../../components/StyledText/StyledTitle'
+import { MediaQueries } from 'themes'
+
+import { StyledParagraph } from 'components/StyledText/StyledParagraph'
+import { TitleH1, TitleH2 } from 'components/StyledText/StyledTitle'
 
 export const CardsWrapper = styled.section`
 	display: grid;

@@ -1,14 +1,11 @@
 import React from 'react'
-import Message from '../../components/Message'
-import { MessageData, MessageType } from '../../components/Message/types'
-import {
-	MessageBoxBorder,
-	MessageBoxTitle,
-} from '../../components/Message/styled'
-import NavBar from '../../components/NavBar'
-import Page from '../../components/Page'
-import Footer from '../../components/Footer'
-import { TitleH1 } from '../../components/StyledText/StyledTitle'
+import Message from 'components/Message'
+import { MessageData, MessageType } from 'components/Message/types'
+import { MessageBoxBorder, MessageBoxTitle } from 'components/Message/styled'
+import NavBar from 'components/NavBar'
+import Page from 'components/Page'
+import Footer from 'components/Footer'
+import { TitleH1 } from 'components/StyledText/StyledTitle'
 import { fakeMessages } from './data'
 
 const groupMessagesByType = (

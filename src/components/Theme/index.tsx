@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
-import { DarkTheme, LightTheme } from '../../themes'
+import { DarkTheme, LightTheme } from 'themes'
 
 export enum Theme {
 	Dark = 'Dark',

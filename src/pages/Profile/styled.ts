@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components'
-import { FontSizes, MediaQueries } from '../../themes'
-import { Picture, Icon } from '../../components/Avatar/styled'
-import Button from '../../components/Button'
-import { StyledParagraph } from '../../components/StyledText/StyledParagraph'
-import { TitleH1, TitleH2 } from '../../components/StyledText/StyledTitle'
+import { FontSizes, MediaQueries } from 'themes'
+
+import { Picture, Icon } from 'components/Avatar/styled'
+import Button from 'components/Button'
+import { StyledParagraph } from 'components/StyledText/StyledParagraph'
+import { TitleH1, TitleH2 } from 'components/StyledText/StyledTitle'
 
 export const ProfileContent = styled.section`
 	display: flex;

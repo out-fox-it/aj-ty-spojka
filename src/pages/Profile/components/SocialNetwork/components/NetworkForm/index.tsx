@@ -1,7 +1,9 @@
 import React, { useContext, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import FormText from '../../../../../../components/Form/components/FormText'
-import { FormItemFullWidth } from '../../../../../../components/Form/styled'
+
+import FormText from 'components/Form/components/FormText'
+import { FormItemFullWidth } from 'components/Form/styled'
+
 import { ProfileContext } from '../../../Context'
 import { ProfileButton } from '../../../../styled'
 

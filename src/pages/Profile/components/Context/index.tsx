@@ -1,7 +1,9 @@
 import React, { createContext, useCallback, useEffect, useState } from 'react'
 import { v4 as uuid } from 'uuid'
-import { firestore } from '../../../../firebase'
-import { useUser } from '../../../../components/User'
+
+import { firestore } from 'services/firebase'
+
+import { useUser } from 'components/User'
 
 export type NetworkType = {
 	address?: string

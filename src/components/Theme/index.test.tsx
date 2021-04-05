@@ -1,8 +1,10 @@
 import React from 'react'
 import { withTheme } from 'styled-components'
+import { DarkTheme } from 'themes'
+
 import { act, cleanup, render } from '@testing-library/react'
 import { renderHook } from '@testing-library/react-hooks'
-import { DarkTheme } from '../../themes'
+
 import ThemeProvider, { Theme, toTheme, useThemeControl } from '.'
 
 test('transforms a string to theme', () => {

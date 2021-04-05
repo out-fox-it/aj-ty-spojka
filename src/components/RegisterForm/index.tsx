@@ -1,20 +1,20 @@
 import React, { useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
+
+import { authentication } from 'services/firebase'
+
 import {
 	Form,
 	FormButton,
 	FormItemForm,
 	FormTitle,
 	Errors,
-} from '../Form/styled'
-
-import FormEmail from '../Form/components/FormEmail'
-import FormPassword from '../Form/components/FormPassword'
-import FormPasswordMessage from '../Form/components/FormPasswordMessage'
-import FormCheckbox from '../Form/components/FormCheckbox'
-import FormText from '../Form/components/FormText'
-
-import { authentication } from '../../firebase'
+} from 'components/Form/styled'
+import FormEmail from 'components/Form/components/FormEmail'
+import FormPassword from 'components/Form/components/FormPassword'
+import FormPasswordMessage from 'components/Form/components/FormPasswordMessage'
+import FormCheckbox from 'components/Form/components/FormCheckbox'
+import FormText from 'components/Form/components/FormText'
 
 type Props = {
 	onSuccess: () => void

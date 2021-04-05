@@ -1,6 +1,6 @@
 import React from 'react'
 import { fireEvent } from '@testing-library/react'
-import renderWithTheme from '../../testing/renderWithTheme'
+import renderWithTheme from 'testing/renderWithTheme'
 import Button from '.'
 
 test('renders button with title', () => {

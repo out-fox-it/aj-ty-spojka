@@ -1,9 +1,12 @@
 import React from 'react'
-import { Theme, useThemeControl } from '../Theme'
-import Toggle from '../Toggle'
-import ButtonNav from '../ButtonNav'
+
+import { Logo } from 'assets/Logo'
+
+import { Theme, useThemeControl } from 'components/Theme'
+import Toggle from 'components/Toggle'
+import ButtonNav from 'components/ButtonNav'
+
 import { Wrapper, NavBarLink } from './styled'
-import { Logo } from '../../assets/Logo'
 
 const NavBar: React.FC = () => {
 	const [theme, setTheme] = useThemeControl()

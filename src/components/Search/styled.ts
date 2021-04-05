@@ -1,6 +1,7 @@
 import styled from 'styled-components'
-import FormText from '../Form/components/FormText'
 import { Search } from '@styled-icons/fa-solid'
+
+import FormText from 'components/Form/components/FormText'
 
 export const SearchBox = styled(FormText)`
 	border: 0.2em solid ${({ theme }) => theme.text.link};

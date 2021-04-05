@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
-import { authentication, firestore } from '../../firebase'
-import Avatar from '../../components/Avatar'
-import Footer from '../../components/Footer'
-import NavBar from '../../components/NavBar'
-import Page from '../../components/Page'
-import SkillQueue from '../../components/SkillQueue'
-import { useUser } from '../../components/User'
+
+import { authentication, firestore } from 'services/firebase'
+
+import Avatar from 'components/Avatar'
+import Footer from 'components/Footer'
+import NavBar from 'components/NavBar'
+import Page from 'components/Page'
+import SkillQueue from 'components/SkillQueue'
+import { useUser } from 'components/User'
+
 import ProfileContextProvider from './components/Context'
 import Name from './components/Name'
 import SocialNetwork from './components/SocialNetwork'
 import Email from './components/Email'
 import AboutMe from './components/AboutMe'
 import Motto from './components/Motto'
+
 import { ProfileButton, ProfileContent, ProfileHeader } from './styled'
 import { ProfileType } from './types'
 

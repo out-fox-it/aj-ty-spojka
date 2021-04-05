@@ -4,9 +4,11 @@ import {
 	Github,
 	Instagram,
 } from '@styled-icons/fa-brands'
-import NavBar from '../../components/NavBar'
-import Page from '../../components/Page'
-import Footer from '../../components/Footer'
+
+import NavBar from 'components/NavBar'
+import Page from 'components/Page'
+import Footer from 'components/Footer'
+
 import {
 	CardsWrapper,
 	AuthorsTitle,

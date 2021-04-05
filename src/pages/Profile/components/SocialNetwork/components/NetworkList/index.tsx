@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
+import Network from '../Network'
 import { ProfileContext } from '../../../Context'
 import { List, PlaceholderText } from '../../../../styled'
-import Network from '../Network'
 
 const NetworkList: React.FC = () => {
 	const { network } = useContext(ProfileContext)

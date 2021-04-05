@@ -1,9 +1,11 @@
 import styled from 'styled-components'
-import { FontSizes, MediaQueries } from '../../../../themes'
-import { HomeSection } from '../../styled'
-import { Theme } from '../../../../components/Theme'
+import { FontSizes, MediaQueries } from 'themes'
 
-import czechtech20191 from '../../../../assets/Home/czechtech2019-1.jpg'
+import czechtech20191 from 'assets/Home/czechtech2019-1.jpg'
+
+import { Theme } from 'components/Theme'
+
+import { HomeSection } from '../../styled'
 
 export const HomeSectionMultipleItems = styled(HomeSection)`
 	background-color: ${({ theme }) => theme.bg.secondary};

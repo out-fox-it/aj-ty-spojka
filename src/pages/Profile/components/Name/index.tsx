@@ -1,11 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Check, PencilAlt } from '@styled-icons/fa-solid'
+
+import { firestore } from 'services/firebase'
+
+import FormText from 'components/Form/components/FormText'
+import { FormItemFullWidth } from 'components/Form/styled'
+import { useUser } from 'components/User'
+
 import { Edit, ProfileName } from '../../styled'
-import FormText from '../../../../components/Form/components/FormText'
-import { FormItemFullWidth } from '../../../../components/Form/styled'
-import { firestore } from '../../../../firebase'
-import { useUser } from '../../../../components/User'
 
 type Props = {
 	fullName: string

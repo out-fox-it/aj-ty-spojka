@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { FontSizes } from '../../themes'
+import { FontSizes } from 'themes'
 
 export const Row = styled.div`
 	display: flex;

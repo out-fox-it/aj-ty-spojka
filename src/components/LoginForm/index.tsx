@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+
+import { authentication } from 'services/firebase'
+
 import {
 	Errors,
 	Form,
@@ -7,12 +11,10 @@ import {
 	FormItemForm,
 	FormLink,
 	FormTitle,
-} from '../Form/styled'
-import FormEmail from '../Form/components/FormEmail'
-import FormPassword from '../Form/components/FormPassword'
-import FormCheckbox from '../Form/components/FormCheckbox'
-import { useHistory } from 'react-router-dom'
-import { authentication } from '../../firebase'
+} from 'components/Form/styled'
+import FormEmail from 'components/Form/components/FormEmail'
+import FormPassword from 'components/Form/components/FormPassword'
+import FormCheckbox from 'components/Form/components/FormCheckbox'
 
 type FormData = {
 	email: string

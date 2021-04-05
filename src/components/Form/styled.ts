@@ -1,8 +1,10 @@
 import styled from 'styled-components'
-import { FontSizes, MediaQueries } from '../../themes'
-import { StyledButton } from '../Button/styled'
-import { StyledLink } from '../StyledText/StyledLink'
-import { TitleH1 } from '../StyledText/StyledTitle'
+import { FontSizes, MediaQueries } from 'themes'
+
+import { StyledButton } from 'components/Button/styled'
+import { StyledLink } from 'components/StyledText/StyledLink'
+import { TitleH1 } from 'components/StyledText/StyledTitle'
+
 import { SizeTextarea } from './components/FormTextArea'
 
 export const Form = styled.form`

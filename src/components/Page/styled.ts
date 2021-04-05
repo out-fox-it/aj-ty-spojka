@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { MediaQueries } from '../../themes'
+import { MediaQueries } from 'themes'
 
 export const GlobalWrapper = styled.article`
 	display: flex;

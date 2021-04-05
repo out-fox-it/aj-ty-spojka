@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { FontSizes, MediaQueries } from '../../themes'
+import { FontSizes, MediaQueries } from 'themes'
 
 export const WrapperIcon = styled.div`
 	width: 3.2em;

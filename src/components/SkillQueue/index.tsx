@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { AllSkillsBox, Skill, SearchBoxContainer } from './styled'
-import { TitleH2 } from '../StyledText/StyledTitle'
-import Search from '../Search'
-import { firestore } from '../../firebase'
-import { Skill as SkillType } from './types'
+
+import { firestore } from 'services/firebase'
+
+import { TitleH2 } from 'components/StyledText/StyledTitle'
+import Search from 'components/Search'
+
 import SQProfile from './SQProfile'
+import { AllSkillsBox, Skill, SearchBoxContainer } from './styled'
+import { Skill as SkillType } from './types'
 
 const SkillQueue: React.FC = () => {
 	const [results, setResults] = useState<ReadonlyArray<SkillType>>([])
