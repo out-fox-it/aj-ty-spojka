@@ -1,5 +1,4 @@
 import React, { ComponentProps } from 'react'
-import { StyledButton, Wrapper, ButtonLink } from './styled'
 import {
 	UserEdit,
 	Users,
@@ -7,8 +6,11 @@ import {
 	UserLock,
 	IdCard,
 } from '@styled-icons/fa-solid'
-import { useUser } from '../User'
-import { useThemeControl } from '../Theme'
+
+import { useThemeControl } from 'components/Theme'
+import { useUser } from 'components/User'
+
+import { StyledButton, Wrapper, ButtonLink } from './styled'
 
 const ThemedStyledButton: React.FC<ComponentProps<typeof StyledButton>> = ({
 	...props

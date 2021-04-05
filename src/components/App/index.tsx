@@ -1,17 +1,18 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import ThemeProvider from '../Theme'
-import { GlobalStyles } from './styled'
 
-// Pages
-import Authors from '../../pages/Authors'
-import Contacts from '../../pages/Contacts'
-import Matching from '../../pages/Matching'
-import Profile from '../../pages/Profile'
-import Register from '../../pages/Register'
-import Home from '../../pages/Home'
-import UserProvider from '../User'
-import Login from '../../pages/Login'
+import ThemeProvider from 'components/Theme'
+import UserProvider from 'components/User'
+
+import Authors from 'pages/Authors'
+import Contacts from 'pages/Contacts'
+import Matching from 'pages/Matching'
+import Profile from 'pages/Profile'
+import Register from 'pages/Register'
+import Home from 'pages/Home'
+import Login from 'pages/Login'
+
+import { GlobalStyles } from './styled'
 
 const Routes: React.FC = () => (
 	<Switch>

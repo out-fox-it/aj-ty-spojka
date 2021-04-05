@@ -1,10 +1,10 @@
 import { CardData } from './types'
 
 // Authors cards images
-import jindrichmaca from '../../assets/AuthorsCards/jindrichmaca.jpg'
-import janachaloupkova from '../../assets/AuthorsCards/janachaloupkova.jpg'
-import martinavilimova from '../../assets/AuthorsCards/martinavilimova.jpeg'
-import tomashampl from '../../assets/AuthorsCards/tomashampl.jpg'
+import jindrichmaca from 'assets/AuthorsCards/jindrichmaca.jpg'
+import janachaloupkova from 'assets/AuthorsCards/janachaloupkova.jpg'
+import martinavilimova from 'assets/AuthorsCards/martinavilimova.jpeg'
+import tomashampl from 'assets/AuthorsCards/tomashampl.jpg'
 
 export const cardsData: Readonly<CardData[]> = [
 	{

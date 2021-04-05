@@ -1,5 +1,5 @@
 import React from 'react'
-import renderWithTheme from '../../testing/renderWithTheme'
+import renderWithTheme from 'testing/renderWithTheme'
 import Avatar from '.'
 
 test('renders avatar with src', () => {

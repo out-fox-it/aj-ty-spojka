@@ -1,6 +1,8 @@
 import React from 'react'
-import { StyledParagraph } from '../../../../components/StyledText/StyledParagraph'
-import { useThemeControl } from '../../../../components/Theme'
+
+import { StyledParagraph } from 'components/StyledText/StyledParagraph'
+import { useThemeControl } from 'components/Theme'
+
 import {
 	HomePictureClip,
 	HomeSectionMultipleItems,

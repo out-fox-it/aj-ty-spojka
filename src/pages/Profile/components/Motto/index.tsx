@@ -1,13 +1,16 @@
-import { Check, PencilAlt } from '@styled-icons/fa-solid'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { Check, PencilAlt } from '@styled-icons/fa-solid'
+
+import { firestore } from 'services/firebase'
+
 import FormTextArea, {
 	SizeTextarea,
-} from '../../../../components/Form/components/FormTextArea'
-import { StyledParagraph } from '../../../../components/StyledText/StyledParagraph'
+} from 'components/Form/components/FormTextArea'
+import { StyledParagraph } from 'components/StyledText/StyledParagraph'
+import { useUser } from 'components/User'
+
 import { Edit, PlaceholderText } from '../../styled'
-import { firestore } from '../../../../firebase'
-import { useUser } from '../../../../components/User'
 
 type Props = {
 	motto?: string

@@ -1,8 +1,10 @@
 import React, { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
-import { Form, FormItemFullWidth } from '../Form/styled'
+
+import { Form, FormItemFullWidth } from 'components/Form/styled'
+import { Skill } from 'components/SkillQueue/types'
+
 import { SearchBox, SearchIcon } from './styled'
-import { Skill } from '../SkillQueue/types'
 
 type Props = {
 	onQueueChange: (results: ReadonlyArray<Skill>) => void

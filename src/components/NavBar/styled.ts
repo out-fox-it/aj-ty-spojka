@@ -1,7 +1,8 @@
 import styled from 'styled-components'
-import { MediaQueries } from '../../themes'
-import { StyledLink } from '../StyledText/StyledLink'
-import { Theme } from '../Theme'
+import { MediaQueries } from 'themes'
+
+import { StyledLink } from 'components/StyledText/StyledLink'
+import { Theme } from 'components/Theme'
 
 export const Wrapper = styled.header`
 	display: grid;

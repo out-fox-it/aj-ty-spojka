@@ -1,12 +1,15 @@
-import { Check, PencilAlt } from '@styled-icons/fa-solid'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { firestore } from '../../../../firebase'
+import { Check, PencilAlt } from '@styled-icons/fa-solid'
+
+import { firestore } from 'services/firebase'
+
 import FormTextArea, {
 	SizeTextarea,
-} from '../../../../components/Form/components/FormTextArea'
+} from 'components/Form/components/FormTextArea'
+import { useUser } from 'components/User'
+
 import { Description, Edit, PlaceholderText, Title } from '../../styled'
-import { useUser } from '../../../../components/User'
 
 type Props = {
 	aboutMe: string

@@ -1,8 +1,9 @@
 import styled from 'styled-components'
-import { FontSizes, MediaQueries } from '../../themes'
-import { StyledButton } from '../Button/styled'
-import { StyledParagraph } from '../StyledText/StyledParagraph'
-import { TitleH2 } from '../StyledText/StyledTitle'
+import { FontSizes, MediaQueries } from 'themes'
+
+import { StyledButton } from 'components/Button/styled'
+import { StyledParagraph } from 'components/StyledText/StyledParagraph'
+import { TitleH2 } from 'components/StyledText/StyledTitle'
 
 export const MessageBoxTitle = styled(TitleH2)`
 	margin: 0;

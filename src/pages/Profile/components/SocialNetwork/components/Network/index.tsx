@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Edit } from '../../../../styled'
-import { ProfileContext } from '../../../Context'
 import { Check, PencilAlt, Times } from '@styled-icons/fa-solid'
-import FormText from '../../../../../../components/Form/components/FormText'
-import { FormItemFullWidth } from '../../../../../../components/Form/styled'
+
+import FormText from 'components/Form/components/FormText'
+import { FormItemFullWidth } from 'components/Form/styled'
+
+import { ProfileContext } from '../../../Context'
+import { Edit } from '../../../../styled'
 
 type Props = {
 	address?: string

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react'
 import firebase from 'firebase'
-import { authentication } from '../../firebase'
+import { authentication } from 'services/firebase'
 
 type UserContextType = {
 	user: firebase.User | null

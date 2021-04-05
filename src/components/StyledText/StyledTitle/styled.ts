@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { FontSizes } from '../../../themes'
+import { FontSizes } from 'themes'
 
 export const TitleH1 = styled.h1<{ color?: string }>`
 	font-size: ${FontSizes.SizeTitleH1};
