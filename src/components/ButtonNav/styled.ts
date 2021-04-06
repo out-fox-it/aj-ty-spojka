@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { MediaQueries } from 'themes'
 
 import Button from 'components/Button'
-import { StyledLink } from 'components/StyledText/StyledLink'
+import { StyledLink } from 'components/StyledText'
 import { Theme } from 'components/Theme'
 
 export const Wrapper = styled.nav`

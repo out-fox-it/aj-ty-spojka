@@ -2,9 +2,8 @@ import React, { useCallback, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Check, PencilAlt } from '@styled-icons/fa-solid'
 
-import FormTextArea, {
-	SizeTextarea,
-} from 'components/Form/components/FormTextArea'
+import { FormTextArea } from 'components/Form'
+import { SizeTextarea } from 'components/Form/types'
 import { useUser } from 'components/User'
 
 import { Description, Edit, PlaceholderText, Title } from '../../styled'

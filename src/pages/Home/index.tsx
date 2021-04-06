@@ -6,7 +6,7 @@ import linuxdays20191 from 'assets/Home/linuxdays2019-1.jpg'
 import NavBar from 'components/NavBar'
 import Page from 'components/Page'
 import Footer from 'components/Footer'
-import { StyledParagraph } from 'components/StyledText/StyledParagraph'
+import { StyledParagraph } from 'components/StyledText'
 
 import { HomeSection, HomePicture } from './styled'
 import ThreeColumnsSubsection from './components/ThreeColumnsSubsection'

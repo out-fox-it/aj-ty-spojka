@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { StyledParagraph } from 'components/StyledText/StyledParagraph'
+import { StyledParagraph } from 'components/StyledText'
 import { useThemeControl } from 'components/Theme'
 
 import {

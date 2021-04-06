@@ -1,11 +1,10 @@
 import React from 'react'
 import { Route, Switch, useLocation } from 'react-router-dom'
 
+import Footer from 'components/Footer'
 import NavBar from 'components/NavBar'
 import Page from 'components/Page'
-import Footer from 'components/Footer'
-import { TitleH1 } from 'components/StyledText/StyledTitle'
-import { StyledLink } from 'components/StyledText/StyledLink'
+import { StyledLink, TitleH1 } from 'components/StyledText'
 
 import { dataTabs } from './data'
 import { StyledButton, Wrapper, TitleTabs, ContentTabs } from './styled'

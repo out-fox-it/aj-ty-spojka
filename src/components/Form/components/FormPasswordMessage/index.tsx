@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { PasswordMessage, ValidPassword } from './styled'
 
 type Props = {

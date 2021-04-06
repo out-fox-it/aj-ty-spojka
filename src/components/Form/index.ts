@@ -1,0 +1,6 @@
+export { default as FormCheckbox } from './components/FormCheckbox'
+export { default as FormEmail } from './components/FormEmail'
+export { default as FormPassword } from './components/FormPassword'
+export { default as FormPasswordMessage } from './components/FormPasswordMessage'
+export { default as FormText } from './components/FormText'
+export { default as FormTextArea } from './components/FormTextArea'

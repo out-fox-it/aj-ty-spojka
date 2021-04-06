@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { ReadMoreStyled } from './styled'
 
 // TODO: Add functionality of "ReadMore" component

@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 
-import FormText from 'components/Form/components/FormText'
+import { FormText } from 'components/Form'
 import { FormItemFullWidth } from 'components/Form/styled'
 import { useUser } from 'components/User'
 

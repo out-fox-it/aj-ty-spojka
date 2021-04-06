@@ -2,10 +2,9 @@ import styled from 'styled-components'
 import { FontSizes, MediaQueries } from 'themes'
 
 import { StyledButton } from 'components/Button/styled'
-import { StyledLink } from 'components/StyledText/StyledLink'
-import { TitleH1 } from 'components/StyledText/StyledTitle'
+import { StyledLink, TitleH1 } from 'components/StyledText'
 
-import { SizeTextarea } from './components/FormTextArea'
+import { SizeTextarea } from './types'
 
 export const Form = styled.form`
 	display: grid;

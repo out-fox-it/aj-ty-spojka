@@ -1,5 +1,6 @@
 import React from 'react'
-import { MySkills, ChosenSkills, Label, Row, Skill } from '../styled'
+
+import { MySkills, ChosenSkills, Label, Row, Skill } from '../../styled'
 
 const labelTexts = ['Dělal jsem:', 'Dělám/učím se:', 'Zajímá mě:']
 

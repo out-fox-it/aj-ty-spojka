@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 
 import { firestore } from 'services/firebase'
 
-import { TitleH2 } from 'components/StyledText/StyledTitle'
+import { TitleH2 } from 'components/StyledText'
 import Search from 'components/Search'
 
-import SQProfile from './SQProfile'
+import SQProfile from './components/SQProfile'
 import { AllSkillsBox, Skill, SearchBoxContainer } from './styled'
 import { Skill as SkillType } from './types'
 
