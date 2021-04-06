@@ -2,7 +2,7 @@ import React from 'react'
 import { EmailAccount } from '../../styled'
 
 type Props = {
-	email: string
+	email?: string | null
 }
 
 const Email: React.FC<Props> = ({ email }) => (

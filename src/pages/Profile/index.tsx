@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useHistory } from 'react-router'
 
-import { authentication, firestore } from 'services/firebase'
+import { authentication } from 'services/firebase'
 
 import Avatar from 'components/Avatar'
 import Footer from 'components/Footer'
@@ -10,40 +10,20 @@ import Page from 'components/Page'
 import SkillQueue from 'components/SkillQueue'
 import { useUser } from 'components/User'
 
-import ProfileContextProvider from './components/Context'
-import Name from './components/Name'
-import SocialNetwork from './components/SocialNetwork'
-import Email from './components/Email'
 import AboutMe from './components/AboutMe'
+import Email from './components/Email'
 import Motto from './components/Motto'
+import Nickname from './components/Nickname'
+import SocialNetworkForm from './components/SocialNetworkForm'
+import SocialNetworksList from './components/SocialNetworksList'
 
-import { ProfileButton, ProfileContent, ProfileHeader } from './styled'
-import { ProfileType } from './types'
+import { ProfileButton, ProfileContent, ProfileHeader, Title } from './styled'
 
 const Profile: React.FC = () => {
-	const [profileData, setProfileData] = useState<ProfileType | null>(null)
-	const { user } = useUser()
+	const { user, profile } = useUser()
 
 	// TODO: Add avatar later
 	const photo = ''
-
-	useEffect(() => {
-		if (user) {
-			firestore
-				.collection('profiles')
-				.doc(user.uid)
-				.get()
-				.then((documentSnapshot) => {
-					setProfileData(documentSnapshot.data() as ProfileType)
-				})
-				.catch((error) =>
-					console.error(
-						'Firestore failed to deliver profileData collection:',
-						error
-					)
-				)
-		}
-	}, [user])
 
 	const history = useHistory()
 
@@ -56,27 +36,27 @@ const Profile: React.FC = () => {
 		<>
 			<NavBar />
 			<Page>
-				{profileData && (
-					<ProfileContextProvider
-						addresses={profileData.socialNetworks ?? []}
-					>
-						<ProfileContent>
-							<ProfileHeader>
-								<Avatar picture={photo} />
-								<Name fullName={profileData.nickname} />
-								<Motto motto={profileData.motto} />
-							</ProfileHeader>
-							<Email email={user?.email ?? ''} />
-							<AboutMe aboutMe={profileData.about} />
-							<SkillQueue />
-							<SocialNetwork />
-							<ProfileButton titleSmall="Propojit" />
-							<ProfileButton
-								title="Odhlásit se"
-								onClick={() => signOut()}
-							/>
-						</ProfileContent>
-					</ProfileContextProvider>
+				{user && profile && (
+					<ProfileContent>
+						<ProfileHeader>
+							<Avatar picture={photo} />
+							<Nickname nickname={profile.nickname} />
+							<Motto motto={profile.motto} />
+						</ProfileHeader>
+						<Email email={user.email} />
+						<AboutMe aboutMe={profile.about} />
+						<SkillQueue />
+						<Title>Kde mě najdeš</Title>
+						<SocialNetworkForm />
+						<SocialNetworksList
+							socialNetworks={profile.socialNetworks}
+						/>
+						<ProfileButton titleSmall="Propojit" />
+						<ProfileButton
+							title="Odhlásit se"
+							onClick={() => signOut()}
+						/>
+					</ProfileContent>
 				)}
 			</Page>
 			<Footer />

@@ -9,7 +9,7 @@ type Props = {
 	required: boolean | string
 	label?: string
 	placeholder?: string
-	value?: string
+	defaultValue?: string
 	change?: (text?: string) => void
 	disabled?: boolean
 	className?: string
@@ -21,7 +21,7 @@ const FormText: React.FC<Props> = ({
 	required,
 	label,
 	placeholder,
-	value,
+	defaultValue,
 	change,
 	disabled,
 	className,
@@ -36,7 +36,7 @@ const FormText: React.FC<Props> = ({
 				name="textField"
 				type="text"
 				placeholder={placeholder}
-				value={value}
+				defaultValue={defaultValue}
 				onChange={(event) => !change || change(event.target.value)}
 				disabled={disabled}
 				className={className}
