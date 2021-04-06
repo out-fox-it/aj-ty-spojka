@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Check, PencilAlt } from '@styled-icons/fa-solid'
 
-import FormText from 'components/Form/components/FormText'
+import { FormText } from 'components/Form'
 import { FormItemFullWidth } from 'components/Form/styled'
 import { useUser } from 'components/User'
 

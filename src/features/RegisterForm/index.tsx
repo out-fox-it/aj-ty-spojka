@@ -10,11 +10,13 @@ import {
 	FormTitle,
 	Errors,
 } from 'components/Form/styled'
-import FormEmail from 'components/Form/components/FormEmail'
-import FormPassword from 'components/Form/components/FormPassword'
-import FormPasswordMessage from 'components/Form/components/FormPasswordMessage'
-import FormCheckbox from 'components/Form/components/FormCheckbox'
-import FormText from 'components/Form/components/FormText'
+import {
+	FormEmail,
+	FormPassword,
+	FormPasswordMessage,
+	FormCheckbox,
+	FormText,
+} from 'components/Form'
 
 type Props = {
 	onSuccess: () => void

@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyledLink } from 'components/StyledText/StyledLink'
+import { StyledLink } from 'components/StyledText'
 import { FooterText } from './styled'
 
 const Footer: React.FC = () => (

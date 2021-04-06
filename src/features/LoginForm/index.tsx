@@ -12,9 +12,7 @@ import {
 	FormLink,
 	FormTitle,
 } from 'components/Form/styled'
-import FormEmail from 'components/Form/components/FormEmail'
-import FormPassword from 'components/Form/components/FormPassword'
-import FormCheckbox from 'components/Form/components/FormCheckbox'
+import { FormCheckbox, FormEmail, FormPassword } from 'components/Form'
 
 type FormData = {
 	email: string

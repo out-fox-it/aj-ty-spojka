@@ -1,4 +1,4 @@
-import { MessageData, MessageType } from 'components/Message/types'
+import { MessageData, MessageType } from 'features/Message/types'
 
 // TODO: Discard fakeMessages when our own API is ready
 export const fakeMessages: MessageData[] = [

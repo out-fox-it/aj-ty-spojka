@@ -1,8 +1,5 @@
 import React from 'react'
-
-import { StyledParagraph } from 'components/StyledText/StyledParagraph'
-import { TitleH1 } from 'components/StyledText/StyledTitle'
-
+import { StyledParagraph, TitleH1 } from 'components/StyledText'
 import { RegistrationMessage } from './styled'
 
 const SubmitMessage: React.FC = () => (

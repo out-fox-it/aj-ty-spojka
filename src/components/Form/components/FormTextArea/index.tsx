@@ -1,12 +1,8 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { Errors, FormItemForm, FormTextBlock } from '../../styled'
 
-export enum SizeTextarea {
-	Large = '15em',
-	Medium = '11em',
-	Small = '8em',
-}
+import { Errors, FormItemForm, FormTextBlock } from '../../styled'
+import { SizeTextarea } from '../../types'
 
 type Props = {
 	register: ReturnType<typeof useForm>['register']

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { MediaQueries } from 'themes'
-import { StyledParagraph } from 'components/StyledText/StyledParagraph'
+import { StyledParagraph } from 'components/StyledText'
 
 export const FooterText = styled(StyledParagraph)`
 	text-align: center;
