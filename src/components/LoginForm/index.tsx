@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 
@@ -31,18 +31,18 @@ const LoginForm: React.FC = () => {
 	const history = useHistory()
 	const [firebaseError, setFirebaseError] = useState(false)
 
-	const onSubmit = handleSubmit(async (formData) => {
-		try {
-			await authentication.signInWithEmailAndPassword(
-				formData.email,
-				formData.password
-			)
+	const onSubmit = useCallback(
+		handleSubmit(async ({ email, password }) => {
+			try {
+				await authentication.signInWithEmailAndPassword(email, password)
 
-			history.push('/home')
-		} catch (error) {
-			setFirebaseError(true)
-		}
-	})
+				history.push('/home')
+			} catch (error) {
+				setFirebaseError(true)
+			}
+		}),
+		[handleSubmit, history, setFirebaseError]
+	)
 
 	// TODO: HANDLE ERRORS
 	// Password eye icon shows or hides the password

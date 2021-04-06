@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useCallback, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { authentication } from 'services/firebase'
@@ -68,30 +68,32 @@ const RegisterForm: React.FC<Props> = ({ onSuccess }) => {
 	const hasUpperCase = /[A-Z]/.test(password.current)
 	const hasNumber = /\d/.test(password.current)
 
-	const onSubmit = handleSubmit(async (formData) => {
-		const { email, nickname, password } = formData
+	const onSubmit = useCallback(
+		handleSubmit(async ({ email, nickname, password }) => {
+			try {
+				const {
+					user,
+				} = await authentication.createUserWithEmailAndPassword(
+					email,
+					password
+				)
 
-		try {
-			const {
-				user,
-			} = await authentication.createUserWithEmailAndPassword(
-				email,
-				password
-			)
+				if (user) {
+					// TODO: Move this to the creation of a user profile
+					await user.updateProfile({ displayName: nickname })
 
-			if (user) {
-				await user.updateProfile({ displayName: nickname })
-
-				onSuccess()
+					onSuccess()
+				}
+			} catch (error) {
+				if (error?.code === 'auth/email-already-in-use') {
+					setSubmitError('Tento e-mail již existuje!')
+				} else {
+					console.error(error)
+				}
 			}
-		} catch (error) {
-			if (error?.code === 'auth/email-already-in-use') {
-				setSubmitError('Tento e-mail již existuje!')
-			} else {
-				console.error(error)
-			}
-		}
-	})
+		}),
+		[handleSubmit, onSuccess, setSubmitError]
+	)
 
 	return (
 		<Form onSubmit={onSubmit} noValidate>

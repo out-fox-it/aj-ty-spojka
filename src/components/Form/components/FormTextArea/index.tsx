@@ -17,7 +17,7 @@ type Props = {
 		message: string
 	}
 	sizeTextarea: SizeTextarea
-	value?: string
+	defaultValue?: string
 	change?: (text?: string) => void
 }
 
@@ -27,14 +27,14 @@ const FormTextArea: React.FC<Props> = ({
 	placeholder,
 	lengthText,
 	sizeTextarea,
-	value,
+	defaultValue,
 	change,
 }) => (
 	<>
 		<FormItemForm>
 			<FormTextBlock
 				name="textarea"
-				value={value}
+				defaultValue={defaultValue}
 				placeholder={placeholder}
 				onChange={(event) => !change || change(event.target.value)}
 				ref={register({

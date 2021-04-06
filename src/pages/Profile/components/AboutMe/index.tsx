@@ -1,8 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { Check, PencilAlt } from '@styled-icons/fa-solid'
-
-import { firestore } from 'services/firebase'
 
 import FormTextArea, {
 	SizeTextarea,
@@ -12,66 +10,45 @@ import { useUser } from 'components/User'
 import { Description, Edit, PlaceholderText, Title } from '../../styled'
 
 type Props = {
-	aboutMe: string
+	aboutMe?: string
+}
+
+type FormData = {
+	textarea?: string
 }
 
 const AboutMe: React.FC<Props> = ({ aboutMe }) => {
-	const [element, setElement] = useState<boolean>(false)
+	const [isEditing, setIsEditing] = useState(false)
 
-	const [text, setText] = useState<string>()
+	const { register, errors, handleSubmit } = useForm<FormData>()
 
-	const { user } = useUser()
+	const { updateProfile } = useUser()
 
-	useEffect(() => {
-		setText(aboutMe)
-	}, [aboutMe])
-
-	const { register, errors } = useForm()
-
-	const changeText = (text?: string) => setText(text)
-
-	const updateUserAboutMe = useCallback(
-		(about: string): void => {
-			if (user) {
-				firestore
-					.collection('profiles')
-					.doc(user.uid)
-					.update({ about })
-					.catch((error) =>
-						console.error(
-							'Firestore failed to deliver profileData collection:',
-							error
-						)
-					)
-			}
-		},
-		[user]
+	const onSubmit = useCallback(
+		handleSubmit(({ textarea }) => {
+			setIsEditing(false)
+			updateProfile({ about: textarea })
+		}),
+		[handleSubmit, setIsEditing, updateProfile]
 	)
 
 	return (
 		<>
 			<Title>
 				Něco o mně
-				{!element && (
-					<Edit onClick={() => setElement(true)}>
+				{!isEditing && (
+					<Edit onClick={() => setIsEditing(true)}>
 						<PencilAlt />
 					</Edit>
 				)}
 			</Title>
-			{element ? (
-				<form
-					onSubmit={(event) => {
-						event.preventDefault()
-						setElement(false)
-						updateUserAboutMe(text ?? '')
-					}}
-				>
+			{isEditing ? (
+				<form onSubmit={onSubmit}>
 					<FormTextArea
 						register={register}
 						errors={errors}
-						value={text}
+						defaultValue={aboutMe}
 						placeholder="Zde můžeš napsat něco o sobě . . ."
-						change={changeText}
 						lengthText={{
 							value: 3000,
 							message:
@@ -85,8 +62,8 @@ const AboutMe: React.FC<Props> = ({ aboutMe }) => {
 				</form>
 			) : (
 				<Description>
-					{text?.length ? (
-						text
+					{aboutMe?.length ? (
+						aboutMe
 					) : (
 						<PlaceholderText>
 							Nejsou zapsány žádné informace
