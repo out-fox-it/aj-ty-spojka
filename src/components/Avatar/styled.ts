@@ -10,4 +10,5 @@ export const Picture = styled.img`
 
 export const Icon = styled(UserCircle)`
 	background-color: ${({ theme }) => theme.bg.primary};
+	border-radius: 50%;
 `

@@ -1,4 +1,6 @@
 import React from 'react'
+import Avatar from 'components/Avatar'
+
 import {
 	BreakLine,
 	ButtonBox,
@@ -13,8 +15,9 @@ import ReadMore from '../ReadMore'
 const NewMatchMessage: React.FC<MessageProps> = ({ message }) => (
 	<>
 		<MessageBox>
-			{/* TODO: Add this avatar of last-message author */}
-			<MessageAvatar />
+			<MessageAvatar>
+				<Avatar picture="" />
+			</MessageAvatar>
 			<MessageBody>
 				{message}
 				<ReadMore message={message} />

@@ -37,8 +37,6 @@ export const MessageBox = styled.div`
 `
 
 export const MessageAvatar = styled.div`
-	border: 0.4em solid ${({ theme }) => theme.text.link};
-	border-radius: 50%;
 	width: 4vw;
 	height: 4vw;
 	min-width: 4vw;
